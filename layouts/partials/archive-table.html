@@ -1,0 +1,11 @@
+<tr>
+  <td><strong>{{ .contest.name }}</strong></td>
+  <td>{{ .contest.date }}</td>
+  <td>{{if .links.website }}<a href="{{.links.website}}">Website</a>{{end}}</td>
+  <td>{{if .resources.problems}}<a href="/archive/{{.contest.year}}/{{.contest.type}}/{{.resources.problems}}">Problemset</a>{{end}}</td>
+  <td>{{if .resources.slides}}<a href="/archive/{{.contest.year}}/{{.contest.type}}/{.resources.slides}}">Solutions presentation</a>{{end}}</td>
+  <td>{{if .resources.data}}<a href="/archive/{{.contest.year}}/{{.contest.type}}/{.resources.data}}">All Data and Solutions</a>{{end}}</td>
+  <td>{{if .links.result }}<a href="{{.link.result}}">Results</a>{{end}}</td>
+  <td>{{if .links.photos }}<a href="{{.link.photos}}">Photos</a>{{end}}</td>
+</tr>
+

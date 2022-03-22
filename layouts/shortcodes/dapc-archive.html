@@ -1,0 +1,7 @@
+<table>
+  <tr><th>Name</th><th>date</th></tr>
+{{ range $.Site.Data.archive.dapc }}
+  {{ partial "archive-table" . }}
+{{ end }}
+</table>
+
