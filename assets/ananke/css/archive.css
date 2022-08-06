@@ -1,0 +1,16 @@
+.archive {
+    width: 100%;
+}
+.archive > * {
+    font-size: 16px;
+}
+
+.icon {
+    height: 2.5em;
+    width: 2.5em;
+    align-self: center;
+}
+
+.link {
+    width: 3em;
+}

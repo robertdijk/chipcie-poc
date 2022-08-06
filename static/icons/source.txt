@@ -1,0 +1,9 @@
+All svg icons are from svgrepo.com and are free of use.
+
+The following were used:
+https://www.svgrepo.com/svg/187480/browser-website
+https://www.svgrepo.com/svg/120019/scoreboard
+https://www.svgrepo.com/svg/97315/documents-symbol
+https://www.svgrepo.com/svg/168632/documents
+https://www.svgrepo.com/svg/34345/presentation
+https://www.svgrepo.com/svg/335607/pic

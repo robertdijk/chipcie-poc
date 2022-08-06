@@ -1,6 +1,7 @@
 ---
-type: section
+type: page
 Title: DAPC Problemset Archive
+menu: Archive
 ---
 # {.Title}
 

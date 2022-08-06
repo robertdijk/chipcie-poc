@@ -1,11 +1,47 @@
 <tr>
   <td><strong>{{ .contest.name }}</strong></td>
   <td>{{ .contest.date }}</td>
-  <td>{{if .links.website }}<a href="{{.links.website}}">Website</a>{{end}}</td>
-  <td>{{if .resources.problems}}<a href="/archive/{{.contest.year}}/{{.contest.type}}/{{.resources.problems}}">Problemset</a>{{end}}</td>
-  <td>{{if .resources.slides}}<a href="/archive/{{.contest.year}}/{{.contest.type}}/{.resources.slides}}">Solutions presentation</a>{{end}}</td>
-  <td>{{if .resources.data}}<a href="/archive/{{.contest.year}}/{{.contest.type}}/{.resources.data}}">All Data and Solutions</a>{{end}}</td>
-  <td>{{if .links.result }}<a href="{{.link.result}}">Results</a>{{end}}</td>
-  <td>{{if .links.photos }}<a href="{{.link.photos}}">Photos</a>{{end}}</td>
+  <td class="link">
+    {{if .links.website }}
+    <a href="{{.links.website}}">
+      <img class="icon" src="/icons/website.svg" alt="Website"/>
+    </a>
+    {{end}}
+  </td>
+  <td class="link">
+    {{if .resources.problems}}
+    <a href="/archive/{{.contest.year}}/{{.contest.type}}/{{.resources.problems}}">
+      <img class="icon" src="/icons/problemset.svg" title="Problemset" alt="Problemset"/>
+    </a>
+    {{end}}
+  </td>
+  <td class="link">
+    {{if .resources.slides}}
+    <a href="/archive/{{.contest.year}}/{{.contest.type}}/{.resources.slides}}">
+      <img src="/icons/presentation.svg" title="Solutions presentation" alt="Solutions presentation" class="icon"/>
+    </a>
+    {{end}}
+  </td>
+  <td class="link">
+    {{if .resources.data}}
+    <a href="/archive/{{.contest.year}}/{{.contest.type}}/{.resources.data}}">
+      <img src="/icons/solutions.svg" title="All Data and Solutions" alt="All Data and Solutions" class="icon"/>
+    </a>
+    {{end}}
+  </td>
+  <td class="link">
+    {{if .links.result }}
+    <a href="{{.links.result}}">
+      <img class="icon" src="/icons/scoreboard.svg" title="Scoreboard" alt="Scoreboard"/>
+    </a>
+    {{end}}
+  </td>
+  <td class="link">
+    {{if .links.photos }}
+    <a href="{{.links.photos}}">
+      <img src="/icons/photos.svg" title="Photos" class="icon" alt="Photos"/>
+    </a>
+    {{end}}
+  </td>
 </tr>
 
