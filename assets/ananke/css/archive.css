@@ -6,9 +6,11 @@
 }
 
 .icon {
-    height: 2.5em;
     width: 2.5em;
-    align-self: center;
+    text-align: center;
+    vertical-align: middle;
+    height: 100%;
+    font-size: larger;
 }
 
 .link {
