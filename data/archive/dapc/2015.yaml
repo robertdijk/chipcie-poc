@@ -1,0 +1,13 @@
+contest:
+  name: DKP 2015
+  date: September 26
+  type: dkp
+  year: 2015
+resources:
+  problems: dkp2015.pdf
+  slides: dkp2015-solutions.pdf
+  data:
+links:
+  photos:
+  website:
+  result: /archive/2015/dkp/DKP2015-scoreboard.html

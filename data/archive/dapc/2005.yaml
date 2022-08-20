@@ -1,0 +1,13 @@
+contest:
+  name: DKP 2005
+  date: October 1
+  type: dkp
+  year: 2005
+resources:
+  problems: problems.pdf
+  slides: solutions.tar.gz
+  data: data.tar.gz
+links:
+  photos:
+  website:
+  result: /archive/2005/dkp/scoreboard.png

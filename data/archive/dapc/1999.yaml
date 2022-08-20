@@ -1,0 +1,13 @@
+contest:
+  name: DKP 1999
+  date: October 23
+  type: vnkp
+  year: 1999
+resources:
+  problems: vr99.pdf
+  slides:
+  data: vr99uitw.zip
+links:
+  photos:
+  website:
+  result: /archive/1999/vnkp/scoreboard.png

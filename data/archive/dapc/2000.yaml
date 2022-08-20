@@ -1,0 +1,13 @@
+contest:
+  name: DKP 2000
+  date: September 23
+  type: vnkp
+  year: 2000
+resources:
+  problems: nk00.pdf
+  slides:
+  data:
+links:
+  photos:
+  website:
+  result: /archive/2000/vnkp/scoreboard.png

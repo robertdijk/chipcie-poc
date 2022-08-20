@@ -30,3 +30,12 @@ For development run `hugo serve` to run the application and then visit [http://l
     * [ ] Add example problem page
     * [ ] Add Training Sources page
  - [ ] Expand the archive
+   * [X] Add archive files for DAPC 
+   * [ ] Add archive files for BAPC 
+   * [ ] Add archive files for NWERC 
+   * [ ] Add archive files for FPC 
+   * [ ] Reverse the table to have the latest contest at the top
+
+## Future Todo's
+ - [ ] Scan in old problem sets (marked to be in the old physical problem set archive)
+   - [ ] DAPC 1990, 1991, 1992

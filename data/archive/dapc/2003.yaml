@@ -1,0 +1,13 @@
+contest:
+  name: DKP 2003
+  date: October 4
+  type: vnkp
+  year: 2003
+resources:
+  problems: problems.pdf
+  slides:
+  data: dkp2003.zip
+links:
+  photos:
+  website:
+  result: /archive/2003/vnkp/scoreboard.png

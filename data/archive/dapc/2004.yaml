@@ -1,0 +1,13 @@
+contest:
+  name: DKP 2004
+  date: October 2
+  type: dkp
+  year: 2004
+resources:
+  problems: opgaven.pdf
+  slides:
+  data:
+links:
+  photos:
+  website:
+  result: /archive/2004/dkp/scoreboard.png

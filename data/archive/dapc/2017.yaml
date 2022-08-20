@@ -1,8 +1,8 @@
 contest:
-  name: DAPC 2020
-  date: November 14
+  name: DAPC 2017
+  date: September 23
   type: dapc
-  year: 2020
+  year: 20174
 resources:
   problems: problemset.pdf
   slides: solutions.pdf
@@ -10,4 +10,4 @@ resources:
 links:
   photos:
   website:
-  result: https://2020.bapc.eu/scoreboard-preliminaries
+  result:

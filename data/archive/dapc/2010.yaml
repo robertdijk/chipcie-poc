@@ -1,0 +1,13 @@
+contest:
+  name: DKP 2010
+  date: October 2
+  type: dkp
+  year: 2010
+resources:
+  problems: dkp2010.pdf
+  slides: 2010-preliminaries-solutions.tar.gz
+  data: testdata.tar.gz
+links:
+  photos:
+  website:
+  result:

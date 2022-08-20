@@ -1,0 +1,13 @@
+contest:
+  name: DKP 2013
+  date: September 28
+  type: dkp
+  year: 2013
+resources:
+  problems: problemset.pdf
+  slides:
+  data: solutions.zip
+links:
+  photos:
+  website:
+  result: /archive/2013/dkp/scoreboard.png

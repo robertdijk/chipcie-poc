@@ -1,0 +1,13 @@
+contest:
+  name: DKP 2002
+  date: October 5
+  type: dkp
+  year: 2002
+resources:
+  problems: opgaven.pdf
+  slides:
+  data:
+links:
+  photos:
+  website:
+  result: /archive/2003/vnkp/scoreboard.png

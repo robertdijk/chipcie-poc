@@ -1,0 +1,13 @@
+contest:
+  name: DKP 2007
+  date: October 6
+  type: dkp
+  year: 2007
+resources:
+  problems: dkp.pdf
+  slides:
+  data:
+links:
+  photos:
+  website:
+  result: /archive/2007/dkp/scoreboard.png

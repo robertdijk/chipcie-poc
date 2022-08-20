@@ -1,0 +1,13 @@
+contest:
+  name: DKP 2011
+  date: October 1
+  type: dkp
+  year: 2011
+resources:
+  problems: Problems.pdf
+  slides: solutions.pdf
+  data: solutions.zip
+links:
+  photos:
+  website:
+  result:

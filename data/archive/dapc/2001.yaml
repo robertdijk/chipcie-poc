@@ -1,0 +1,13 @@
+contest:
+  name: DKP 2001
+  date: September 22
+  type: vnkp
+  year: 2001
+resources:
+  problems: vr01.pdf
+  slides:
+  data: vr01uitw.zip
+links:
+  photos:
+  website:
+  result: /archive/2001/vnkp/scoreboard.png

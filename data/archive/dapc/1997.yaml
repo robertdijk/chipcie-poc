@@ -1,0 +1,13 @@
+contest:
+  name: DKP 1997
+  date:
+  type: vnkp
+  year: 1997
+resources:
+  problems: vr97html.zip
+  slides: vr97uitw.zip
+  data:
+links:
+  photos:
+  website:
+  result:

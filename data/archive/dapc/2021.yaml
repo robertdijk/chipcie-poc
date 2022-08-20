@@ -1,6 +1,6 @@
 contest:
-  name: BAPC 2021
-  date: Amsterdam(VU), October 30
+  name: DAPC 2021
+  date: October 9
   type: dapc
   year: 2021
 resources:
@@ -8,6 +8,6 @@ resources:
   slides: solutions.pdf
   data: solutions.zip
 links:
-  photos: https://
-  website: https://2021.bapc.eu
+  photos:
+  website:
   result: /archive/2021/dapc/scoreboard.html

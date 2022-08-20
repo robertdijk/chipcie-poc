@@ -1,0 +1,13 @@
+contest:
+  name: DKP 2006
+  date: September 30
+  type: dkp
+  year: 2006
+resources:
+  problems: qualif2006.pdf
+  slides:
+  data:
+links:
+  photos:
+  website:
+  result: /archive/2006/dkp/scoreboard.png
