@@ -1,6 +1,8 @@
 ---
 title: "Christiaan Huygens important programming Committee"
 description: "Organizing programming contests since 1991"
+featured_image: images/YAW02284.jpg
+featured_image_alignment: top
 ---
 Welcome to the website of the **CHipCie**.
 

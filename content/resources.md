@@ -1,8 +1,8 @@
 ---
 title: Resources
-featured_image: "images/notebook.jpg"
 description: Training, practice and preparation makes perfect
-featured_image: /images/header-systeem.jpeg
+featured_image: /images/YAW02249.jpg
+featured_image_alignment: center
 type: page
 weight: 30
 menu: main
