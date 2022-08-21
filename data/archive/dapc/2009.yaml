@@ -8,6 +8,6 @@ resources:
   slides: solutions.pdf
   data:
 links:
-  photos:
+  photos: https://flitcie.ch.tudelft.nl/53/004-DKP
   website:
   result:  /archive/2009/dkp/scoreboard.png

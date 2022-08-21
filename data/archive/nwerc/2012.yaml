@@ -8,6 +8,6 @@ resources:
   slides: solutions.pdf
   data: solutions.zip
 links:
-  photos:
+  photos: https://flitcie.ch.tudelft.nl/56/NWERC-2012
   website: https://2012.nwerc.eu/
   result: https://2012.nwerc.eu/en/results/scoreboard/

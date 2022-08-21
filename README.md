@@ -29,13 +29,13 @@ For development run `hugo serve` to run the application and then visit [http://l
     * [X] Add Contest page
     * [ ] Add example problem page
     * [X] Add Training Sources page
- - [ ] Expand the archive
+ - [X] Expand the archive
    * [X] Add archive files for DAPC 
    * [X] Add archive files for BAPC 
    * [X] Add archive files for NWERC 
    * [X] Add archive files for FPC 
    * [X] Reverse the table to have the latest contest at the top
-   * [ ] Add photo links from previous contests
+   * [X] Add photo links from previous contests
 
 ## Future Todo's
  - [ ] Scan in old problem sets (marked to be in the old physical problem set archive)
@@ -44,3 +44,4 @@ For development run `hugo serve` to run the application and then visit [http://l
    - [ ] NWERC 1988, 1990, 1991, 1995 (double check 1989 if only 4 problems)
  - [ ] Search old chipcie drive for scoreboard dkp 2011 and 1998-
  - [ ] Search old CHipCie drive for problemsets FPC 2017, 2013, 2010, 2009, 2008, 2005
+ - [ ] Add pictures from new ch picture site once it works again(dapc 2019 and up) 

@@ -8,6 +8,6 @@ resources:
   slides: solutions.pdf
   data: solutions.zip
 links:
-  photos:
+  photos: https://flitcie.ch.tudelft.nl/59/Freshman-Programming-Contest
   website:
   result:

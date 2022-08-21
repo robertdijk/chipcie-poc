@@ -1,6 +1,6 @@
 contest:
   name: NKP 2001
-  date: Utrecht, October 23
+  date: Delft, October 6
   type: nkp
   year: 2001
 resources:
@@ -8,6 +8,6 @@ resources:
   slides:
   data: nk01uitw.zip
 links:
-  photos:
+  photos: https://flitcie.ch.tudelft.nl/45/NKP
   website: https://commissies.ch.tudelft.nl/nkp2001/
   result: https://commissies.ch.tudelft.nl/nkp2001/files/score-final.html

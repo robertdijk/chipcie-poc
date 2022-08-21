@@ -8,6 +8,6 @@ resources:
   slides: presentation.pdf
   data: solutions.zip
 links:
-  photos:
+  photos: https://flitcie.ch.tudelft.nl/57/SKP
   website:
   result:

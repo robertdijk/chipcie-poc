@@ -8,6 +8,6 @@ resources:
   slides: 2010-preliminaries-solutions.tar.gz
   data: testdata.tar.gz
 links:
-  photos:
+  photos: https://flitcie.ch.tudelft.nl/54/DKP2010
   website:
   result: /archive/2010/dkp/scoreboard.png

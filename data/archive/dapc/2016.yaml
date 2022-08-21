@@ -8,6 +8,6 @@ resources:
   slides: solutions.pdf
   data: solutions.zip
 links:
-  photos:
+  photos: https://flitcie.ch.tudelft.nl/60/Delft-Algorithm-Programming-Contest
   website:
   result: /archive/2016/dapc/scoreboard.png

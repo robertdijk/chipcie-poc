@@ -8,6 +8,6 @@ resources:
   slides:
   data: solutions.zip
 links:
-  photos:
+  photos: https://flitcie.ch.tudelft.nl/52/034-BAPC
   website: https://commissies.ch.tudelft.nl/bapc2008/
   result: https://commissies.ch.tudelft.nl/bapc2008/score.html

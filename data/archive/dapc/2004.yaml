@@ -8,6 +8,6 @@ resources:
   slides:
   data:
 links:
-  photos:
+  photos: https://flitcie.ch.tudelft.nl/48/023-Delfts-Kampioenschap-Programmeren-2004
   website:
   result: /archive/2004/dkp/scoreboard.png

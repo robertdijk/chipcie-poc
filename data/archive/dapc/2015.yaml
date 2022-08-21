@@ -8,6 +8,6 @@ resources:
   slides: dkp2015-solutions.pdf
   data:
 links:
-  photos:
+  photos: https://flitcie.ch.tudelft.nl/59/DKP
   website:
   result: /archive/2015/dkp/DKP2015-scoreboard.html

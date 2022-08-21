@@ -8,6 +8,6 @@ resources:
   slides:
   data: dkp2003.zip
 links:
-  photos:
+  photos: https://flitcie.ch.tudelft.nl/47/003-DKP
   website:
   result: /archive/2003/vnkp/scoreboard.png

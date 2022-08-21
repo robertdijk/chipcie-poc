@@ -8,6 +8,6 @@ resources:
   slides: solutions.pdf
   data: solutions.zip
 links:
-  photos:
+  photos: https://flitcie.ch.tudelft.nl/Bestuur-61/DAPC
   website:
   result:  /archive/2017/dapc/scoreboard.png

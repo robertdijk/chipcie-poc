@@ -8,6 +8,6 @@ resources:
   slides: solutions.tar.gz
   data: data.tar.gz
 links:
-  photos:
+  photos: https://flitcie.ch.tudelft.nl/49/012-Delfts-Kampioenschap-Programmeren
   website:
   result: /archive/2005/dkp/scoreboard.png

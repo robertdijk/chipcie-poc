@@ -8,6 +8,6 @@ resources:
   slides: solutions.pdf
   data: solutions.zip
 links:
-  photos:
+  photos: https://flitcie.ch.tudelft.nl/60/BAPC
   website: https://2016.bapc.eu/
   result: https://2016.bapc.eu/en/results/
