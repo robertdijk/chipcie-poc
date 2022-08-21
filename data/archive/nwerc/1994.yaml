@@ -1,0 +1,13 @@
+contest:
+  name: NWERC 1994
+  date: Amsterdam (VU)
+  type: nwercpc
+  year: 1994
+resources:
+  problems: problemset.pdf
+  slides:
+  data:
+links:
+  photos:
+  website:
+  result:

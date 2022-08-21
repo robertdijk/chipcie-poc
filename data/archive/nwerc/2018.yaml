@@ -1,0 +1,13 @@
+contest:
+  name: NWERC 2018
+  date: Eindhoven, November 23-25
+  type: nwerc
+  year: 2018
+resources:
+  problems: problemset.pdf
+  slides: solutions.pdf
+  data: solutions.tar.bz2
+links:
+  photos:
+  website: https://2018.nwerc.eu/
+  result:

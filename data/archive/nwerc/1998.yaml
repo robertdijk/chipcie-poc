@@ -1,0 +1,13 @@
+contest:
+  name: NWERC 1998
+  date: "'s-Hertogenbosch, November 22"
+  type: ekp
+  year: 1998
+resources:
+  problems: ek98.pdf
+  slides:
+  data:
+links:
+  photos:
+  website:
+  result: https://web.archive.org/web/20100710004141/http://icpc.baylor.edu/past/icpc99/Regionals/NWERC98/Standings.htm

@@ -1,0 +1,13 @@
+contest:
+  name: NWERC 1992
+  date: Gent
+  type: nwercpc
+  year: 1992
+resources:
+  problems: problemset.pdf
+  slides:
+  data:
+links:
+  photos:
+  website:
+  result:

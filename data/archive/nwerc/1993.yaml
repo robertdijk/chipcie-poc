@@ -1,0 +1,13 @@
+contest:
+  name: NWERC 1993
+  date: Swansea
+  type: nwercpc
+  year: 1993
+resources:
+  problems: problemset.pdf # TODO first 4 problems only
+  slides:
+  data:
+links:
+  photos:
+  website:
+  result:

@@ -1,0 +1,13 @@
+contest:
+  name: NWERC 2016
+  date: Bath, November 19-20
+  type: nwerc
+  year: 2016
+resources:
+  problems: problemset.pdf
+  slides: solutions.pdf
+  data: solutions.tar.bz2
+links:
+  photos:
+  website: https://web.archive.org/web/20170706164409/http://2016.nwerc.eu:80/
+  result: https://web.archive.org/web/20170528144000/http://nwerc2016-scoreboard.bath.ac.uk/static/scoreboard/static.html

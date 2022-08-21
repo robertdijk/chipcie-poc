@@ -1,0 +1,13 @@
+contest:
+  name: NWERC 2021
+  date: Reykjavík, November 20-21
+  type: nwerc
+  year: 2021
+resources:
+  problems: problemset.pdf
+  slides: solutions.pdf
+  data: solutions.tar.bz2
+links:
+  photos:
+  website: https://2021.nwerc.eu/
+  result: https://2021.nwerc.eu/standings/

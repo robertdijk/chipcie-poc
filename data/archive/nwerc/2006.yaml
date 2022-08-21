@@ -1,0 +1,13 @@
+contest:
+  name: NWERC 2006
+  date: Stockholm, November 17-19
+  type: EKP
+  year: 2006
+resources:
+  problems: nwerc06.pdf
+  slides:
+  data: nwerc06.zip
+links:
+  photos:
+  website: https://www.csc.kth.se/contest/nwerc/2006/
+  result: https://www.csc.kth.se/contest/nwerc/2006/results/results.html

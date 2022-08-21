@@ -1,0 +1,13 @@
+contest:
+  name: NWERC 2019
+  date: Eindhoven, November 15-17
+  type: nwerc
+  year: 2019
+resources:
+  problems: problemset.pdf
+  slides: solutions.pdf
+  data: solutions.tar.bz2
+links:
+  photos:
+  website: https://2019.nwerc.eu/
+  result: https://2019.nwerc.eu/scoreboard/

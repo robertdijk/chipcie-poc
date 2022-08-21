@@ -1,0 +1,13 @@
+contest:
+  name: NWERC 2013
+  date: Delft, November 22-24
+  type: nwerc
+  year: 2013
+resources:
+  problems: problemset.pdf
+  slides: solutions.pdf
+  data: solutions.zip
+links:
+  photos:
+  website: https://2013.nwerc.eu/
+  result: https://2013.nwerc.eu/en/results/scoreboard/

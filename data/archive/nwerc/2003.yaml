@@ -1,0 +1,13 @@
+contest:
+  name: NWERC 2003
+  date: Lund, November 13
+  type: ekp
+  year: 2003
+resources:
+  problems: NWERC03.pdf
+  slides:
+  data:
+links:
+  photos:
+  website: https://web.archive.org/web/20031203033528/http://www.cs.lth.se/contest/nwerc/
+  result: https://web.archive.org/web/20040106020210fw_/http://www.cs.lth.se/contest/nwerc/results2003.html

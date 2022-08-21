@@ -1,0 +1,13 @@
+contest:
+  name: NWERC 2015
+  date: Linköping, November 27-29
+  type: nwerc
+  year: 2015
+resources:
+  problems: problemset.pdf
+  slides: solutions.pdf
+  data: solutions.tar.bz2
+links:
+  photos:
+  website: https://web.archive.org/web/20160304210910/http://www.nwerc.eu/
+  result: https://web.archive.org/web/20160305082809/http://www.nwerc.eu/scoreboard/

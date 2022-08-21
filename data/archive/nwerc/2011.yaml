@@ -1,0 +1,13 @@
+contest:
+  name: NWERC 2011
+  date: Bremen, November 23-25
+  type: nwerc
+  year: 2011
+resources:
+  problems: problemset.pdf
+  slides: solutions.pdf
+  data: nwerc.zip
+links:
+  photos:
+  website: https://web.archive.org/web/20121120082122/https://2011.nwerc.eu:80/index.php
+  result: https://commissies.ch.tudelft.nl/chipcie/archief/2011/nwerc/scoreboard.html

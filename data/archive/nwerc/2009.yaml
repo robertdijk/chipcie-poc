@@ -1,0 +1,13 @@
+contest:
+  name: NWERC 2009
+  date: Nuremberg, November 7-8
+  type: nwerc
+  year: 2009
+resources:
+  problems: nwerc2009.pdf
+  slides: solutions.pdf
+  data: data.zip
+links:
+  photos:
+  website: https://web.archive.org/web/20110810162249/http://2009.nwerc.eu/
+  result: https://web.archive.org/web/20091112154357/http://2009.nwerc.eu/results/

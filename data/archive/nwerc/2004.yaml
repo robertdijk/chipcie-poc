@@ -1,0 +1,13 @@
+contest:
+  name: NWERC 2004
+  date: Lund, November 14
+  type: ekp
+  year: 2004
+resources:
+  problems: NWERC04.pdf
+  slides: nwerc2004solutions.pdf
+  data: nwerc2004.zip
+links:
+  photos:
+  website: https://web.archive.org/web/20050205010345/http://www.cs.lth.se/contest/nwerc/
+  result: https://commissies.ch.tudelft.nl/chipcie/archief/2004/nwerc/scoreboard.html

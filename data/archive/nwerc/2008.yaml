@@ -1,0 +1,13 @@
+contest:
+  name: NWERC 2008
+  date: Utrecht, November 22-23
+  type: nwerc
+  year: 2008
+resources:
+  problems: nwerc08-problemset.pdf
+  slides: nwerc08-solutions.pdf
+  data: data.zip
+links:
+  photos:
+  website: https://web.archive.org/web/20211017114636/http://2008.nwerc.eu/
+  result: https://web.archive.org/web/20210923220245/http://2008.nwerc.eu/live/scoreboard

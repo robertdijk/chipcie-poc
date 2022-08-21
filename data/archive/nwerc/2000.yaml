@@ -1,0 +1,13 @@
+contest:
+  name: NWERC 2000
+  date: Darmstadt, November 19
+  type: ekp
+  year: 2000
+resources:
+  problems: ek00.pdf
+  slides:
+  data: ek00uitw.zip
+links:
+  photos:
+  website:
+  result:

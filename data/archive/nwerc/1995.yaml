@@ -1,0 +1,13 @@
+contest:
+  name: NWERC 1995
+  date: Amsterdam (VU)
+  type: nwercpc
+  year: 1995
+resources:
+  problems: problemset.pdf # TODO first 4 problems only
+  slides:
+  data:
+links:
+  photos:
+  website:
+  result:

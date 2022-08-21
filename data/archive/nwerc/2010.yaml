@@ -1,0 +1,13 @@
+contest:
+  name: NWERC 2010
+  date: Bremen, November 19-21
+  type: nwerc
+  year: 2010
+resources:
+  problems: nwerc2010.pdf
+  slides: nwerc2010-solutions.pdf
+  data: data.zip
+links:
+  photos:
+  website: https://web.archive.org/web/20120111102554/http://2010.nwerc.eu/
+  result: https://web.archive.org/web/20110301020132/http://2010.nwerc.eu/score/

@@ -1,0 +1,13 @@
+contest:
+  name: NWERC 1996
+  date: Delft
+  type: nwercpc
+  year: 1996
+resources:
+  problems: problemset.pdf
+  slides:
+  data:
+links:
+  photos:
+  website:
+  result:

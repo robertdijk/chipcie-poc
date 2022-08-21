@@ -1,0 +1,13 @@
+contest:
+  name: NWERC 1989
+  date: Eindhoven
+  type: nwercpc
+  year: 1989
+resources:
+  problems: problemset.pdf # only 4 problems?
+  slides:
+  data:
+links:
+  photos:
+  website:
+  result:

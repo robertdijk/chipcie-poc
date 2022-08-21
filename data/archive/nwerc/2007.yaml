@@ -1,0 +1,13 @@
+contest:
+  name: NWERC 2007
+  date: Utrecht, November 17-18
+  type: nwerc
+  year: 2007
+resources:
+  problems: nwerc07.pdf
+  slides:
+  data: nwerc07.zip
+links:
+  photos:
+  website: https://web.archive.org/web/20210924213517/http://2007.nwerc.eu/
+  result: https://web.archive.org/web/20210924213517/http://2007.nwerc.eu/live/scoreboard

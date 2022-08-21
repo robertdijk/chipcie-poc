@@ -11,9 +11,21 @@ This page contains exercises, test sets and solutions of several contests. You c
  * [FPC (first year problems)](/archive/fpc)
  * [DAPC (national problem set)](/archive/dapc)
  * [BAPC (problem set preliminary Benelux)](/archive/bapc)
- * NWERC
+ * [NWERC](/archive/nwerc)
 
-Other archives: TODO
+# Other archives
+ * [ICPC World Finals Problem archive](https://icpc.global/worldfinals/problems)
+ * [Open Kattis Problem Sources](https://open.kattis.com/problem-sources)
+ * [Uva Online judge](https://onlinejudge.org/)
 
+# DAPC Archive
+{{< dapc-archive >}}
 
+# BAPC Archive
+{{< bapc-archive >}}
 
+# NWERC Archive
+{{< nwerc-archive >}}
+
+# FPC Archive
+{{< fpc-archive >}}
