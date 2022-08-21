@@ -25,16 +25,16 @@ For development run `hugo serve` to run the application and then visit [http://l
  - [X] How to deal with scoreboards?
  - [ ] Figure out if there is enough lfs space for all years
  - [X] Fix layout (especially of the table)
- - [ ] Add other pages that are wanted(general information, training sources, etc)\
+ - [ ] Add other pages that are wanted(general information, training sources, etc)
     * [X] Add Contest page
     * [ ] Add example problem page
-    * [ ] Add Training Sources page
+    * [X] Add Training Sources page
  - [ ] Expand the archive
    * [X] Add archive files for DAPC 
    * [X] Add archive files for BAPC 
    * [ ] Add archive files for NWERC 
    * [ ] Add archive files for FPC 
-   * [ ] Reverse the table to have the latest contest at the top
+   * [X] Reverse the table to have the latest contest at the top
    * [ ] Add photo links from previous contests
 
 ## Future Todo's

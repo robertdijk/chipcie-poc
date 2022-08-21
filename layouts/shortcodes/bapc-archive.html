@@ -1,6 +1,6 @@
 <table class="archive helvetica">
   <tr><th>Name</th><th>date</th></tr>
-{{ range $.Site.Data.archive.bapc }}
+{{ range sort $.Site.Data.archive.bapc "contest.year" "desc" }}
   {{ partial "archive-table" . }}
 {{ end }}
 </table>

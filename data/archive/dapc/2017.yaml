@@ -2,7 +2,7 @@ contest:
   name: DAPC 2017
   date: September 23
   type: dapc
-  year: 20174
+  year: 2017
 resources:
   problems: problemset.pdf
   slides: solutions.pdf
