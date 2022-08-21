@@ -1,0 +1,13 @@
+contest:
+  name: SKP 2014
+  date: March 24
+  type: skp
+  year: 2014
+resources:
+  problems: problems.pdf
+  slides: presentation.pdf
+  data: solutions.zip
+links:
+  photos:
+  website:
+  result:

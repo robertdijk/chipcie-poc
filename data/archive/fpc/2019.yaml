@@ -1,8 +1,8 @@
 contest:
-  name: DAPC 2017
-  date: September 23
-  type: dapc
-  year: 2017
+  name: FPC 2019
+  date: May 1
+  type: fpc
+  year: 2019
 resources:
   problems: problemset.pdf
   slides: solutions.pdf
@@ -10,4 +10,4 @@ resources:
 links:
   photos:
   website:
-  result:  /archive/2017/dapc/scoreboard.png
+  result: /archive/2019/fpc/scoreboard/FPC2019_Scoreboard.html

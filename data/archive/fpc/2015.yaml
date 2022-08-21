@@ -1,0 +1,13 @@
+contest:
+  name: SKP 2015
+  date: March 26
+  type: skp
+  year: 2015
+resources:
+  problems: problems.pdf
+  slides: solutions.pdf
+  data: solutions.zip
+links:
+  photos:
+  website:
+  result: /archive/2015/skp/Scoreboard.html

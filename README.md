@@ -33,7 +33,7 @@ For development run `hugo serve` to run the application and then visit [http://l
    * [X] Add archive files for DAPC 
    * [X] Add archive files for BAPC 
    * [ ] Add archive files for NWERC 
-   * [ ] Add archive files for FPC 
+   * [X] Add archive files for FPC 
    * [X] Reverse the table to have the latest contest at the top
    * [ ] Add photo links from previous contests
 
@@ -41,3 +41,5 @@ For development run `hugo serve` to run the application and then visit [http://l
  - [ ] Scan in old problem sets (marked to be in the old physical problem set archive)
    - [ ] DAPC 1990, 1991, 1992
    - [ ] NKP 1992, 1994, 1995, 2001(maybe, hopefully)
+ - [ ] Search old chipcie drive for scoreboard dkp 2011 and 1998-
+ - [ ] Search old CHipCie drive for problemsets FPC 2017, 2013, 2010, 2009, 2008, 2005

@@ -1,8 +1,8 @@
 contest:
-  name: DAPC 2017
-  date: September 23
-  type: dapc
-  year: 2017
+  name: FPC 2022
+  date: May 11
+  type: fpc
+  year: 2022
 resources:
   problems: problemset.pdf
   slides: solutions.pdf
@@ -10,4 +10,4 @@ resources:
 links:
   photos:
   website:
-  result:  /archive/2017/dapc/scoreboard.png
+  result: /archive/2022/fpc/scoreboard/FPC2022_Scoreboard.html

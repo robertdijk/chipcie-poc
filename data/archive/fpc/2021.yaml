@@ -1,8 +1,8 @@
 contest:
-  name: DAPC 2017
-  date: September 23
-  type: dapc
-  year: 2017
+  name: FPC 2021
+  date: May 8
+  type: fpc
+  year: 2021
 resources:
   problems: problemset.pdf
   slides: solutions.pdf
@@ -10,4 +10,4 @@ resources:
 links:
   photos:
   website:
-  result:  /archive/2017/dapc/scoreboard.png
+  result: /archive/2021/fpc/scoreboard/FPC2021_Scoreboard.html

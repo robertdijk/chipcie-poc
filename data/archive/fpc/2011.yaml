@@ -1,0 +1,13 @@
+contest:
+  name: SKP 2011
+  date: March 18
+  type: skp
+  year: 2011
+resources:
+  problems: opgaven.pdf
+  slides:
+  data:
+links:
+  photos:
+  website:
+  result:
