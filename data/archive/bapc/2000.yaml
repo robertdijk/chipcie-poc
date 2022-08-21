@@ -1,0 +1,13 @@
+contest:
+  name: NKP 2000
+  date: Groningen, October 7
+  type: nkp
+  year: 2000
+resources:
+  problems: nk00.pdf
+  slides:
+  data:
+links:
+  photos:
+  website:
+  result:

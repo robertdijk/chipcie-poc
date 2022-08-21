@@ -1,0 +1,13 @@
+contest:
+  name: BAPC 2006
+  date: Leiden, October 21
+  type: NKP
+  year: 2006
+resources:
+  problems: bapc2006.pdf
+  slides:
+  data:
+links:
+  photos:
+  website:
+  result:

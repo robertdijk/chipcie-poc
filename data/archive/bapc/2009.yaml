@@ -1,0 +1,13 @@
+contest:
+  name: BAPC 2009
+  date: Groningen, October 17
+  type: bapc
+  year: 2009
+resources:
+  problems: bapc2009.pdf
+  slides:
+  data:
+links:
+  photos:
+  website:
+  result:

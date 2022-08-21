@@ -1,0 +1,13 @@
+contest:
+  name: NKP 2003
+  date: Twente, October 16
+  type: nkp
+  year: 2003
+resources:
+  problems: opgaven.pdf
+  slides:
+  data:
+links:
+  photos:
+  website: https://web.archive.org/web/20040901174613/http://www.nkp2003.nl/
+  result: https://web.archive.org/web/20040807010735/http://www.nkp2003.nl/?subject=uitslag

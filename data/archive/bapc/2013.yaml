@@ -1,0 +1,13 @@
+contest:
+  name: BAPC 2013
+  date: Utrecht, October 26
+  type: bapc
+  year: 2013
+resources:
+  problems: problemset.pdf
+  slides: solutions.pdf
+  data: solutions.zip
+links:
+  photos:
+  website: https://2013.bapc.eu/
+  result: https://2013.bapc.eu/Scoreboard.html

@@ -1,0 +1,13 @@
+contest:
+  name: BAPC 2011
+  date: Eindhoven, October 15
+  type: bapc
+  year: 2011
+resources:
+  problems: problemset.pdf
+  slides: solutions.ppt
+  data: solutions.zip
+links:
+  photos:
+  website: https://2011.bapc.eu/
+  result: /archive/2011/bapc/scoreboard.html

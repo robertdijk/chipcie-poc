@@ -1,0 +1,13 @@
+contest:
+  name: NKP 1997
+  date: Groningen, October 18
+  type: nkp
+  year: 1997
+resources:
+  problems: nk97.pdf
+  slides:
+  data: nk97uitw.zip
+links:
+  photos:
+  website: https://web.archive.org/web/20050913011203/http://www.wing.rug.nl/~nkp/
+  result: https://web.archive.org/web/20050307055915fw_/http://www.wing.rug.nl/~nkp/results/teamresults.html

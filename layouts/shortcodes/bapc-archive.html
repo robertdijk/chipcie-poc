@@ -1,0 +1,7 @@
+<table class="archive helvetica">
+  <tr><th>Name</th><th>date</th></tr>
+{{ range $.Site.Data.archive.bapc }}
+  {{ partial "archive-table" . }}
+{{ end }}
+</table>
+

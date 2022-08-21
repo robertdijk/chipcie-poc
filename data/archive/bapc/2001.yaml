@@ -1,0 +1,13 @@
+contest:
+  name: NKP 2001
+  date: Utrecht, October 23
+  type: nkp
+  year: 2001
+resources:
+  problems: nk01.pdf
+  slides:
+  data: nk01uitw.zip
+links:
+  photos:
+  website: https://commissies.ch.tudelft.nl/nkp2001/
+  result: https://commissies.ch.tudelft.nl/nkp2001/files/score-final.html

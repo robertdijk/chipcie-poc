@@ -1,0 +1,13 @@
+contest:
+  name: NKP 1993
+  date: Delft
+  type: nkp
+  year: 1993
+resources:
+  problems: problemset.pdf
+  slides:
+  data:
+links:
+  photos:
+  website:
+  result:

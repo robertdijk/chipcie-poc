@@ -31,11 +31,13 @@ For development run `hugo serve` to run the application and then visit [http://l
     * [ ] Add Training Sources page
  - [ ] Expand the archive
    * [X] Add archive files for DAPC 
-   * [ ] Add archive files for BAPC 
+   * [X] Add archive files for BAPC 
    * [ ] Add archive files for NWERC 
    * [ ] Add archive files for FPC 
    * [ ] Reverse the table to have the latest contest at the top
+   * [ ] Add photo links from previous contests
 
 ## Future Todo's
  - [ ] Scan in old problem sets (marked to be in the old physical problem set archive)
    - [ ] DAPC 1990, 1991, 1992
+   - [ ] NKP 1992, 1994, 1995, 2001(maybe, hopefully)

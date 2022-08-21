@@ -10,7 +10,7 @@ This page contains exercises, test sets and solutions of several contests. You c
 
  * FPC
  * [DAPC (national problem set)](/archive/dapc)
- * BAPC (problem set preliminary Benelux)
+ * [BAPC (problem set preliminary Benelux)](/archive/bapc)
  * NWERC
 
 Other archives: TODO

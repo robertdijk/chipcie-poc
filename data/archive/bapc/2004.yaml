@@ -1,0 +1,13 @@
+contest:
+  name: NKP 2004
+  date: Utrecht, October 23
+  type: nkp
+  year: 2004
+resources:
+  problems: opgaven.pdf
+  slides: uitwerkingen.pdf
+  data: data.zip
+links:
+  photos:
+  website: https://web.archive.org/web/20051215040336/http://2004.nkp.nl:80/
+  result: https://web.archive.org/web/20051211225523/http://2004.nkp.nl/score/board.html

@@ -1,0 +1,13 @@
+contest:
+  name: BAPC 2012
+  date: Utrecht, October 27
+  type: bapc
+  year: 2012
+resources:
+  problems: problemset.pdf
+  slides: solutions.pdf
+  data: solutions.zip
+links:
+  photos:
+  website: https://2012.bapc.eu/
+  result: https://web.archive.org/web/20121204212250/https://www.a-eskwadraat.nl/Vereniging/Commissies/escapade/BAPC2012.html

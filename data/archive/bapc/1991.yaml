@@ -1,0 +1,15 @@
+problemset:
+  pdf:
+contest:
+  name: NKP 1991
+  date: Leiden
+  type: nkp
+  year: 1991
+resources:
+  problems: problemset.pdf
+  slides:
+  data:
+links:
+  photos:
+  website:
+  result:

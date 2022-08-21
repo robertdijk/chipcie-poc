@@ -1,0 +1,13 @@
+contest:
+  name: BAPC 2020
+  date: Delft(online), December 12
+  type: bapc
+  year: 2020
+resources:
+  problems: problemset.pdf
+  slides: solutions.pdf
+  data: solutions.zip
+links:
+  photos:
+  website: https://2020.bapc.eu/
+  result: https://2020.bapc.eu/scoreboard

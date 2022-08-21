@@ -1,0 +1,13 @@
+contest:
+  name: BAPC 2007
+  date: Twente, October 27
+  type: bapc
+  year: 2007
+resources:
+  problems: bapc.pdf
+  slides:
+  data:
+links:
+  photos:
+  website:
+  result:

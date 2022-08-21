@@ -1,0 +1,13 @@
+contest:
+  name: NKP 1996
+  date: Groningen, October 7
+  type: nkp
+  year: 1996
+resources:
+  problems: problemset.pdf
+  slides:
+  data:
+links:
+  photos:
+  website: https://web.archive.org/web/19970101145505/http://gewis.win.tue.nl/gewis/commissies/nkp/
+  result: https://web.archive.org/web/19970101145328/http://gewis.win.tue.nl/gewis/commissies/nkp/nkp/eindstand.html
