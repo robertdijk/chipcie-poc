@@ -4,42 +4,54 @@
   <td class="link">
     {{if .links.website }}
     <a href="{{.links.website}}">
-      <img class="icon" src="/icons/website.svg" alt="Website"/>
+      <span class="material-symbols-outlined icon" title="Website">
+        link
+      </span>
     </a>
     {{end}}
   </td>
   <td class="link">
     {{if .resources.problems}}
     <a href="/archive/{{.contest.year}}/{{.contest.type}}/{{.resources.problems}}">
-      <img class="icon" src="/icons/problemset.svg" title="Problemset" alt="Problemset"/>
+      <span class="material-symbols-outlined icon" title="Problemset">
+        description
+      </span>
     </a>
     {{end}}
   </td>
   <td class="link">
     {{if .resources.slides}}
     <a href="/archive/{{.contest.year}}/{{.contest.type}}/{{.resources.slides}}">
-      <img src="/icons/presentation.svg" title="Solutions presentation" alt="Solutions presentation" class="icon"/>
+      <span class="material-symbols-outlined icon" title="Presentation">
+        co_present
+      </span>
     </a>
     {{end}}
   </td>
   <td class="link">
     {{if .resources.data}}
     <a href="/archive/{{.contest.year}}/{{.contest.type}}/{{.resources.data}}">
-      <img src="/icons/solutions.svg" title="All Data and Solutions" alt="All Data and Solutions" class="icon"/>
+      <span class="material-symbols-outlined icon" title="All Data and Solutions">
+        task
+      </span>
     </a>
     {{end}}
   </td>
   <td class="link">
     {{if .links.result }}
     <a href="{{.links.result}}">
-      <img class="icon" src="/icons/scoreboard.svg" title="Scoreboard" alt="Scoreboard"/>
+      <span class="material-symbols-outlined icon" title="Scoreboard">
+        scoreboard
+      </span>
     </a>
     {{end}}
   </td>
   <td class="link">
     {{if .links.photos }}
     <a href="{{.links.photos}}">
-      <img src="/icons/photos.svg" title="Photos" class="icon" alt="Photos"/>
+      <span class="material-symbols-outlined icon" title="Photos">
+        photo_library
+      </span>
     </a>
     {{end}}
   </td>
