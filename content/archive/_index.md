@@ -3,7 +3,7 @@ title: "Archive"
 description: "The CHipCie ProblemSet Archive"
 type: page
 weight: 500
-featured_image: /images/YAW02258.jpg
+featured_image: /images/header-think.webp
 featured_image_alignment: bottom
 ---
 # Archive

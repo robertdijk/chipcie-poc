@@ -2,7 +2,7 @@
 title: Contact
 featured_image: "images/notebook.jpg"
 description: We'd love to hear from you
-featured_image: /images/YAW02631.jpg
+featured_image: /images/header-chipcie.webp
 featured_image_alignment: top
 type: page
 menu: main
