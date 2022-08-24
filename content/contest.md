@@ -13,7 +13,7 @@ menu: main
 The collegiate programming contest is a yearly contest with several qualifiers per region. The participants of these
 contests work in teams of three people with a single computer available. Every team tries to solve as many algorithmic
 problems as possible within the duration of a contest (usually five hours) by writing computer programs. The best teams
-of the world compete in the International Collegiate Programming Contest(ICPC or World Finals).
+of the world compete in the International Collegiate Programming Contest (ICPC or World Finals).
 
 Teams that want to qualify for the ICPC have to participate in several preliminary contests. The first contest is the
 Delft Algorithm Programming Contest (DAPC). This contest is open for all teams consisting of students of the TU Delft.
@@ -45,27 +45,29 @@ will be used to send the best teams of the Benelux to the NWERC (North-West Euro
 
 # Contest
 The procedure for the preliminary contests is very similar to that of the international contests. Participants are
-organised in teams of up to three persons. The contest consists of  8  to 12algorithmic problems. The goal of your team is
+organised in teams of up to three persons. The contest consists of 8 to 13 algorithmic problems. The goal of your team is
 to create a solution for such a problem in the form of a program. Your program will have to read data from an input file
 and give back the result as output.
 
 Whenever you believe your program correctly solves the problem, you can submit the program to the jury via the network.
 They will test your program and report back to you whether it was correct or not. An incorrect program can then be
-improved and resubmitted. The programs will solely be judged on their workings, so we won’t judge your for any dirty
+improved and resubmitted. The programs will solely be judged on their workings, so we won’t judge you for any dirty
 hacks used!
 
 Each team will be provided with a workspace with one computer to implement and test the programs. In addition, you can
 take as many books and notes with you as you are able to, but bringing USB drives, calculators, laptops, smartphones and
 such is not allowed.
+Starting from the BAPC, you are only allowed up to 25 pages of A4
+(see [Team Contest Reference](/resources/#team-contest-reference-tcr)).
 
 # Score
 The contest is 5 hours long. This means you have 5 hours to solve as many problems as you can. Your score is based on
 how many correct solutions you presented, and each problem has the same weight. It is possible that two or more teams
-solve the same amount of problems. In that case the time it took you to solve those problems is the deciding factor. For
+solve the same number of problems. In that case the time it took you to solve those problems is the deciding factor. For
 every correct solution, the time is counted from the start of the contest until the correct solution was handed in. For
 an incorrect solution however, 20 minutes is added to this time. If a solution is handed in incorrectly, but does not
 get handed in correctly later on, there is no penalty for this incorrect solution. The person who hands in the largest
-amount of correct solutions and has the lowest time score wins.
+number of correct solutions and has the lowest time score wins.
 
 # Problems
 The problem set is usually based on known algorithms such as Dijkstra's shortest path algorithm or backtracking. Often
