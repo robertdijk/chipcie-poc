@@ -1,6 +1,6 @@
 ---
 title: "Archive"
-description: "The CHipCie ProblemSet Archive"
+description: "The CHipCie Problemset Archive"
 type: page
 weight: 500
 featured_image: /images/header-participants.jpeg
@@ -8,10 +8,10 @@ featured_image: /images/header-participants.jpeg
 # Archive
 This page contains exercises, test sets and solutions of several contests. You can use these to practice and maximise your chance of winning:
 
- * [FPC (first year problems)](/archive/fpc)
- * [DAPC (national problem set)](/archive/dapc)
- * [BAPC (problem set preliminary Benelux)](/archive/bapc)
- * [NWERC](/archive/nwerc)
+ * [Freshmen Programming Contest (FPC)](/archive/fpc)
+ * [Delft Algorithm Programming Contest (DAPC)](/archive/dapc)
+ * [Benelux Algorithm Programming Contest (BAPC)](/archive/bapc)
+ * [Northwestern Europe Regional Contest (NWERC)](/archive/nwerc)
 
 # Other archives
  * [ICPC World Finals Problem archive](https://icpc.global/worldfinals/problems)
@@ -19,6 +19,8 @@ This page contains exercises, test sets and solutions of several contests. You c
  * [Uva Online judge](https://onlinejudge.org/)
 
 # DAPC Archive
+These problem sets are shared across all preliminary contests in the Benelux.
+
 {{< dapc-archive >}}
 
 # BAPC Archive
