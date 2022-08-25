@@ -1,7 +1,7 @@
 ---
 title: Contest
 description: What are programming contests?
-featured_image: /images/YAW02293.jpg
+featured_image: /images/YAW02293.webp
 featured_image_alignment: bottom
 type: page
 weight: 10

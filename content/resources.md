@@ -1,7 +1,7 @@
 ---
 title: Resources
 description: Training, practice and preparation makes perfect
-featured_image: /images/YAW02249.jpg
+featured_image: /images/YAW02249.webp
 featured_image_alignment: center
 type: page
 weight: 30
