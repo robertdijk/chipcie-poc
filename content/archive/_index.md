@@ -1,6 +1,7 @@
 ---
-title: "Archive"
-description: "The CHipCie Problemset Archive"
+linkTitle: "Archive"
+title: "The CHipCie Problem Set Archive"
+description: "Problems, solutions and explanations"
 type: page
 weight: 500
 featured_image: /images/YAW02258.webp
