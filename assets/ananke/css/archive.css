@@ -1,6 +1,7 @@
 .archive {
     width: 100%;
 }
+
 .archive > * {
     font-size: 16px;
 }
@@ -15,4 +16,15 @@
 
 .link {
     width: 3em;
+}
+
+/* Fix for links colouring not working */
+a {
+    color: #357edd;
+    transition: color .15s ease-in
+}
+
+a:focus, a:hover {
+    color: #96ccff;
+    transition: color .15s ease-in
 }
