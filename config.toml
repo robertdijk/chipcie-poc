@@ -11,7 +11,7 @@ enableRobotsTXT = true
 [params]
   favicon = ""
   site_logo = "/logo/chipcie.svg"
-  background_color_class = "bg-black"
+  background_color_class = "bg-navy"
   featured_image = "/images/chipciegroot2.png"
   recent_posts_number = 0
   custom_css = ["archive.css"]
