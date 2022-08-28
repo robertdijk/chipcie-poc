@@ -28,3 +28,7 @@ a:focus, a:hover {
     color: #96ccff;
     transition: color .15s ease-in;
 }
+
+li {
+    text-align: left;
+}
