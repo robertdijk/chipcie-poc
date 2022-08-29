@@ -1,6 +1,6 @@
 ---
 type: page
-Title: BAPC Problemset Archive
+Title: BAPC Problem Set Archive
 menu: Archive
 ---
 # {.Title}

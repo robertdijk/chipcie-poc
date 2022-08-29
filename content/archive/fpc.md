@@ -1,6 +1,6 @@
 ---
 type: page
-Title: FPC Problemset Archive
+Title: FPC Problem Set Archive
 menu: Archive
 ---
 # {.Title}
