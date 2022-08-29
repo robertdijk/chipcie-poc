@@ -14,7 +14,7 @@
     font-size: larger;
 }
 
-.link {
+.archive-link {
     width: 3em;
 }
 
@@ -31,4 +31,27 @@ a:focus, a:hover {
 
 li {
     text-align: left;
+}
+
+article, .center {
+    text-align: left;
+}
+
+article, .mw7 {
+    max-width: 64rem;
+}
+
+article, .nested-copy-line-height {
+    margin-right: auto;
+    margin-left: auto;
+    max-width: 64rem;
+}
+
+article, .nested-copy-line-height > table {
+    padding-left: 2rem;
+    padding-right: 2rem;
+}
+
+article, .measure-wide {
+    max-width: 64rem;
 }
