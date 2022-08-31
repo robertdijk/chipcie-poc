@@ -1,0 +1,216 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.2 beta6 (August 14th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Pietje</TITLE>
+<META NAME="description" CONTENT="Pietje">
+<META NAME="keywords" CONTENT="opgaven">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="opgaven.css">
+<LINK REL="next" HREF="node8.html">
+<LINK REL="previous" HREF="node6.html">
+<LINK REL="up" HREF="opgaven.html">
+<LINK REL="next" HREF="node8.html">
+</HEAD>
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html93"
+ HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next_motif.png"></A> 
+<A NAME="tex2html91"
+ HREF="opgaven.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up_motif.png"></A> 
+<A NAME="tex2html85"
+ HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="previous_motif.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html94"
+ HREF="node8.html">Maxima Succubus</A>
+<B> Up:</B> <A NAME="tex2html92"
+ HREF="opgaven.html">opgaven</A>
+<B> Previous:</B> <A NAME="tex2html86"
+ HREF="node6.html">EuroMaat</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00700000000000000000">
+Pietje</A>
+</H1>
+
+<P>
+Om zijn studiebeurs iets aan te vullen heeft student Pietje een
+bijbaantje in een postkamer. Voor de post kan worden weggebracht, moet
+deze eerst nog met de hand worden gesorteerd. Pietje is &#233;&#233;n van de
+postsorteerders die elke ochtend de post verdeelt. Op de vroege
+ochtend is Pietje over het algemeen niet in topvorm, door het stappen
+van de vorige nacht. Het komt dan ook regelmatig voor dat Pietje
+tijdens zijn werk in slaap valt.
+
+<P>
+Op een gegeven moment valt Pietje voor de zoveelste keer in
+slaap. Zijn collega's zijn het zat en besluiten Pietje een lesje te
+leren. Met behulp van postzakken sluiten zij Pietje van de uitgang
+af. Op een gegeven moment wordt Pietje wakker en vindt zichzelf
+opgesloten. Pietje kan niet langs een postzak of door een muur
+heen. Hij vraagt zich af of hij het gebouw nog kan verlaten. 
+
+<P>
+Gelukkig heeft Pietje via de Baan Postzak Software (BPS) een overzicht
+van de locatie van de postzakken in vorm van een rooster. Hij kan zich
+in &#233;&#233;n stap &#233;&#233;n hokje verplaatsen en alleen in de richtingen
+Noord, Oost, Zuid of West. Helaas kan Pietje maar &#233;&#233;n postzak
+tegelijkertijd in zijn kijkrichting vooruit duwen en heeft Pietje niet
+genoeg conditie om meer dan 10 maal een zak &#233;&#233;n hokje vooruit te
+duwen. Kan Pietje uit deze situatie komen?
+
+<P>
+
+<P>
+Deze bestaat uit:
+
+<UL><LI>sep=-1mm
+
+<LI>&#233;&#233;n regel met daarop een enkele positieve integer: het
+    aantal runs;
+
+<LI>per run:
+  <DL>
+<DD><P>
+<DT><STRONG>regel 1</STRONG>
+<DD>twee integers <I>px</I> en <I>py</I>, 
+<!-- MATH
+ $(0 \leq px,py \leq
+      9)$
+ -->
+<IMG
+ WIDTH="120" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img20.png"
+ ALT="$(0 \leq px,py \leq
+9)$">:
+respectievelijk de horizontale en de verticale co&#246;rdinaat
+      van Pietje's beginpositie;
+
+<P>
+<DT><STRONG>regel 2</STRONG>
+<DD>twee integers <I>ex</I> en <I>ey</I>, 
+<!-- MATH
+ $(0 \leq ex,ey \leq 9)$
+ -->
+<IMG
+ WIDTH="114" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$(0 \leq ex,ey \leq 9)$">:
+      respectievelijk de horizontale en de verticale co&#246;rdinaat van
+      de uitgang;
+
+<P>
+<DT><STRONG>regel 3</STRONG>
+<DD>twee integers <I>b</I> (<I>x</I>-richting) en <I>h</I>
+        (<I>y</I>-richting), waarbij 
+<!-- MATH
+ $(1 \leq b,h \leq 10)$
+ -->
+<IMG
+ WIDTH="110" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.png"
+ ALT="$(1 \leq b,h \leq 10)$">:
+        respectievelijk de breedte en hoogte van de ruimte;
+
+<P>
+<DT><STRONG> <B>l</B> regels</STRONG>
+<DD>met daarop <I>b</I> characters. De
+      characters zijn: `<code>#</code>' voor een muur, `<code>x</code>' voor een
+      postzak en een spatie voor een lege doorgang. De linkerbovenhoek
+      heeft co&#246;rdinaten (0,0), de rechteronderhoek (9,9). Er is
+      gegeven dat Pietje's beginpositie zich op een lege positie
+      bevindt en dat de uitgang zich niet &#237;n een muur bevindt.
+  </DL>
+</UL>
+
+<P>
+
+<P>
+Deze bestaat per run uit daarop: 'mogelijk' als Pietje het gebouw kan
+verlaten, 'onmogelijk' als dit niet mogelijk is.
+
+<P>
+
+<P>
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="CENTER"><B>invoer</B></TH>
+<TD ALIGN="CENTER">bijbehorende <B>uitvoer</B></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><TABLE  WIDTH="331">
+<TR><TD>
+<PRE>
+2
+1 1
+3 2
+5 4
+#####
+# # #
+# # #
+#####
+1 1
+6 3
+8 5
+########
+#  #   #
+#x   x #
+#  #   #
+########
+</PRE>
+<BR>
+</TD></TR>
+</TABLE></TD>
+<TD ALIGN="CENTER"><TABLE  WIDTH="331">
+<TR><TD>
+<PRE>
+onmogelijk
+mogelijk
+</PRE></TD></TR>
+</TABLE></TD>
+</TR>
+</TABLE>
+
+<P>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html93"
+ HREF="node8.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next_motif.png"></A> 
+<A NAME="tex2html91"
+ HREF="opgaven.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up_motif.png"></A> 
+<A NAME="tex2html85"
+ HREF="node6.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="previous_motif.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html94"
+ HREF="node8.html">Maxima Succubus</A>
+<B> Up:</B> <A NAME="tex2html92"
+ HREF="opgaven.html">opgaven</A>
+<B> Previous:</B> <A NAME="tex2html86"
+ HREF="node6.html">EuroMaat</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I>Nederlands Kampioenschap Programmeren 2000</I>
+<BR><I>2000-10-10</I>
+</ADDRESS>
+</BODY>
+</HTML>

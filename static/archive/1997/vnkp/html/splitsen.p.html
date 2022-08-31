@@ -1,0 +1,44 @@
+<html><body bgcolor="FFFFFF"><pre><b>program</b> Splitsen <b>(</b>input<b>,</b> output<b>)</b><b>;</b>
+
+<font color ="0000A0">{ (c) 10/8/'97 Meinte Boersma
+  Pascal-uitwerking van de NKP'97-opgave "Splitsen"
+}</font>
+
+<b>type</b>
+   som <b>=</b> <b>array</b><b>[</b><font color ="A00000">1..5</font><b>]</b> <b>of</b> integer<b>;</b>
+
+<b>var</b>
+   a <b>:</b> som<b>;</b>
+   run<b>,</b> n<b>,</b> t <b>:</b> integer<b>;</b>
+
+
+<b>procedure</b> splits <b>(</b>x<b>,</b> k <b>:</b> integer<b>;</b> <b>var</b> a <b>:</b> som<b>)</b><b>;</b>
+
+<b>begin</b>
+   <b>if</b> k<b>=</b><font color ="A00000">0</font> <b>then</b> <b>begin</b>
+      <b>if</b> x<b>=</b><font color ="A00000">0</font> <b>then</b> <b>begin</b>
+         <font color ="0000A0">{ correcte splitsing }</font>
+         writeln<b>(</b><font color ="00A000">'4*'</font><b>,</b> t<b>:</b><font color ="A00000">1</font><b>,</b> <font color ="00A000">'='</font><b>,</b>
+                 sqr<b>(</b>a<b>[</b><font color ="A00000">4</font><b>]</b><b>)</b><b>:</b><font color ="A00000">1</font><b>,</b> <font color ="00A000">'+'</font><b>,</b> sqr<b>(</b>a<b>[</b><font color ="A00000">3</font><b>]</b><b>)</b><b>:</b><font color ="A00000">1</font><b>,</b> <font color ="00A000">'+'</font><b>,</b>
+                 sqr<b>(</b>a<b>[</b><font color ="A00000">2</font><b>]</b><b>)</b><b>:</b><font color ="A00000">1</font><b>,</b> <font color ="00A000">'+'</font><b>,</b> sqr<b>(</b>a<b>[</b><font color ="A00000">1</font><b>]</b><b>)</b><b>:</b><font color ="A00000">1</font><b>)</b><b>;</b>
+      <b>end</b><b>;</b>
+   <b>end</b> <b>else</b> <b>begin</b>
+      a<b>[</b>k<b>]</b> <b>:</b><b>=</b> a<b>[</b>k<b>+</b><font color ="A00000">1</font><b>]</b><b>;</b>
+      <b>while</b> sqr<b>(</b>a<b>[</b>k<b>]</b><b>)</b><b>&lt;</b><b>=</b>x <b>do</b> <b>begin</b>
+	 splits<b>(</b>x<b>-</b>sqr<b>(</b>a<b>[</b>k<b>]</b><b>)</b><b>,</b>k<b>-</b><font color ="A00000">1</font><b>,</b>a<b>)</b><b>;</b>
+	 a<b>[</b>k<b>]</b> <b>:</b><b>=</b> a<b>[</b>k<b>]</b><b>+</b><font color ="A00000">2</font><b>;</b>
+      <b>end</b><b>;</b>
+   <b>end</b><b>;</b>
+<b>end</b><b>;</b> <font color ="0000A0">{ splits }</font>
+
+
+<b>begin</b>
+   <font color ="0000A0">{ lees invoer }</font>
+   readln<b>(</b>n<b>)</b><b>;</b>
+   <b>for</b> run <b>:</b><b>=</b> <font color ="A00000">1</font> <b>to</b> n <b>do</b> <b>begin</b>
+      readln<b>(</b>t<b>)</b><b>;</b>
+      a<b>[</b><font color ="A00000">5</font><b>]</b> <b>:</b><b>=</b> <font color ="A00000">1</font><b>;</b>
+      splits<b>(</b><font color ="A00000">4</font><b>*</b>t<b>,</b><font color ="A00000">4</font><b>,</b>a<b>)</b><b>;</b>
+      <b>if</b> run<b>&lt;</b>n <b>then</b> writeln<b>;</b>
+   <b>end</b><b>;</b>
+<b>end</b><b>.</b>

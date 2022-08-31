@@ -1,0 +1,200 @@
+<html>
+<head>
+<title>boeken.c (html)</title></head>
+<body bgcolor="white">
+<pre>
+#include &lt;stdlib.h&gt;
+#include &lt;stdio.h&gt;
+#include &lt;string.h&gt;
+
+#define maxboeken 30              /* maximum hoeveelheid boeken op een plank */
+#define maxlen 20                 /* maximum lengte van een titel */
+
+/* De naam kast ten spijt, gaat het hier niet om de kasten in de opgave,
+   maar ja, de naam plankstruct is zo mogelijk nog waardelozer */
+typedef struct kast {
+  char prefix[maxlen+1];          /* gebruikte prefix in de boom */
+  char grootste[maxlen+1];        /* prefix van alle boeken op deze plank */
+  unsigned int boeken;
+  char boek[maxboeken][maxlen+1]; /* De titels op deze plank */
+  struct kast *child;
+  struct kast *next;
+  int echt;
+} kast;
+
+
+unsigned int planken;
+kast *plank=NULL;
+unsigned int plankenperkast,boekenperplank;
+int debug;
+
+void Init(kast *pl,char *titel) {
+  strcpy(pl-&gt;prefix,"");          /* prefix in deze ``boom'' is leeg */
+  strcpy(pl-&gt;grootste,titel);     /* prefix op deze plank is de titel */
+  pl-&gt;boeken=1;
+  strcpy(pl-&gt;boek[0],titel);     /* Dit boek STAAT op de plank */
+  pl-&gt;child=NULL;
+  pl-&gt;next=NULL;
+  pl-&gt;echt=1;
+  planken++;
+}
+
+void Print(kast *pl) {
+  static int tab=0;
+  unsigned int i;
+/*  if ((pl!=NULL) &amp;&amp; (debug)) {
+  fprintf(stderr,"%*sprefix: ``%s'', grootste: ``%s''\n",
+            tab,"",pl-&gt;prefix,pl-&gt;grootste);
+    for (i=0;i&lt;pl-&gt;boeken;i++) fprintf(stderr,"%*s%s\n",tab,"",pl-&gt;boek[i]);
+    tab+=3;
+    Print(pl-&gt;child);
+    tab-=3;
+    Print(pl-&gt;next);
+  } */
+}
+
+void Quit(kast **pl) {
+  if ((*pl)!=NULL) {
+    Quit(&amp;((*pl)-&gt;child));
+    Quit(&amp;((*pl)-&gt;next));
+    free(*pl);
+    (*pl)=NULL;
+  }
+}
+
+kast *Zoek(kast *pl,char *titel) {
+  /* Neem aan dat er tenminste 1 kind is */
+  kast *plch=pl-&gt;child,*pln;
+  if (strncmp(plch-&gt;prefix,titel,strlen(plch-&gt;prefix))&gt;0) return(NULL);
+  pln=plch-&gt;next;
+  while ((pln!=NULL) &amp;&amp; (strncmp(pln-&gt;prefix,titel,strlen(pln-&gt;prefix))&lt;=0)) {
+    plch=pln;
+    pln=pln-&gt;next;
+  }
+  return(plch);
+}
+
+void Herverdeel(kast *pl) {
+  unsigned int i,j;
+  kast *nwpl,*zpl;
+
+  strcpy(pl-&gt;prefix,pl-&gt;grootste);
+  pl-&gt;echt=0;
+  /* Voor elk boek op deze plank moet een kind-plank gevonden worden */
+  for (i=0;i&lt;pl-&gt;boeken;i++) {
+    zpl=Zoek(pl,pl-&gt;boek[i]);
+    if (zpl==NULL) {
+      nwpl=malloc(sizeof(kast));
+      Init(nwpl,pl-&gt;boek[i]);
+      for (j=0;pl-&gt;prefix[j]==pl-&gt;boek[i][j];j++) ;
+      strncpy(nwpl-&gt;prefix,pl-&gt;boek[i],j+1);
+      nwpl-&gt;prefix[j+1]='\0';
+      nwpl-&gt;next=pl-&gt;child;
+      pl-&gt;child=nwpl;
+    } else {
+      if (strncmp(zpl-&gt;prefix,pl-&gt;boek[i],strlen(zpl-&gt;prefix))&lt;0) {
+        nwpl=malloc(sizeof(kast));
+        Init(nwpl,pl-&gt;boek[i]);
+        for (j=0;pl-&gt;prefix[j]==pl-&gt;boek[i][j];j++) ;
+        strncpy(nwpl-&gt;prefix,pl-&gt;boek[i],j+1);
+        nwpl-&gt;prefix[j+1]='\0';
+        nwpl-&gt;next=zpl-&gt;next;
+        zpl-&gt;next=nwpl;
+      } else {
+        /* Het boek hoort op deze plank thuis */
+        strcpy(zpl-&gt;boek[zpl-&gt;boeken++],pl-&gt;boek[i]);
+        for (j=0;zpl-&gt;grootste[j]==pl-&gt;boek[i][j];j++);
+        zpl-&gt;grootste[j]='\0';
+      }
+    }
+/*    Print(pl); */
+  }
+  pl-&gt;boeken=0;
+  planken--; /* pl is nu geen ``echte'' plank meer */
+} /* Herverdeel() */
+
+void VolgendeBoek(char *titel) {
+  kast *pl,*nwpl,*zpl;
+  unsigned int i;
+
+  if (plank==NULL) {
+    plank=malloc(sizeof(kast));
+    Init(plank,titel);
+    return;
+  }
+
+  pl=plank;
+  while (!pl-&gt;echt) { /* oftewel, er ZIJN kinderen */
+    zpl=Zoek(pl,titel);
+    if (zpl==NULL) {
+      /* Maak nieuwe plank vooraan in lijst van kinderen */
+      nwpl=malloc(sizeof(kast));
+      Init(nwpl,titel);
+      for (i=0;pl-&gt;child-&gt;prefix[i]==titel[i];i++) ;
+      strncpy(nwpl-&gt;prefix,titel,i+1);
+      nwpl-&gt;prefix[i+1]='\0';
+      nwpl-&gt;next=pl-&gt;child;
+      pl-&gt;child=nwpl;
+      return;
+    } else {
+      if (strncmp(zpl-&gt;prefix,titel,strlen(zpl-&gt;prefix))&lt;0) {
+        nwpl=malloc(sizeof(kast));
+        Init(nwpl,titel);
+        for (i=0;pl-&gt;prefix[i]==titel[i];i++) ;
+        strncpy(nwpl-&gt;prefix,titel,i+1);
+        nwpl-&gt;prefix[i+1]='\0';
+        nwpl-&gt;next=zpl-&gt;next;
+        zpl-&gt;next=nwpl;
+        return;
+      } else {
+        pl=zpl;
+      }
+    }
+  }
+
+  /* We zijn nu aangekomen bij een ``echte'' plank. Het boek moet hierbij */
+  for (i=0;pl-&gt;grootste[i]==titel[i];i++);
+  pl-&gt;grootste[i]='\0';
+  if (pl-&gt;boeken&lt;boekenperplank) {
+    /* boeken hoeven niet gesorteerd op de plank te staan */
+    strcpy(pl-&gt;boek[pl-&gt;boeken++],titel);
+  } else {
+    /* Leg de nieuwe titel vast op zijn eigen plank,
+       zodat Zoek gebruikt mag worden */
+    nwpl=malloc(sizeof(kast));
+    Init(nwpl,titel);
+    strncpy(nwpl-&gt;prefix,titel,strlen(pl-&gt;grootste)+1);
+    nwpl-&gt;prefix[strlen(pl-&gt;grootste)+1]='\0';
+    pl-&gt;child=nwpl;
+    Herverdeel(pl);
+  }
+}
+
+int main() {
+  unsigned int runs,r;
+  unsigned int boeken,b;
+  char titel[maxlen+1];
+
+  scanf("%d",&amp;runs);
+  for (r=0;r&lt;runs;r++) {
+    if (r!=9) debug=1; else debug=0;
+    planken=0;
+    plank=NULL;
+    scanf("%d %d %d",&amp;plankenperkast,&amp;boekenperplank,&amp;boeken);
+    for (b=0;b&lt;boeken;b++) {
+      scanf("%s",titel); /* Hoezo niet netjes maxlen tekens?
+        Die opmerking over spaties is slechts bedoeld om ambiguiteiten
+        in het probleem te vermijden :*/
+      VolgendeBoek(titel);
+      Print(plank);
+    }
+    printf("%d\n",(planken+plankenperkast-1)/plankenperkast);
+    Quit(&amp;plank); /* This REALLY s*cks, maar 'k heb geen tijd meer om de echte fout op te zoeken */
+  }
+  return(0);
+}
+</pre>
+<hr noshade>
+<address>Generated by Java2Html</address>
+</body>
+</html>

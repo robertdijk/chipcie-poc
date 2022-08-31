@@ -1,0 +1,227 @@
+<HTML>
+<TITLE>DKP99 Opgave E - Tegelen</TITLE>
+<P>
+
+<DIV ALIGN="CENTER">
+<FONT SIZE="+4"><B>E</B></FONT>  
+<FONT SIZE="+3"><B>Tegelen</B></FONT>
+
+</DIV>
+
+<P>
+
+<P><P>
+<BR>
+
+<P>
+<FONT SIZE="+2"><B>Beschrijving</B></FONT>
+
+<P>
+Na het omwaaien van Mekelweg 4 werd de huisvestingproblematiek van de
+faculteit ITS voortvarend aangepakt.
+Het architectencollectief GROOTMOEDER kreeg opdracht een nieuw gebouw te
+ontwerpen.
+Ofschoon hun ontwerp op zijn minst opmerkelijk was, werd het na verrassend
+weinig geharrewar aangenomen en gerealiseerd.
+
+<P>
+Om hygi&#235;nische redenen werd besloten in alle ruimtes een tegelvloer te
+leggen.
+Er zijn tegels in diverse maten beschikbaar.
+Tegels mogen gedraaid worden.
+Elke zijde van elke tegel is echter een geheel aantal decimeters,
+hetzelfde geldt voor de te betegelen vloeren.
+Voor elke ruimte is vastgesteld welke tegels er gebruikt kunnen worden.
+In elke ruimte kan in elk geval een 
+<!-- MATH
+ $1 \times 1$
+ -->
+<MATH CLASS="INLINE">
+1&times;1
+</MATH>-tegel worden gebruikt.
+Alle tegels, groot of klein  kosten 1 Euro per stuk (inclusief leggen).
+Omdat het gebouw toch al zo duur is, moet elke vloer tegen minimale kosten
+worden gelegd.
+
+<P>
+De architect heeft echter wel een esthetische eis: een betegelde vloer moet
+een <EM>deelbare</EM> rechthoek zijn.
+
+<BR>
+
+<P>
+<FONT SIZE="+2"><B>Definitie</B></FONT>
+
+<UL><LI>Een rechthoek bestaande uit &#233;&#233;n tegel is deelbaar.
+
+<LI>Een rechthoek bestaande uit meer dan &#233;&#233;n tegel is deelbaar,
+als er een rechte lijn is die, zonder een tegel te splitsen (dus geheel over
+voegen lopend), de rechthoek in twee kleinere rechthoeken verdeelt, die elk
+ook weer deelbaar zijn.
+
+</UL>
+
+<P>
+<B>Voorbeeld</B>
+
+<P>
+Als de vloer 
+<!-- MATH
+ $5 \times 5$
+ -->
+<MATH CLASS="INLINE">
+5&times;5
+</MATH> is en de tegels 
+<!-- MATH
+ $1 \times 1$
+ -->
+<MATH CLASS="INLINE">
+1&times;1
+</MATH> resp.
+
+<!-- MATH
+ $2 \times 3$
+ -->
+<MATH CLASS="INLINE">
+2&times;3
+</MATH>, dan is de linker betegeling niet geoorloofd.
+De rechter betegeling is wel geoorloofd, maar veel duurder (tweemaal zo duur).
+
+<P>
+<BR>
+<IMG
+ WIDTH="398" HEIGHT="164" ALIGN="BOTTOM" BORDER="0"
+ SRC="img4.gif"
+ ALT="voorbeeld betegelingen">
+<BR>
+
+<P>
+
+<P>
+<FONT SIZE="+2"><B>Probleem</B></FONT>
+
+<P>
+Gegeven een tegelset en een aantal vloeren, bereken voor elke vloer de
+minimale kosten om deze vloer met deze tegelset deelbaar te beleggen.
+Elke tegelset bevat gegarandeerd de tegel 
+<!-- MATH
+ $1 \times 1$
+ -->
+<MATH CLASS="INLINE">
+1&times;1
+</MATH>, dus elke vloer kan
+belegd worden.
+
+<BR>
+
+<P>
+<FONT SIZE="+2"><B>Invoer</B></FONT> <B>(lezen uit: <TT>tegelen.in</TT>)</B>
+
+<P>
+De eerste regel van de invoer bevat het aantal tests.
+Dan volgt een aantal tests.
+Elke test is als volgt opgebouwd:
+<DL COMPACT>
+<DT>1.
+<DD>De eerste regel bevat het getal <MATH CLASS="INLINE">
+t
+</MATH>, het aantal tegels. 
+<DT>2.
+<DD>De volgende regel bevat de beschrijving van <MATH CLASS="INLINE">
+t
+</MATH> tegels.
+In elk geval is de tegel 
+<!-- MATH
+ $1 \times 1$
+ -->
+<MATH CLASS="INLINE">
+1&times;1
+</MATH> aanwezig. Alle tegels zijn verschillend.
+Een tegelbeschrijving bestaat uit twee getallen  <MATH CLASS="INLINE">
+b
+</MATH> <MATH CLASS="INLINE">
+l
+</MATH>,
+met 
+<!-- MATH
+ $0 < b \le l < 100$
+ -->
+<MATH CLASS="INLINE">
+0 &lt; b  &lt;= l &lt; 100
+</MATH>.
+<DT>3.
+<DD>De volgende regel bevat het getal <MATH CLASS="INLINE">
+v
+</MATH>, het aantal vloeren (<MATH CLASS="INLINE">
+v &lt; 100
+</MATH>).
+<DT>4.
+<DD>De volgende regel bevat de beschrijving van <MATH CLASS="INLINE">
+v
+</MATH> vloeren.
+Een beschrijving van een vloer bestaat uit twee getallen <MATH CLASS="INLINE">
+b
+</MATH> <MATH CLASS="INLINE">
+l
+</MATH>,
+met 
+<!-- MATH
+ $0 < b \le l < 100$
+ -->
+<MATH CLASS="INLINE">
+0 &lt; b  &lt;= l &lt; 100
+</MATH>.
+</DL>
+De getallen op &#233;&#233;n regel worden telkens door &#233;&#233;n of meer spaties
+gescheiden.
+
+<BR>
+
+<P>
+<FONT SIZE="+2"><B>Uitvoer</B></FONT> <B>(schrijven naar standard-output)</B>
+
+<P>
+De uitvoer bevat, voor elk testgeval apart op een regel,
+de minimale kosten van betegeling van de vloeren.
+
+<P>
+
+<P>
+<FONT SIZE="+2"><B>Voorbeeld</B></FONT>
+
+<P>
+<B>Invoer</B>
+
+<P>
+<TT>2			
+<BR>
+2			
+<BR>
+1 1  2 3		
+<BR>
+3			
+<BR>
+4 4  5 5  6 6	
+<BR>
+3			
+<BR>
+1 1  1 10  3 5	
+<BR>
+3			
+<BR>
+4 4  5 6  4 10	
+<BR>
+</TT>
+
+<P>
+<B>Uitvoer</B>
+
+<P>
+<TT>6 10 6		
+<BR>
+16 2 3		
+<BR>
+</TT>
+
+<P>
+</HTML>

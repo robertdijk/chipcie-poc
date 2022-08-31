@@ -1,0 +1,64 @@
+<HTML>
+<HEAD>
+   <TITLE>Voorronde NKP 1997</TITLE>
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.01Gold (X11; I; HP-UX B.10.20 9000/735) [Netscape]">
+</HEAD>
+
+<H1>Golf</H1>
+
+
+<H2>Beschrijving</H2>
+
+Een normaal partijtje golf bestaat uit het spelen van een bal over 18
+holes. Da's een beetje weinig. Daarom is in Ool'In-Wan een golfcourt
+aangelegd met enkele duizenden holes. Da's een beetje veel. Daarom
+zijn de regels enigszins aangepast. De bal wordt verondersteld over
+een gedeelte van de holes gespeeld te worden in plaats van over alle
+holes.
+
+<H2>Het Probleem</H2>
+
+De golfcourt heeft geen 18, maar <i>N</i> holes, genummerd van 1 ...
+<i>N</i>, waarbij <i>N</i> &lt;= 10000 (tienduizend). Het gaat erom de bal te
+spelen van hole <i>X</i> naar hole <i>Y</i>, maar via een bepaalde route. Als
+de bal in hole <i>i</i> is, mag de bal gespeeld worden naar holes <i>j</i>, met
+<i>j</i> is element van { i+1, i-1, 2 i, i/2  }, waarbij uiteraard
+1 &lt;= j &lt;= <i>N</i> moet gelden. <BR><BR>
+
+Hoe korter zo'n route, hoe sneller je klaar bent. Daarom
+vragen we jullie om de kortste route uit te rekenen.
+
+<H2>De Invoer</H2>
+
+De invoer begint met een regel met daarop het aantal runs.
+Daarna per run:
+<UL>
+  <LI> een regel met de hoeveelheid holes van de court.
+  <LI> een regel met de start- en eindholes <i>X</i>, resp. <i>Y</i>,
+    <i>1 &lt;= X,Y &lt;= N</i>.
+</UL>
+Bij gegeven <i>X</i> en <i>Y</i> is er precies &eacute;&eacute;n kortste route.
+
+<h2>De Uitvoer</h2>
+
+Per run &eacute;&eacute;n regel met de kortste route (inclusief <i>X</i> en
+<i>Y</i>). Holes in zo'n route worden gescheiden door een spatie.
+
+<h2>Voorbeeld</h2>
+Bij de <B>invoer</b>
+<PRE>
+2
+100
+11 30
+100
+11 32
+</PRE>
+hoort de <B>uitvoer</b>
+<PRE>
+11 12 13 14 15 30
+11 10 9 8 16 32
+</PRE>	
+<BR><BR><BR>
+
+</BODY>
+</HTML>

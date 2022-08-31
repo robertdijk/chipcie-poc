@@ -1,0 +1,245 @@
+<HTML>
+<TITLE>DKP99 Opgave C - Benzine</TITLE>
+
+<P>
+
+<DIV ALIGN="CENTER">
+<FONT SIZE="+4"><B>C</B></FONT> &nbsp;&nbsp;
+<FONT SIZE="+3"><B>Benzine</B></FONT>
+
+</DIV>
+
+<P>
+
+<P><P>
+<BR>
+
+<P>
+<FONT SIZE="+2"><B>Beschrijving</B></FONT>
+
+<P>
+In het Verenigd Europa wordt voor alles voorschriften, richtlijnen en
+regeltjes opgesteld. Een van de  zaken die zich echter geheel aan centrale
+directie lijken te onttrekken is de prijs van benzine.
+Verschillen in belasting maken dat de benzineprijs van land tot land,
+en zelfs van stad tot stad zeer uiteen kan lopen.
+Het gevolg is dat conventionele routeplanners niet meer voldoen aan de
+wensen van de calculerende automobilist. De automobilist die door Europa
+reist zoekt niet meer de route met de minste kilometers, maar de goedkoopste
+route. Dat wil zeggen dat omrijden voor goedkopere benzine acceptabel is.
+
+<P>
+<BR>
+<IMG
+ WIDTH="282" HEIGHT="101" ALIGN="BOTTOM" BORDER="0"
+ SRC="img3.gif"
+ ALT="benzine voorbeeld">
+<BR>
+
+<P>
+De softwaregigant About besluit op deze wens in te spelen. Hun programma houdt
+al rekening met het rijgedrag van de individuele bestuurder, en met het 
+gebruik van de auto.
+Zodoende drukt dit programma  afstanden niet uit in kilometers, maar in liters
+benzine. Voorts zijn de benzineprijzen in alle plaatsen bekend.
+Waar de programmeurs van About nog niet uit zijn is het volgende: hoe bereken
+je nu de goedkoopste route van A naar Z, gegeven alle afstanden (in liters)
+en de benzineprijzen in alle plaatsen (in dE: deci-Euros).
+
+<P>
+In bovenstaand plaatje moet je om van A direct naar B te rijden, in A 20
+liter tanken, tegen 9 dE, kost 180 dE. Van A naar C kost 90 dE, tanken in C
+voor de rit naar B kost 
+<!-- MATH
+ $5 \times 15 = 75$
+ -->
+<MATH CLASS="INLINE">
+5&times;15 = 75
+</MATH> dE, totaal 165 dE. 
+De omweg over C is dus goedkoper,  hoewel het meer benzine kost.
+(Groen Links heeft de Minister dan ook verzocht dit soort programma's te
+verbieden).
+
+<BR>
+
+<P>
+<FONT SIZE="+2"><B>Probleem</B></FONT>
+
+<P>
+Gegeven is een routekaart, met de afstand tussen steden in liters,
+en bij elke stad de benzineprijs in die stad (in dE).
+Zowel de afstanden als de literprijzen zijn altijd gehele getallen.
+Ook zijn twee steden <MATH CLASS="INLINE">
+s<SUB>1</SUB>
+</MATH> en <MATH CLASS="INLINE">
+s<SUB>2</SUB>
+</MATH> gegeven.
+Bepaal de minimale kosten om van <MATH CLASS="INLINE">
+s<SUB>1</SUB>
+</MATH> in <MATH CLASS="INLINE">
+s<SUB>2</SUB>
+</MATH> te komen.
+
+<UL><LI>Je begint in <MATH CLASS="INLINE">
+s<SUB>1</SUB>
+</MATH> met een lege tank
+(gelukkig sta je net bij een benzinestation).
+
+<LI>Je mag in <MATH CLASS="INLINE">
+s<SUB>2</SUB>
+</MATH> eindigen met een lege tank
+(hopelijk naast een benzinestation).
+
+<LI>In het Verenigd Europa hebben alle auto's een tankinhoud van 60 liter.
+
+</UL>
+
+<P>
+
+<P>
+<FONT SIZE="+2"><B>Invoer</B></FONT> <B>(lezen uit: <TT>benzine.in</TT>)</B>
+
+<P>
+De eerste regel van de invoer bevat het aantal tests.
+Dan volgt een aantal tests. Elke test is als volgt opgebouwd:
+<DL COMPACT>
+<DT>1.
+<DD>De eerste regel bevat het getal <MATH CLASS="INLINE">
+s
+</MATH>, het aantal steden.
+<DT>2.
+<DD>Dan volgen regels met de beschrijving van de steden.
+Elke stad staat op een aantal regels beschreven.
+De eerste regel bevat achtereenvolgens:
+<UL><LI>De naam van de stad: een enkele hoofdletter. 
+
+<LI>De prijs <MATH CLASS="INLINE">
+p
+</MATH> van een liter benzine in deze stad (
+<!-- MATH
+ $1 \le p \le 100$
+ -->
+<MATH CLASS="INLINE">
+1  &lt;= p  &lt;= 100
+</MATH>),
+in dE.
+
+<LI>Het aantal buren <MATH CLASS="INLINE">
+b
+</MATH> van deze stad, dat wil zeggen het aantal steden dat 
+vanuit deze stad te bereiken is.
+
+</UL>
+De volgende <MATH CLASS="INLINE">
+b
+</MATH> regels van een stadbeschrijving bevatten de beschrijving van de
+buursteden, dat wil zeggen: <MATH CLASS="INLINE">
+b
+</MATH> maal: de naam van een buurstad, gevolgd door de
+afstand <MATH CLASS="INLINE">
+d
+</MATH> (<MATH CLASS="INLINE">
+d  &lt;= 500
+</MATH>) naar <MATH CLASS="INLINE">
+b
+</MATH> in liters benzine.
+<DT>3.
+<DD>De laatste regel bevat de naam van twee steden: de plaats van vertrek en
+de plaats van bestemming, zonder scheiding er tussen.
+</DL>
+
+<P>
+Voor een test gelden de volgende regels:
+
+<UL><LI>Voor willekeurige steden <MATH CLASS="INLINE">
+x
+</MATH> en <MATH CLASS="INLINE">
+y
+</MATH>, is de afstand van <MATH CLASS="INLINE">
+x
+</MATH> naar <MATH CLASS="INLINE">
+y
+</MATH>
+altijd gelijk aan de afstand van <MATH CLASS="INLINE">
+y
+</MATH> naar <MATH CLASS="INLINE">
+x
+</MATH>.
+
+<LI>Een stad die als buurstad voorkomt, komt ook als beschreven stad voor.
+
+<LI>De plaats van vertrek en de plaats van aankomst komen ook als beschreven
+stad voor.
+
+</UL>
+
+<P>
+<FONT SIZE="+2"><B>Uitvoer</B></FONT> <B>(schrijven naar standard-output)</B>
+
+<P>
+Voor elk testgeval apart op een regel: de minimale kosten (in dE) om van de
+plaats van vertrek in de plaats van aankomst te komen.
+Als de plaats van aankomst niet bereikbaar is vanuit de plaats van vertrek,
+het woord: '<TT>ONMOGELIJK</TT>'
+
+<BR>
+
+<P>
+
+<P>
+<FONT SIZE="+2"><B>Voorbeeld</B></FONT>
+
+<P>
+<B>Invoer</B>
+
+<P>
+<TT>2	
+<BR>
+3	
+<BR>
+A  9  2	
+<BR>
+B 20 	
+<BR>
+C 10	
+<BR>
+B 8 2	
+<BR>
+A 20 	
+<BR>
+C 15	
+<BR>
+C 5 2	
+<BR>
+A 10 	
+<BR>
+B 15	
+<BR>
+AB	
+<BR>
+2	
+<BR>
+A 30 1	
+<BR>
+B 100	
+<BR>
+B 30 1	
+<BR>
+A 100	
+<BR>
+AB	
+<BR>
+</TT>
+
+<P>
+<B>Uitvoer</B>
+
+<P>
+<TT>165		
+<BR>
+ONMOGELIJK	
+<BR>
+</TT>
+
+<P>
+</HTML>

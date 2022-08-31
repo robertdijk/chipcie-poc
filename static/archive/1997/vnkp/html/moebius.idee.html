@@ -1,0 +1,37 @@
+<HTML>
+<H2>M&ouml;bius; de gedachtengang</h2>
+
+Recursie met backtracking. 
+<HR>
+Het bord was 2*n bij m. Als je van de ``buitenkant'' doorloopt naar de
+``binnenkant'' zijn er geen rare twists, als je verder doorloopt en
+weer bij de ``buitenkant'' uitkomt evenmin. Bovendien sta je dan op
+precies dezelfde manier op je uitgangspunt. Kortom: een array van 2*n
+bij m in het geheugen voldoet als M&ouml;biusband!
+<HR>
+Het vaststellen van een bovengrens voor het aantal koninginnen is eenvoudig:
+Het 2*n bij m bord kunnen hooguit Min(2*n,m) koninginnen aan.
+<HR>
+Dus:
+<UL>
+ <LI> Kan er een koningin gezet worden op een vrije niet-slaanbare plek?
+  <UL>
+   <LI> Ja, 
+    <UL>
+     <LI> zet haar neer
+     <LI> ga de recursie in (en kom er weer uit)
+     <LI> haal haar weer weg
+    </ul>
+   <LI> Nee
+    <UL>
+     <LI> hoog eventueel huidig maximum op
+     <LI> is dit gelijk aan de bovengrens, BREAK
+    </ul>
+  </ul>
+ <LI> herhalen tot alle vrije niet-slaanbare plaatsen aan de beurt geweest zijn
+</ul>
+<HR>
+Enige optimalisaties op ``alle vrije niet-slaanbare plaatsen'' zijn nog wel te maken.
+<HR>
+
+</HTML>

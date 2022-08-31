@@ -1,0 +1,74 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Problem F</title>
+</head>
+
+<body bgcolor="#D6D6D6" text="#637BBD">
+</FONT><FONT FACE="Arial" SIZE=6><P ALIGN="CENTER">Problem F</P>
+</FONT><FONT FACE="Arial" SIZE=5><P ALIGN="CENTER">Basically Boolean</P>
+<P ALIGN="CENTER">Input: f.in</P>
+</FONT><FONT SIZE=2>
+<P>Boolean expressions of more than two or three variables can become very complex. Sometimes they become so complex, it is no longer simple to see how the outcome of the expression depends on the value of a single variable. It may even be so that the outcome of an expression no longer depends on the value of one of the variables in it, i.e. that the outcome is the same whether the variable is true or false. If an expression <I>E</I> no longer depends on a variable <I>X, </I>we say that <I>X</I> is <I>not important</I> for the expression, and conversely, if a variable <I>X</I> is important for an expression E, then the outcome of <I>E</I> will depend on the value of <I>X</I>.  If none of the variables in an expression are important, then the expression is either a tautology (always true), or a contradiction (always false).</P>
+
+<P>You are asked to write a program that will, given an expression <I>E, </I>determine all the important variables in the expression.</P>
+
+</FONT><FONT FACE="Arial" SIZE=4><P>Input</P>
+</FONT><FONT SIZE=2><P>The first line of the input contains the number of runs <I>R</I> (1 &#8804; <I>R </I>&#8804; 1,000). Then <I>R</I> lines appear, with each line containing one formula. Each formula consists of one or more of the following elements:</P>
+
+
+<UL>
+<LI>A variable, denoted by a capital letter <B>A</B> through <B>J</B> (each variable may occur multiple times, or may not occur at all)</LI>
+<LI>The unary operator <B>not</LI>
+</B><LI>The binary operators <B>or</B>, <B>and</B>, or <B>=&gt; </B><I>(implies)</LI>
+</I><LI>Brackets: <B>(</B> and <B>)</B>, always matching</LI></UL>
+
+
+<P>A formal description of an input line is given by the following grammar (where ‘space’ denotes exactly one space, and FORMULA is the start symbol, as shown by the underscoring):</P>
+
+<U><P>FORMULA</U>   =&#9;VARIABLE&#9;&#9;&#9;&#9;&#9;&#9;|</P>
+<P>&#9;&#9;UNARY_OP space FORMULA&#9;&#9;&#9;&#9;|</P>
+<P>&#9;&#9;( FORMULA space BINARY_OP space  FORMULA )&#9;|</P>
+<P>VARIABLE   =&#9;</FONT><FONT FACE="Courier New" SIZE=2>A</FONT><FONT SIZE=2> | </FONT><FONT FACE="Courier New" SIZE=2>B</FONT><FONT SIZE=2> | </FONT><FONT FACE="Courier New" SIZE=2>C</FONT><FONT SIZE=2> | </FONT><FONT FACE="Courier New" SIZE=2>D</FONT><FONT SIZE=2> | </FONT><FONT FACE="Courier New" SIZE=2>E</FONT><FONT SIZE=2> | </FONT><FONT FACE="Courier New" SIZE=2>F</FONT><FONT SIZE=2> | </FONT><FONT FACE="Courier New" SIZE=2>G</FONT><FONT SIZE=2> | </FONT><FONT FACE="Courier New" SIZE=2>H</FONT><FONT SIZE=2> | </FONT><FONT FACE="Courier New" SIZE=2>I</FONT><FONT SIZE=2> | </FONT><FONT FACE="Courier New" SIZE=2>J</FONT><FONT SIZE=2> </P>
+<P>UNARY_OP  =&#9;</FONT><FONT FACE="Courier New" SIZE=2>not</P>
+</FONT><FONT SIZE=2><P>BINARY_OP =&#9;</FONT><FONT FACE="Courier New" SIZE=2>or</FONT><FONT SIZE=2> | </FONT><FONT FACE="Courier New" SIZE=2>and</FONT><FONT SIZE=2> | </FONT><FONT FACE="Courier New" SIZE=2>=&gt;</P>
+</FONT><FONT SIZE=2>
+<P>Note: the <B>not </B>operator binds stronger than the binary operators, and between the binary operators no precedence needs to be defined as every formula is fully bracketed. The Boolean operators are to be interpreted as usual:</P>
+
+<P>x <B>or</B> y &#9;is true, if and only if x is true, or y is true, or both are true;</P>
+<P>x <B>and</B> y &#9;is true, if and only if x is true and y is true;</P>
+<P>x <B>=&gt;</B> y &#9;is true, if and only if x is false or y is true.</P>
+</FONT><FONT FACE="Arial" SIZE=4>
+<P>Output</P>
+
+</FONT><FONT SIZE=2><P>For each test case, you must output a line with the variables from the input expression that are important for that expression, preceded by the string  ‘</FONT><FONT FACE="Courier New" SIZE=2>Important variables: </FONT><FONT SIZE=2>‘. Multiple variables are to be separated by single spaces. There must also be exactly one space between the ‘:’ and the first variable. If no variables are important for the evaluation of the formula, you must print the string ‘</FONT><FONT FACE="Courier New" SIZE=2>No variables are important.</FONT><FONT SIZE=2>’</P>
+
+<P>&nbsp;</P></FONT>
+<TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=595>
+<TR><TD VALIGN="TOP">
+<B><FONT FACE="Arial"><P>Sample Input</B></FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT FACE="Courier New" SIZE=2><P>4</P>
+<P>H</P>
+<P>(not A and not not A)</P>
+<P>(((B and C) or (D and B)) =&gt; (A or B))</P>
+<P>((not (not E or (B or C)) or G) and not (((not E or B) or C) and G))</FONT></TD>
+</TR>
+</TABLE>
+
+<FONT SIZE=2><P> </P></FONT>
+<TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=359>
+<TR><TD VALIGN="TOP">
+<B><FONT FACE="Arial"><P>Output for the Sample Input</B></FONT></TD>
+</TR>
+<TR><TD VALIGN="TOP">
+<FONT FACE="Courier New" SIZE=2><P>Important variables: H</P>
+<P>No variables are important.</P>
+<P>No variables are important.</P>
+<P>Important variables: B C E</FONT></TD>
+</TR>
+</TABLE>
+</body>
+</html>

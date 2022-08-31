@@ -1,0 +1,150 @@
+<HTML>
+<TITLE>DKP99 Opgave D - Taart-delingen</TITLE>
+
+<P>
+
+<DIV ALIGN="CENTER">
+<FONT SIZE="+4"><B>D</B></FONT> &nbsp;&nbsp;
+<FONT SIZE="+3"><B>Taart-delingen voor gevorderden</B></FONT>
+
+</DIV>
+
+<P>
+
+<P><P>
+<BR>
+
+<P>
+<FONT SIZE="+2"><B>Beschrijving</B></FONT>
+
+<P>
+In groep 4 van de basisschool wordt leerlingen uitgelegd hoe delingen werken.
+Vaak gebeurt dit aan de hand van taartpunten.
+De volgende som zou voor een groep 4-ganger weinig problemen mogen opleveren:
+
+<P>
+"Jan is jarig. Hij heeft 20 taartpunten, die hij eerlijk moet delen met Kees
+en Piet.
+Hoeveel taartpunten krijgen Jan, Kees en Piet ieder?"
+
+<P>
+Een fascinerend gegeven is dat er vaak taartpunten overblijven.
+Zoals je wellicht inziet krijgen Jan, Kees en Piet in het bovenstaande
+voorbeeld ieder 6 taartpunten; er blijven 2 taartpunten over.
+
+<BR>
+
+<P>
+<FONT SIZE="+2"><B>Probleem</B></FONT>
+
+<P>
+In deze opgave zijn we ge&#239;nteresseerd in het aantal taartpunten <MATH CLASS="INLINE">
+r
+</MATH> dat
+overblijft indien we <MATH CLASS="INLINE">
+t
+</MATH> taartpunten delen met <MATH CLASS="INLINE">
+p
+</MATH> personen.
+Met de computer kunnen we dit soort sommen natuurlijk veel sneller maken dan
+met pen en papier. Om de opgave toch enigzins lastig te maken, staan we (zeer)
+grote getallen toe voor <MATH CLASS="INLINE">
+t
+</MATH> en <MATH CLASS="INLINE">
+p
+</MATH>.
+
+<BR>
+
+<P>
+<FONT SIZE="+2"><B>Invoer</B></FONT> <B>(lezen uit: <TT>taart.in</TT>)</B>
+
+<P>
+Op de eerste regel staat een getal <MATH CLASS="INLINE">
+n
+</MATH>, dat aangeeft hoeveel testgevallen er
+volgen.
+Op de volgende <MATH CLASS="INLINE">
+n
+</MATH> regels staan 2 getallen <MATH CLASS="INLINE">
+p
+</MATH> en <MATH CLASS="INLINE">
+t
+</MATH>,
+gescheiden door precies &#233;&#233;n spatie.
+
+<P>
+Verder geldt dat 
+<!-- MATH
+ $1 \le p < 100.000.000$
+ -->
+<MATH CLASS="INLINE">
+1  &lt;= p &lt; 100.000.000
+</MATH> (honderd miljoen) en dat
+
+<!-- MATH
+ $0 \le t \le 10^{1000}$
+ -->
+<MATH CLASS="INLINE">
+0  &lt;= t  &lt;= 10<SUP>1000</SUP>
+</MATH>
+
+<BR>
+
+<P>
+<FONT SIZE="+2"><B>Uitvoer</B></FONT> <B>(schrijven naar standard-output)</B>
+
+<P>
+Voor ieder testgeval uit de invoer moet &#233;&#233;n regel in de uitvoer komen
+die er als volgt uitziet:
+
+<P>
+<TT>Indien we T taartpunten delen met P personen, is het aantal taartpunten 
+<BR>
+dat overblijft gelijk aan R.
+</TT>
+
+<P>
+N.B.: iedere regel moet afgesloten worden met een punt!
+
+<BR>
+
+<P>
+
+<P>
+<FONT SIZE="+2"><B>Voorbeeld</B></FONT>
+
+<P>
+<B>Invoer</B>
+
+<P>
+<TT>3			
+<BR>
+113 355			
+<BR>
+123456789 987654321	
+<BR>
+11447 158456325028528675187087900671	
+<BR>
+</TT>
+
+<P>
+<B>Uitvoer</B>
+
+<P>
+<TT>Indien we 355 taartpunten delen met 113 personen, is het aantal taartpun
+<BR>
+ten dat overblijft gelijk aan 16. 
+<BR>
+Indien we 987654321 taartpunten delen met 123456789 personen, is het aan
+<BR>
+tal taartpunten dat overblijft gelijk aan 9. 
+<BR>
+Indien we 158456325028528675187087900671 taartpunten delen met 11447 per
+<BR>
+sonen, is het aantal taartpunten dat overblijft gelijk aan 0. 
+<BR>
+</TT>
+
+<P>
+</HTML>

@@ -1,0 +1,159 @@
+<html><body bgcolor="FFFFFF"><pre><b>Program</b> HTML<b>(</b>input<b>,</b>output<b>)</b><b>;</b>
+
+<b>const</b>
+   maxwidth <b>=</b> <font color ="A00000">80</font><b>;</b>
+   maxlines <b>=</b> <font color ="A00000">750</font><b>;</b>
+   sep	    <b>=</b> Chr<b>(</b><font color ="A00000">9</font><b>)</b><b>;</b>    <font color ="0000A0">(* a tab, randomly chosen separator of columns :*)</font>
+
+<b>var</b>
+   table		<b>:</b> <b>array</b> <b>[</b><font color ="A00000">1..</font>MAXLINES<b>]</b> <b>of</b> <b>string</b><b>[</b>maxwidth<b>]</b><b>;</b>
+   width<b>,</b>totwidth	<b>:</b> <b>array</b> <b>[</b><font color ="A00000">1..</font>MAXWIDTH<b>]</b> <b>of</b> integer<b>;</b>
+   lines<b>,</b>columns<b>,</b>curcol	<b>:</b> integer<b>;</b>
+   sym			<b>:</b> <b>string</b><b>[</b>MAXWIDTH<b>]</b><b>;</b>
+   r<b>,</b>runs   <b>:</b> integer<b>;</b>
+   firsttime<b>:</b> boolean<b>;</b>
+   c        <b>:</b> char<b>;</b>     <font color ="0000A0">(* Yeah, ugly as hell... *)</font>
+
+<b>Procedure</b> InitTable<b>;</b>
+<b>var</b>
+   i <b>:</b> integer<b>;</b>
+<b>begin</b>
+   lines<b>:</b><b>=</b><font color ="A00000">0</font><b>;</b>
+   columns<b>:</b><b>=</b><font color ="A00000">0</font><b>;</b>
+   <b>for</b> i<b>:</b><b>=</b><font color ="A00000">1</font> <b>to</b> MAXLINES <b>do</b> table<b>[</b>i<b>]</b><b>:</b><b>=</b><font color ="00A000">''</font><b>;</b>
+   <b>for</b> i<b>:</b><b>=</b><font color ="A00000">1</font> <b>to</b> MAXWIDTH <b>do</b> width<b>[</b>i<b>]</b><b>:</b><b>=</b><font color ="A00000">0</font><b>;</b>
+<b>end</b><b>;</b> <font color ="0000A0">{ InitTable }</font>
+
+
+<b>Procedure</b> NextSym<b>;</b>
+<b>begin</b>
+   <b>if</b> firsttime <b>then</b> <b>begin</b>
+	    Read<b>(</b>c<b>)</b><b>;</b>
+      firsttime<b>:</b><b>=</b>false<b>;</b>
+   <b>end</b><b>;</b>
+   <b>while</b> <b>(</b>c<b>&lt;</b><b>=</b><font color ="00A000">' '</font><b>)</b> <b>do</b> Read<b>(</b>c<b>)</b><b>;</b>
+   <b>if</b> <b>(</b>c<b>=</b><font color ="00A000">'&lt;'</font><b>)</b> <b>then</b> <b>begin</b>
+      sym<b>:</b><b>=</b><font color ="00A000">'&lt;'</font><b>;</b>
+      Read<b>(</b>c<b>)</b><b>;</b>
+      <b>while</b> <b>(</b>c<b>&lt;</b><b>></b><font color ="00A000">'>'</font><b>)</b> <b>do</b> <b>begin</b>
+     SetStrLen<b>(</b>sym<b>,</b>StrLen<b>(</b>sym<b>)</b><b>+</b><font color ="A00000">1</font><b>)</b><b>;</b>
+     sym<b>[</b>StrLen<b>(</b>sym<b>)</b><b>]</b><b>:</b><b>=</b>c<b>;</b>
+	 			Read<b>(</b>c<b>)</b><b>;</b>
+      <b>end</b><b>;</b>
+      StrAppend<b>(</b>sym<b>,</b><font color ="00A000">'>'</font><b>)</b><b>;</b>
+      Read<b>(</b>c<b>)</b><b>;</b>
+   <b>end</b> <b>else</b> <b>begin</b>
+     SetStrLen<b>(</b>sym<b>,</b><font color ="A00000">1</font><b>)</b><b>;</b>
+     sym<b>[</b><font color ="A00000">1</font><b>]</b><b>:</b><b>=</b>c<b>;</b>
+      Read<b>(</b>c<b>)</b><b>;</b>
+      <b>while</b> <b>(</b>c<b>></b><font color ="00A000">' '</font><b>)</b> <b>and</b> <b>(</b>c<b>&lt;</b><b>></b><font color ="00A000">'&lt;'</font><b>)</b> <b>do</b> <b>begin</b>
+     SetStrLen<b>(</b>sym<b>,</b>StrLen<b>(</b>sym<b>)</b><b>+</b><font color ="A00000">1</font><b>)</b><b>;</b>
+     sym<b>[</b>StrLen<b>(</b>sym<b>)</b><b>]</b><b>:</b><b>=</b>c<b>;</b>
+				 Read<b>(</b>c<b>)</b><b>;</b>
+      <b>end</b><b>;</b>
+   <b>end</b><b>;</b>
+<font color ="0000A0">(*   WriteLn('`',sym,''''); *)</font>
+<b>end</b><b>;</b> <font color ="0000A0">{ NextSym }</font>
+
+<b>Procedure</b> ReadItem<b>;</b>
+<b>var</b>
+   itemwidth <b>:</b> integer<b>;</b>
+<b>begin</b>
+   <b>if</b> <b>(</b>sym<b>=</b><font color ="00A000">'&lt;TD>'</font><b>)</b> <b>then</b> <b>begin</b>
+   	  curcol<b>:</b><b>=</b>curcol<b>+</b><font color ="A00000">1</font><b>;</b>
+      <b>if</b> <b>(</b>curcol<b>></b>columns<b>)</b> <b>then</b> columns<b>:</b><b>=</b>columns<b>+</b><font color ="A00000">1</font><b>;</b>
+      itemwidth<b>:</b><b>=</b><font color ="A00000">0</font><b>;</b>
+      <b>if</b> <b>(</b>curcol<b>></b><font color ="A00000">1</font><b>)</b> <b>then</b> table<b>[</b>lines<b>]</b><b>:</b><b>=</b>table<b>[</b>lines<b>]</b><b>+</b>SEP<b>;</b>
+      NextSym<b>;</b> <font color ="0000A0">(* useful string or </TD> *)</font>
+      <b>while</b> <b>(</b>sym<b>&lt;</b><b>></b><font color ="00A000">'&lt;/TD>'</font><b>)</b> <b>do</b> <b>begin</b>
+		  	 <b>if</b> <b>(</b>itemwidth<b>></b><font color ="A00000">0</font><b>)</b> <b>then</b> <b>begin</b>
+	    		  itemwidth<b>:</b><b>=</b>itemwidth<b>+</b><font color ="A00000">1</font><b>;</b>
+	    			table<b>[</b>lines<b>]</b><b>:</b><b>=</b>table<b>[</b>lines<b>]</b><b>+</b><font color ="00A000">' '</font><b>;</b>
+				 <b>end</b><b>;</b>
+	 			 itemwidth<b>:</b><b>=</b>itemwidth<b>+</b>StrLen<b>(</b>sym<b>)</b><b>;</b>
+         table<b>[</b>lines<b>]</b><b>:</b><b>=</b>table<b>[</b>lines<b>]</b><b>+</b>sym<b>;</b>
+      	 <b>if</b> <b>(</b>itemwidth<b>></b>width<b>[</b>curcol<b>]</b><b>)</b> <b>then</b> width<b>[</b>curcol<b>]</b><b>:</b><b>=</b>itemwidth<b>;</b>
+      	 NextSym<b>;</b>
+      <b>end</b><b>;</b>
+   <b>end</b><b>;</b>
+<b>end</b><b>;</b> <font color ="0000A0">{ ReadItem }</font>
+
+<b>Procedure</b> ReadLine<b>;</b>
+<b>var</b>
+   i<b>,</b>strlentab <b>:</b> integer<b>;</b>
+<b>begin</b>
+   <b>if</b> <b>(</b>sym<b>=</b><font color ="00A000">'&lt;TR>'</font><b>)</b> <b>then</b> <b>begin</b>
+      lines<b>:</b><b>=</b>lines<b>+</b><font color ="A00000">1</font><b>;</b>
+      curcol<b>:</b><b>=</b><font color ="A00000">0</font><b>;</b>
+      NextSym<b>;</b> <font color ="0000A0">(* <TD> or </TR> *)</font>
+      <b>while</b> <b>(</b>sym<b>&lt;</b><b>></b><font color ="00A000">'&lt;/TR>'</font><b>)</b> <b>do</b> <b>begin</b>
+	 ReadItem<b>;</b>
+	 NextSym<b>;</b>
+      <b>end</b><b>;</b>
+     strlentab<b>:</b><b>=</b>StrLen<b>(</b>table<b>[</b>lines<b>]</b><b>)</b><b>;</b>
+     SetStrLen<b>(</b>table<b>[</b>lines<b>]</b><b>,</b>MAXWIDTH<b>)</b><b>;</b>
+      <b>for</b> i<b>:</b><b>=</b>strlentab<b>+</b><font color ="A00000">1</font> <b>to</b> MAXWIDTH <b>do</b> table<b>[</b>lines<b>]</b><b>[</b>i<b>]</b><b>:</b><b>=</b>SEP<b>;</b>
+   <b>end</b><b>;</b>
+<b>end</b><b>;</b> <font color ="0000A0">{ ReadLine }</font>
+
+<b>Procedure</b> ReadTable<b>;</b>
+<b>begin</b>
+   NextSym<b>;</b> <font color ="0000A0">(* assume this IS <TABLE> *)</font>
+   NextSym<b>;</b> <font color ="0000A0">(* <TR> or </TABLE> *)</font>
+   <b>while</b> <b>(</b>sym<b>&lt;</b><b>></b><font color ="00A000">'&lt;/TABLE>'</font><b>)</b> <b>do</b> <b>begin</b>
+      ReadLine<b>;</b>
+      NextSym<b>;</b>
+   <b>end</b><b>;</b>
+<b>end</b><b>;</b> <font color ="0000A0">{ ReadTable }</font>
+
+<b>Procedure</b> WriteRuler<b>;</b>
+<b>var</b>
+   i<b>,</b>j <b>:</b> integer<b>;</b>
+<b>begin</b>
+   <b>for</b> i<b>:</b><b>=</b><font color ="A00000">1</font> <b>to</b> columns <b>do</b> <b>begin</b>
+      Write<b>(</b><font color ="00A000">'+'</font><b>)</b><b>;</b>
+      <b>for</b> j<b>:</b><b>=</b><font color ="A00000">0</font> <b>to</b> width<b>[</b>i<b>]</b> <b>do</b> Write<b>(</b><font color ="00A000">'-'</font><b>)</b><b>;</b>
+      <b>if</b> <b>(</b>width<b>[</b>i<b>]</b><b>></b><font color ="A00000">0</font><b>)</b> <b>then</b> Write<b>(</b><font color ="00A000">'-'</font><b>)</b><b>;</b>
+   <b>end</b><b>;</b>
+   WriteLn<b>(</b><font color ="00A000">'+'</font><b>)</b><b>;</b>
+<b>end</b><b>;</b> <font color ="0000A0">{ WriteRuler }</font>
+
+<b>Procedure</b> WriteTable<b>;</b>
+<b>var</b>
+   i<b>,</b>j<b>,</b>k <b>:</b> integer<b>;</b> <font color ="0000A0">(* run through table&width *)</font>
+   pos	 <b>:</b> integer<b>;</b> <font color ="0000A0">(* run over screen (without delimiters) *)</font>
+<b>begin</b>
+   totwidth<b>[</b><font color ="A00000">1</font><b>]</b><b>:</b><b>=</b>width<b>[</b><font color ="A00000">1</font><b>]</b><b>;</b>
+   <b>for</b> k<b>:</b><b>=</b><font color ="A00000">2</font> <b>to</b> MAXWIDTH <b>do</b> totwidth<b>[</b>k<b>]</b><b>:</b><b>=</b>totwidth<b>[</b>k<b>-</b><font color ="A00000">1</font><b>]</b><b>+</b>width<b>[</b>k<b>]</b><b>;</b>
+   WriteRuler<b>;</b>
+   <b>for</b> i<b>:</b><b>=</b><font color ="A00000">1</font> <b>to</b> lines <b>do</b> <b>begin</b>
+      k<b>:</b><b>=</b><font color ="A00000">1</font><b>;</b>
+      pos<b>:</b><b>=</b><font color ="A00000">1</font><b>;</b>
+      <b>for</b> j<b>:</b><b>=</b><font color ="A00000">1</font> <b>to</b> columns <b>do</b> <b>begin</b>
+	 			 Write<b>(</b><font color ="00A000">'| '</font><b>)</b><b>;</b>
+			 	 <b>while</b> <b>(</b>table<b>[</b>i<b>]</b><b>[</b>k<b>]</b><b>&lt;</b><b>></b>SEP<b>)</b> <b>do</b> <b>begin</b>
+	    		  Write<b>(</b>table<b>[</b>i<b>]</b><b>[</b>k<b>]</b><b>)</b><b>;</b>
+	    		  k<b>:</b><b>=</b>k<b>+</b><font color ="A00000">1</font><b>;</b> <font color ="0000A0">(* printed char *)</font>
+	    		  pos<b>:</b><b>=</b>pos<b>+</b><font color ="A00000">1</font><b>;</b>
+	 			 <b>end</b><b>;</b>
+	 			 k<b>:</b><b>=</b>k<b>+</b><font color ="A00000">1</font><b>;</b> <font color ="0000A0">(* SEP itself *)</font>
+	 			 <b>while</b> <b>(</b>pos<b>&lt;</b><b>=</b>totwidth<b>[</b>j<b>]</b><b>)</b> <b>do</b> <b>begin</b>
+				    Write<b>(</b><font color ="00A000">' '</font><b>)</b><b>;</b>
+            pos<b>:</b><b>=</b>pos<b>+</b><font color ="A00000">1</font><b>;</b>
+         <b>end</b><b>;</b>
+	 			 <b>if</b> <b>(</b>width<b>[</b>j<b>]</b><b>></b><font color ="A00000">0</font><b>)</b> <b>then</b> Write<b>(</b><font color ="00A000">' '</font><b>)</b><b>;</b>
+      <b>end</b><b>;</b>
+      WriteLn<b>(</b><font color ="00A000">'|'</font><b>)</b><b>;</b>
+      WriteRuler<b>;</b>
+   <b>end</b><b>;</b>
+<b>end</b><b>;</b> <font color ="0000A0">{ WriteTable }</font>
+   
+<b>begin</b>
+   firsttime<b>:</b><b>=</b>true<b>;</b>
+   ReadLn<b>(</b>runs<b>)</b><b>;</b>
+   <b>for</b> r<b>:</b><b>=</b><font color ="A00000">1</font> <b>to</b> runs <b>do</b> <b>begin</b>
+      InitTable<b>;</b>
+      ReadTable<b>;</b>
+      WriteTable<b>;</b>
+   <b>end</b><b>;</b>
+<b>end</b><b>.</b>

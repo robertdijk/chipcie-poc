@@ -1,0 +1,214 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.2 beta6 (August 14th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Landjes veroveren II</TITLE>
+<META NAME="description" CONTENT="Landjes veroveren II">
+<META NAME="keywords" CONTENT="opgaven">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="opgaven.css">
+<LINK REL="next" HREF="node6.html">
+<LINK REL="previous" HREF="node4.html">
+<LINK REL="up" HREF="opgaven.html">
+<LINK REL="next" HREF="node6.html">
+</HEAD>
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html73"
+ HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next_motif.png"></A> 
+<A NAME="tex2html71"
+ HREF="opgaven.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up_motif.png"></A> 
+<A NAME="tex2html65"
+ HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="previous_motif.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html74"
+ HREF="node6.html">EuroMaat</A>
+<B> Up:</B> <A NAME="tex2html72"
+ HREF="opgaven.html">opgaven</A>
+<B> Previous:</B> <A NAME="tex2html66"
+ HREF="node4.html">Y2K</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00500000000000000000">
+Landjes veroveren II</A>
+</H1>
+Twee legers -het ene rood, het andere blauw- bevinden zich in een
+slagveld: een rechthoekig, regelmatig rooster van landjes. In een
+aantal landjes staat een regiment, bestaande uit een aantal soldaten,
+van het <I>blauwe</I> leger. Het gehele rode leger bevindt zich
+aanvankelijk in de rode thuisbasis: de linkerbovenhoek.  Het rode
+leger wil de thuisbasis van het blauwe leger dat zich in de
+rechteronderhoek bevindt, veroveren. Het blauwe leger is wat
+vredelievender en verdedigt alleen maar.
+
+<P>
+Er gaat een veldslag uitgevochten worden die verdeeld is in
+tijdseenheden. Elke tijdseenheid begeeft het rode leger zich &#243;f een
+land naar rechts (mits het zich niet aan de rechterrand van het
+slagveld bevindt) of een land naar beneden (mits het zich niet aan de
+onderrand van het slagveld bevindt).
+
+<P>
+Als het rode leger een land binnengaat waar een blauw regiment
+staat, dan wordt er slag geleverd waarbij er (simultaan) verliezen
+geleden worden in de verhouding 1:1, dat wil zeggen: zolang er nog aan
+beide kanten soldaten over zijn, leggen &#233;&#233;n rode soldaat en
+&#233;&#233;n blauwe soldaat gelijktijdig het loodje.
+Als er na afloop van de schermutseling nog soldaten van het rode leger
+over zijn, dan neemt het rode leger het land in. In alle andere
+gevallen blijft het restant van het blauwe regiment staan.
+
+<P>
+De thuisbasis van het blauwe leger is veroverd zodra er minstens
+&#233;&#233;n soldaat van het rode leger in die thuisbasis staat.
+Het rode leger kan diverse routes kiezen om de blauwe basis te
+veroveren. Sommige routes zullen echter zwaardere verliezen opleveren
+dan andere.
+
+<P>
+
+<P>
+Schrijf een programma dat bepaalt wat het kleinste aantal verliezen is
+dat het rode leger lijdt in de slag om de blauwe thuisbasis door een
+optimale route te kiezen.
+
+<P>
+
+<P>
+Deze bestaat uit:
+
+<UL><LI>sep=-1mm
+
+<LI>&#233;&#233;n regel met daarop een positieve integer: het aantal
+  runs;
+
+<LI>per run:
+    <DL>
+<DT><DD>sep=-1mm
+
+<P>
+<DT><STRONG>1 regel</STRONG>
+<DD>twee gehele getallen: respectievelijk de hoogte
+        <I>h</I> (
+<!-- MATH
+ $2 \leq h \leq 100$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$2 \leq h \leq 100$">)
+en de breedte <I>b</I> (
+<!-- MATH
+ $2 \leq b \leq
+        100$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$2 \leq b \leq
+100$">)
+van het slagveld;
+
+<P>
+<DT><STRONG><B>h</B> regels</STRONG>
+<DD>met <I>b</I> positieve gehele getallen:
+        het aantal soldaten dat zich in elk land bevindt. In de rode
+        thuisbasis is dit de grootte van het rode leger; elders is dit
+        het aantal blauwe soldaten.
+  </DL>
+</UL>
+Getallen op een regel worden gescheiden door een enkele spatie.
+
+<P>
+
+<P>
+Voor elke run bestaat de uitvoer uit het aantal rode soldaten dat
+verloren gaat in de slag als de route met minimale verliezen gekozen
+wordt.
+
+<P>
+
+<P>
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="CENTER"><B>invoer</B></TH>
+<TD ALIGN="CENTER">bijbehorende <B>uitvoer</B></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><TABLE  WIDTH="331">
+<TR><TD>
+<PRE>
+3
+4 4
+200 10 10 10
+20 20 20 10
+20 20 20 10
+20 20 20 10
+4 4
+200 10 10 10
+10 20 20 10
+10 20 20 10
+10 10 10 10
+4 4
+200 101 10 10
+10 1000 1000 10
+10 1000 1000 10
+10 10 100 10
+</PRE>
+<BR>
+</TD></TR>
+</TABLE></TD>
+<TD ALIGN="CENTER"><TABLE  WIDTH="331">
+<TR><TD>
+<PRE>
+50
+50
+150
+</PRE></TD></TR>
+</TABLE></TD>
+</TR>
+</TABLE>
+
+<P>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html73"
+ HREF="node6.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next_motif.png"></A> 
+<A NAME="tex2html71"
+ HREF="opgaven.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up_motif.png"></A> 
+<A NAME="tex2html65"
+ HREF="node4.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="previous_motif.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html74"
+ HREF="node6.html">EuroMaat</A>
+<B> Up:</B> <A NAME="tex2html72"
+ HREF="opgaven.html">opgaven</A>
+<B> Previous:</B> <A NAME="tex2html66"
+ HREF="node4.html">Y2K</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I>Nederlands Kampioenschap Programmeren 2000</I>
+<BR><I>2000-10-10</I>
+</ADDRESS>
+</BODY>
+</HTML>

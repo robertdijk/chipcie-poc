@@ -1,0 +1,184 @@
+<HTML>
+<TITLE>DKP99 Opgave F - Sommen</TITLE>
+
+<P>
+
+<DIV ALIGN="CENTER">
+<FONT SIZE="+4"><B>F</B></FONT> &nbsp;&nbsp;
+<FONT SIZE="+3"><B>Sommen</B></FONT>
+
+</DIV>
+
+<P>
+
+<P><P>
+<BR>
+
+<P>
+<FONT SIZE="+2"><B>Beschrijving</B></FONT>
+
+<P>
+De kinderen in de klas van meester Van Dalen zijn erg goed in rekenen.
+Ze kunnen optellen, aftrekken, vermenigvuldigen en delen.
+Bovendien maken ze al sommen waarin meerdere rekenoperaties en zelfs haakjes
+voorkomen.
+De meester laat ze vaak oefenen met een computerprogramma.
+Het programma verzint dan sommen, en de leerlingen moeten het antwoord intypen.
+Na afloop kunnen alle sommen opgeslagen en nagekeken worden.
+
+<P>
+Helaas is er bij het opslaan van de gemaakte sommen iets mis gegaan:
+door een foutje in het programma zijn alle haakjes weggevallen.
+Het nakijken van de sommen wordt nu een stuk lastiger omdat niemand nog
+weet waar de haakjes in de som precies stonden.
+
+<BR>
+
+<P>
+<FONT SIZE="+2"><B>Probleem</B></FONT>
+
+<P>
+De meester besluit dat een som goed gerekend wordt als het mogelijk is
+om haakjes te plaatsen zodat de som weer klopt; als dat niet mogelijk is
+wordt de som fout gerekend.
+
+<P>
+Daarbij houdt hij rekening met de beperkingen in de sommen
+die het programma kon verzinnen.
+Alle getallen, tussenresultaten en eindresultaten in de oorspronkelijke
+sommen waren gehele getallen met 
+<!-- MATH
+ $0 \le g \le 1000000$
+ -->
+<MATH CLASS="INLINE">
+0  &lt;= g  &lt;= 1000000
+</MATH> (&#233;&#233;n miljoen).
+Verder bestaat elke som uit maximaal 10 getallen.
+Delen kan alleen maar als de uitkomst een geheel getal is; er wordt niet
+doorgerekend met breuken en er wordt niet afgerond.
+
+<P>
+Het is natuurlijk een heel gepuzzel om met de hand uit te zoeken of een som
+nog goed gerekend kan worden.
+Het zou dus handig zijn als jij daar een computerprogramma voor maakt.
+
+<BR>
+
+<P>
+<FONT SIZE="+2"><B>Invoer</B></FONT> <B>(lezen uit: <TT>sommen.in</TT>)</B>
+
+<P>
+Op de eerste regel staat het aantal sommen dat moet worden nagekeken. 
+<BR>
+Dan volgt per som een regel met daarop de som en het antwoord van de leerling,
+in het volgende formaat:
+
+<!-- MATH
+ $x_1 \;\;  o_1 \;\;  x_2 \;\;  o_2 \;\; ... \;\; o_{n-1} \;\; x_n \;$
+ -->
+<MATH CLASS="INLINE">
+&nbsp x<SUB>1</SUB> &nbsp;&nbsp; o<SUB>1</SUB> &nbsp;&nbsp; x<SUB>2</SUB> &nbsp;&nbsp; o<SUB>2</SUB> &nbsp;&nbsp; ... &nbsp;&nbsp; o<SUB>n-1</SUB> &nbsp;&nbsp; x<SUB>n</SUB> &nbsp;
+</MATH>
+<TT>=</TT> <MATH CLASS="INLINE">
+&nbsp; a
+</MATH> 
+<BR>
+Waarbij de <MATH CLASS="INLINE">
+x<SUB>i</SUB>
+</MATH> (
+<!-- MATH
+ $0 \le x_i \le 1000000$
+ -->
+<MATH CLASS="INLINE">
+0  &lt;= x<SUB>i</SUB>  &lt;= 1000000
+</MATH>, 
+<!-- MATH
+ $1 \le i \le n$
+ -->
+<MATH CLASS="INLINE">
+1  &lt;= i  &lt;= n
+</MATH>) de getallen in de 
+som zijn, en de <MATH CLASS="INLINE">
+o<SUB>i</SUB>
+</MATH> (
+<!-- MATH
+ $1 \le i \le n - 1$
+ -->
+<MATH CLASS="INLINE">
+1  &lt;= i  &lt;= n - 1
+</MATH>) telkens &#233;&#233;n van de karakters
+'<TT>+</TT>', '<TT>-</TT>', '<TT>*</TT>' of '<TT>/</TT>' voor optellen, aftrekken,
+vermenigvuldigen en delen.
+Het getal <MATH CLASS="INLINE">
+a
+</MATH> (
+<!-- MATH
+ $0 \le a \le 1000000$
+ -->
+<MATH CLASS="INLINE">
+0  &lt;= a  &lt;= 1000000
+</MATH>) is het antwoord dat de leerling heeft
+gevonden.
+Verder geldt dat 
+<!-- MATH
+ $1 \le n \le 10$
+ -->
+<MATH CLASS="INLINE">
+1  &lt;= n  &lt;= 10
+</MATH>.
+De getallen en operatoren zijn van elkaar gescheiden door een spatie.
+
+<BR>
+
+<P>
+<FONT SIZE="+2"><B>Uitvoer</B></FONT> <B>(schrijven naar standard-output)</B>
+
+<P>
+De uitvoer bestaat uit een regel per nagekeken som met daarop het woord 
+'<TT>goed</TT>' of '<TT>fout</TT>'.
+
+<BR>
+
+<P>
+<FONT SIZE="+2"><B>Voorbeeld</B></FONT>
+
+<P>
+<B>Invoer</B>
+
+<P>
+<TT>6			
+<BR>
+10 - 5 - 3 = 2		
+<BR>
+10 - 5 - 3 = 7		
+<BR>
+10 - 5 - 3 = 8		
+<BR>
+10 - 3 - 5 = 12		
+<BR>
+65535 + 1 * 65537 - 1 = 131071	
+<BR>
+65535 + 1 * 65537 - 1 = 0	
+<BR>
+</TT>
+
+<P>
+<B>Uitvoer</B>
+
+<P>
+<TT>goed			
+<BR>
+fout			
+<BR>
+goed			
+<BR>
+fout			
+<BR>
+goed			
+<BR>
+fout			
+<BR>
+</TT>
+
+<P>
+</HTML>

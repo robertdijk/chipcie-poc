@@ -1,0 +1,98 @@
+<HTML>
+<HEAD>
+   <TITLE>Voorronde NKP 1997</TITLE>
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.01Gold (X11; I; HP-UX B.10.20 9000/735) [Netscape]">
+</HEAD>
+
+<H1>HTML</H1>
+
+<H2>Beschrijving</H2>
+
+Tom heeft geen GUI. 's Sneu voor Tom. Maar hij wil wel op het internet
+kunnen surfen. Het probleem ligt niet in het ophalen van de
+documenten, als wel in de weergave daarvan op zijn
+computerscherm. Daarom heeft Tom besloten zelf een browser voor
+tekst-schermen te schrijven, zoiets als Lynx. Tom is erin geslaagd
+diverse HTML-tag's te herkennen en de meeste kan hij ook verwerken,
+maar hij heeft nog problemen met tabellen.
+
+<H2>Het Probleem</H2>
+
+Gegeven een correcte HTML-tabel, maak een versie die geschikt is voor op een
+computer-scherm (80 tekens breed). Voor de minder fervente Web-page-bouwers
+onder ons: Een <b>tag</B> is een reeks tekens, beginnend met een `<' en
+eindigend met een `>', bijvoorbeeld </B>&#60;tt>&#60;HTML>&#60;/tt></B> en <B>&#60;tt>&#60;/HTML>&#60;/tt></B>.
+
+<H2>De Invoer</H2>
+
+Een regel met daarop het aantal runs. Daarna per run een correcte
+HTML-tabel <i>tabel</i>\ (in EBNF-notatie):<BR>
+
+<TABLE>
+<TR>
+  <TD><i>tabel</i> </TD><TD> `{\tt <TABLE>}' <i>line</i>\ + `{\tt </TABLE>}' </TD>
+</TR><TR>
+<TD><i>line</i></TD><TD> `{\tt <TR>}' <i>item</i>\ + `{\tt </TR>}' </TD></TR><TR>
+<i>item</i>    </TD><TD> `{\tt <TD>}' <i>string</i>\ $\star$ `{\tt </TD>}' </TD></TR><TR>
+<i>string</i>   </TD><TD> <i>teken</i>\ + </TD></TR><TR>
+<i>teken</i>    </TD><TD> `{\tt a}'-`{\tt z}' $|$ `{\tt A}'-`{\tt Z}' $|$ `{\tt
+0}'-`{\tt 9}' $|$ `{\tt !}' $|$ `{\tt /}' </TD></TR>
+</TABLE>
+
+
+Merk op dat onze tags (i.t.t. de echte HTML-tags) alleen
+hoofdletters bevatten. Whitespace (spaties, newlines, carriage return en tabs)
+kan overal tussendoor aanwezig zijn (behalve binnen een tag en binnen een <i>string</i>, omdat in de set van <i>teken</i>s geen
+whitespace voorkomt). Tevens bevatten <i>string</i>s niet alle mogelijke tekens, met
+name het kleiner-dan-teken mist.
+
+<h2>De Uitvoer</h2>
+
+Per run moet een ASCII-versie van de HTML-tabel gegeven worden, dat
+wil zeggen:
+<ul>
+  <LI> Voor de eerste <i>line</i>, tussen alle <i>line</i>s in en na de laatste
+    <i>line</i> komt een regel met min-tekens (`-').
+   <LI> E&eacute;n <i>line</i> komt op &eacute;&eacute;n regel, beginnend en eindigend
+     met een pipe (`|').
+  <LI> <i>item</i> binnen &eacute;&eacute;n <i>line</i>\ worden gescheiden door pipes.
+  <LI> Tussen <i>string</i>s binnen &eacute;&eacute;n <i>item</i> staat precies &eacute;&eacute;n spatie.
+  <LI> <i>item</i>s moeten links worden uitgelijnd.
+  <LI> Tussen <i>item</i>s en pipes onderling staat tenminste &eacute;&eacute;n spatie.
+  <LI> De pipes die twee opvolgende <i>item</i>s scheiden staan voor elke <i>line</i>\
+    recht onder elkaar.
+  <LI> De gehele <i>tabel</i>\ moet zo smal mogelijk. Gegeven is dat bij
+    deze opgave een <i>tabel</i> hooguit 80 tekens breed is (op het scherm)
+    en hooguit 750 <i>line</i>s bevat.
+  <LI> Daar waar mintekens en pipes elkaar raken, worden plustekens (`+') gebruikt.
+</ul>
+
+<h2>Voorbeeld</h2>
+
+Bij de <B>invoer</B>
+<PRE>
+1
+&#60;TABLE>
+  &#60;TR>
+    &#60;TD>Hello&#60;/TD>
+  &#60;/TR>
+  &#60;TR>
+    &#60;TD>&#60;/TD>
+    &#60;TD>world!&#60;/TD>
+  &#60;/TR>
+&#60;/TABLE>
+&#60
+</PRE>
+hoort de <B>uitvoer</B>
+<PRE>
++-------+--------+
+| Hello |        |
++-------+--------+
+|       | world! |
++-------+--------+
+</PRE>
+
+<BR><BR><BR>
+
+</BODY>
+</HTML>

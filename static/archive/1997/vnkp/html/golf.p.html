@@ -1,0 +1,119 @@
+<html><body bgcolor="FFFFFF"><pre><b>$</b>HEAP_DISPOSE ON<b>$</b>
+<b>Program</b> HoleInOne<b>(</b>input<b>,</b>output<b>)</b><b>;</b>
+
+<b>const</b>
+  maxhole<b>=</b><font color ="A00000">10000</font><b>;</b>
+
+<b>type</b>
+  parents<b>=</b><b>(</b>none<b>,</b>min1<b>,</b>plus1<b>,</b>maal2<b>,</b>over2<b>)</b><b>;</b>
+  field<b>=</b><b>record</b>
+    distance<b>:</b>integer<b>;</b>
+    next<b>:</b>parents<b>;</b>
+  <b>end</b><b>;</b>
+  queue<b>=</b><b>record</b>
+    <b>index</b><b>:</b>integer<b>;</b>
+    dist<b>:</b>integer<b>;</b>
+  <b>end</b><b>;</b>
+  qarray<b>=</b><b>array</b><b>[</b><font color ="A00000">1..</font>maxhole<b>]</b> <b>of</b> queue<b>;</b>
+  qpointer<b>=</b><b>^</b>qarray<b>;</b>
+
+<b>var</b>
+  r<b>,</b>runs<b>:</b>integer<b>;</b>
+  hole<b>:</b><b>array</b><b>[</b><font color ="A00000">1..</font>maxhole<b>]</b> <b>of</b> field<b>;</b>
+  size<b>:</b>integer<b>;</b>
+  fromhole<b>,</b>tohole<b>:</b>integer<b>;</b>
+
+
+<b>Procedure</b> Init<b>;</b>
+<b>var</b>
+  i<b>:</b>integer<b>;</b>
+<b>begin</b>
+  <b>for</b> i<b>:</b><b>=</b><font color ="A00000">1</font> <b>to</b> size <b>do</b> <b>with</b> hole<b>[</b>i<b>]</b> <b>do</b> <b>begin</b>
+    distance<b>:</b><b>=</b>maxint<b>;</b>
+    next<b>:</b><b>=</b>none<b>;</b>
+  <b>end</b><b>;</b>
+<b>end</b><b>;</b> <font color ="0000A0">{ Init }</font>
+
+
+<b>Procedure</b> SearchRoute<b>;</b>
+<b>var</b>
+   q<b>:</b>qpointer<b>;</b> <font color ="0000A0">(* Index to hole *)</font>
+   qstart<b>,</b>qend<b>:</b>integer<b>;</b>
+<b>begin</b>
+   New<b>(</b>q<b>)</b><b>;</b>
+   qstart<b>:</b><b>=</b><font color ="A00000">1</font><b>;</b>
+   q<b>^</b><b>[</b><font color ="A00000">1</font><b>]</b><b>.</b><b>index</b><b>:</b><b>=</b>tohole<b>;</b>
+   q<b>^</b><b>[</b><font color ="A00000">1</font><b>]</b><b>.</b>dist<b>:</b><b>=</b><font color ="A00000">0</font><b>;</b>
+   qend<b>:</b><b>=</b><font color ="A00000">1</font><b>;</b>
+   <b>while</b> <b>(</b>qend<b>></b><b>=</b>qstart<b>)</b> <b>do</b> <b>begin</b>
+     <b>if</b> <b>(</b>q<b>^</b><b>[</b>qstart<b>]</b><b>.</b><b>index</b><b>*</b><font color ="A00000">2</font><b>&lt;</b><b>=</b>size<b>)</b> <b>then</b> <b>with</b> hole<b>[</b>q<b>^</b><b>[</b>qstart<b>]</b><b>.</b><b>index</b><b>*</b><font color ="A00000">2</font><b>]</b> <b>do</b> <b>begin</b>
+       <b>if</b> <b>(</b>q<b>^</b><b>[</b>qstart<b>]</b><b>.</b>dist<b>&lt;</b>distance<b>)</b> <b>then</b> <b>begin</b>
+  	     distance<b>:</b><b>=</b>q<b>^</b><b>[</b>qstart<b>]</b><b>.</b>dist<b>;</b>
+	       next<b>:</b><b>=</b>over2<b>;</b>
+	       qend<b>:</b><b>=</b>qend<b>+</b><font color ="A00000">1</font><b>;</b>
+	       q<b>^</b><b>[</b>qend<b>]</b><b>.</b><b>index</b><b>:</b><b>=</b>q<b>^</b><b>[</b>qstart<b>]</b><b>.</b><b>index</b><b>*</b><font color ="A00000">2</font><b>;</b>
+	       q<b>^</b><b>[</b>qend<b>]</b><b>.</b>dist<b>:</b><b>=</b>q<b>^</b><b>[</b>qstart<b>]</b><b>.</b>dist<b>+</b><font color ="A00000">1</font><b>;</b>
+       <b>end</b><b>;</b>
+     <b>end</b><b>;</b>
+     <b>if</b> <b>(</b>q<b>^</b><b>[</b>qstart<b>]</b><b>.</b><b>index</b><b>&lt;</b>size<b>)</b> <b>then</b> <b>with</b> hole<b>[</b>q<b>^</b><b>[</b>qstart<b>]</b><b>.</b><b>index</b><b>+</b><font color ="A00000">1</font><b>]</b> <b>do</b> <b>begin</b>
+       <b>if</b> <b>(</b>q<b>^</b><b>[</b>qstart<b>]</b><b>.</b>dist<b>&lt;</b>distance<b>)</b> <b>then</b> <b>begin</b>
+	       distance<b>:</b><b>=</b>q<b>^</b><b>[</b>qstart<b>]</b><b>.</b>dist<b>;</b>
+	       next<b>:</b><b>=</b>min1<b>;</b>
+	       qend<b>:</b><b>=</b>qend<b>+</b><font color ="A00000">1</font><b>;</b>
+	       q<b>^</b><b>[</b>qend<b>]</b><b>.</b><b>index</b><b>:</b><b>=</b>q<b>^</b><b>[</b>qstart<b>]</b><b>.</b><b>index</b><b>+</b><font color ="A00000">1</font><b>;</b>
+	       q<b>^</b><b>[</b>qend<b>]</b><b>.</b>dist<b>:</b><b>=</b>q<b>^</b><b>[</b>qstart<b>]</b><b>.</b>dist<b>+</b><font color ="A00000">1</font><b>;</b>
+       <b>end</b><b>;</b>
+     <b>end</b><b>;</b>
+     <b>if</b> <b>(</b>q<b>^</b><b>[</b>qstart<b>]</b><b>.</b><b>index</b><b>></b><font color ="A00000">1</font><b>)</b> <b>then</b> <b>with</b> hole<b>[</b>q<b>^</b><b>[</b>qstart<b>]</b><b>.</b><b>index</b><b>-</b><font color ="A00000">1</font><b>]</b> <b>do</b> <b>begin</b>
+       <b>if</b> <b>(</b>q<b>^</b><b>[</b>qstart<b>]</b><b>.</b>dist<b>&lt;</b>distance<b>)</b> <b>then</b> <b>begin</b>
+	    	 distance<b>:</b><b>=</b>q<b>^</b><b>[</b>qstart<b>]</b><b>.</b>dist<b>;</b>
+	    	 next<b>:</b><b>=</b>plus1<b>;</b>
+	    	 qend<b>:</b><b>=</b>qend<b>+</b><font color ="A00000">1</font><b>;</b>
+	    	 q<b>^</b><b>[</b>qend<b>]</b><b>.</b><b>index</b><b>:</b><b>=</b>q<b>^</b><b>[</b>qstart<b>]</b><b>.</b><b>index</b><b>-</b><font color ="A00000">1</font><b>;</b>
+	    	 q<b>^</b><b>[</b>qend<b>]</b><b>.</b>dist<b>:</b><b>=</b>q<b>^</b><b>[</b>qstart<b>]</b><b>.</b>dist<b>+</b><font color ="A00000">1</font><b>;</b>
+       <b>end</b><b>;</b>
+     <b>end</b><b>;</b>
+     <b>if</b> <b>(</b>q<b>^</b><b>[</b>qstart<b>]</b><b>.</b><b>index</b> <b>mod</b> <font color ="A00000">2</font><b>=</b><font color ="A00000">0</font><b>)</b> <b>then</b> <b>with</b> hole<b>[</b>q<b>^</b><b>[</b>qstart<b>]</b><b>.</b><b>index</b> <b>div</b> <font color ="A00000">2</font><b>]</b> <b>do</b> <b>begin</b>
+       <b>if</b> <b>(</b>q<b>^</b><b>[</b>qstart<b>]</b><b>.</b>dist<b>&lt;</b>distance<b>)</b> <b>then</b> <b>begin</b>
+	    	 distance<b>:</b><b>=</b>q<b>^</b><b>[</b>qstart<b>]</b><b>.</b>dist<b>;</b>
+	    	 next<b>:</b><b>=</b>maal2<b>;</b>
+	    	 qend<b>:</b><b>=</b>qend<b>+</b><font color ="A00000">1</font><b>;</b>
+	    	 q<b>^</b><b>[</b>qend<b>]</b><b>.</b><b>index</b><b>:</b><b>=</b>q<b>^</b><b>[</b>qstart<b>]</b><b>.</b><b>index</b> <b>div</b> <font color ="A00000">2</font><b>;</b>
+	    	 q<b>^</b><b>[</b>qend<b>]</b><b>.</b>dist<b>:</b><b>=</b>q<b>^</b><b>[</b>qstart<b>]</b><b>.</b>dist<b>+</b><font color ="A00000">1</font><b>;</b>
+       <b>end</b><b>;</b>
+     <b>end</b><b>;</b>
+     qstart<b>:</b><b>=</b>qstart<b>+</b><font color ="A00000">1</font><b>;</b>
+   <b>end</b><b>;</b>
+   Dispose<b>(</b>q<b>)</b><b>;</b>
+<b>end</b><b>;</b> <font color ="0000A0">{ SearchRoute }</font>
+
+
+<b>Procedure</b> PrintPath<b>;</b>
+<b>var</b>
+  current<b>:</b>integer<b>;</b>
+<b>begin</b>
+  current<b>:</b><b>=</b>fromhole<b>;</b>
+  Write<b>(</b>current<b>:</b><font color ="A00000">1</font><b>)</b><b>;</b>
+  <b>while</b> <b>(</b>current<b>&lt;</b><b>></b>tohole<b>)</b> <b>do</b> <b>begin</b>
+    <b>case</b> hole<b>[</b>current<b>]</b><b>.</b>next <b>of</b>
+      min1<b>:</b> current<b>:</b><b>=</b>current<b>-</b><font color ="A00000">1</font><b>;</b>
+      plus1<b>:</b> current<b>:</b><b>=</b>current<b>+</b><font color ="A00000">1</font><b>;</b>
+      maal2<b>:</b> current<b>:</b><b>=</b>current<b>*</b><font color ="A00000">2</font><b>;</b>
+      over2<b>:</b> current<b>:</b><b>=</b>current <b>div</b> <font color ="A00000">2</font><b>;</b>
+    <b>end</b><b>;</b> <font color ="0000A0">{ case }</font>
+    Write<b>(</b><font color ="00A000">' '</font><b>,</b>current<b>:</b><font color ="A00000">1</font><b>)</b><b>;</b>
+  <b>end</b><b>;</b>
+  WriteLn<b>;</b>
+<b>end</b><b>;</b>
+
+<b>begin</b>
+  ReadLn<b>(</b>runs<b>)</b><b>;</b>
+  <b>for</b> r<b>:</b><b>=</b><font color ="A00000">1</font> <b>to</b> runs <b>do</b> <b>begin</b>
+    ReadLn<b>(</b>size<b>)</b><b>;</b>
+    Init<b>;</b>
+    ReadLn<b>(</b>fromhole<b>,</b>tohole<b>)</b><b>;</b>
+    hole<b>[</b>tohole<b>]</b><b>.</b>distance<b>:</b><b>=</b><font color ="A00000">0</font><b>;</b>
+    SearchRoute<b>;</b>
+    PrintPath<b>;</b>
+  <b>end</b><b>;</b>
+<b>end</b><b>.</b>

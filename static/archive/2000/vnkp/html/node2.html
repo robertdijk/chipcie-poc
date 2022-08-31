@@ -1,0 +1,156 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Baby Gates</TITLE>
+<META NAME="description" CONTENT="Baby Gates">
+<META NAME="keywords" CONTENT="opgaven">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta6">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="opgaven.css">
+
+</HEAD>
+
+<BODY >
+
+<H1><A NAME="SECTION00200000000000000000">
+Baby Gates</A>
+</H1>
+
+We kennen baby Gates allemaal wel uit de reclame. Ondertussen heeft
+baby Gates wat te doen gekregen. Hij heeft namelijk een doos met
+blokjes gekregen. Deze blokjes hebben elk de vorm van een balk met een
+geheeltallige hoogte (in cm) en een vierkante basis met weer een
+geheeltallige breedte (in cm).
+
+<P>
+Baby Gates is een creatief joch: hij bouwt torens van steeds dezelfde
+soort blokjes (dus met vaste hoogte en breedte). Dit doet hij door
+steeds &#233;&#233;n laag bovenop de laatste te bouwen, opgebouwd uit ofwel
+rechtopstaande &#243;f liggende blokjes.
+
+<P>
+
+<P></P>
+<DIV ALIGN="CENTER"><A NAME="33"></A>
+<TABLE>
+<CAPTION ALIGN="BOTTOM"><STRONG>Figure A.1:</STRONG>
+Zijaanzicht van &#233;&#233;n van Baby's torens</CAPTION>
+<TR><TD>
+<DIV ALIGN="CENTER">
+0.4toren.eps
+  
+</DIV></TD></TR>
+</TABLE>
+</DIV><P></P>
+
+<P>
+Het valt baby op dat hij, afhankelijk van het soort blokjes, niet
+altijd een toren van een willekeurig aantal centimeters hoog kan
+bouwen. Bijvoorbeeld met het soort blokjes dat hoogte 3 cm en breedte
+2 cm heeft, kan hij geen toren bouwen van 1 cm hoog. En met blokjes
+van breedte 2 en hoogte 6 kan hij geen toren met oneven hoogte bouwen.
+
+<P>
+
+<P>
+Gegeven een hoogte <IMG
+ WIDTH="17" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$m$"> en een breedte <IMG
+ WIDTH="13" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$n$">, waarbij
+<!-- MATH
+ $1 \leq n \leq m < 256$
+ -->
+<IMG
+ WIDTH="124" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.png"
+ ALT="$1 \leq n \leq m &lt; 256$">,
+bepaal d&#237;e hoogtes (in cm) waarvan hij geen toren met die hoogte
+kan bouwen. Zijn dit er oneindig veel, dan volstaat die melding. Als
+het er eindig veel zijn, dan moet je alle onmogelijke hoogtes
+expliciet berekenen.
+
+<P>
+
+<P>
+
+ <UL>
+<LI>&#233;&#233;n regel met daarop een enkele positieve integer: het aantal runs;
+</LI>
+<LI>per run &#233;&#233;n regel met daarop twee positieve integers: de
+    breedte <IMG
+ WIDTH="13" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$n$"> en hoogte <IMG
+ WIDTH="17" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$m$"> van het soort blokjes.
+</LI>
+</UL>
+
+<P>
+
+<P>
+Per run &#233;&#233;n regel met daarop:
+
+ <UL>
+<LI>als er een oneindig aantal onmogelijke hoogtes is, het woord
+    `oneindig';
+</LI>
+<LI>als het aantal onmogelijke hoogtes eindig is, die onmogelijke
+    hoogtes, in oplopende volgorde en van elkaar gescheiden door een
+    spatie;
+</LI>
+</UL>
+
+<P>
+
+<P>
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="CENTER"><B>invoer</B></TH>
+<TD ALIGN="CENTER">bijbehorende <B>uitvoer</B></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><TABLE  WIDTH="331">
+<TR><TD>
+<PRE>
+4
+2 3
+2 6
+3 7
+3 13
+</PRE>
+<BR>
+</TD></TR>
+</TABLE></TD>
+<TD ALIGN="CENTER"><TABLE  WIDTH="331">
+<TR><TD>
+<PRE>
+1
+oneindig
+1 2 4 5 8 11
+1 2 4 5 7 8 10 11 14 17 20 23
+</PRE></TD></TR>
+</TABLE></TD>
+</TR>
+</TABLE>
+
+<P>
+<BR><HR>
+<ADDRESS>
+DKP 2000
+</ADDRESS>
+</BODY>
+</HTML>

@@ -1,0 +1,1141 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+
+<!-- Heavily modified after conversion by Joris, 9 Okt 2001 -->
+
+<HTML>
+<HEAD>
+<TITLE>Voorronde NKP 2001</TITLE>
+<META NAME="description" CONTENT="Opgaven Voorronde NKP 2001">
+<META NAME="keywords" CONTENT="voorronde,nkp2001,nkp,opgaven,2001,programmeerwedstrijd,Nederlands Kampioenschap Programmeren,Delft,TU Delft">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+</HEAD>
+
+<BODY>
+
+<H1>Voorronde NKP 2001</H1>
+
+<HR>
+
+<H2><A NAME="inhoudsopgave">Inhoudsopgave</A></H2>
+
+<P>
+<A HREF="#opga">A. Factorialiseren</A> <BR>
+<A HREF="#opgb">B. Rekeningrijden in Mobilia</A> <BR>
+<A HREF="#opgc">C. Sleutels</A> <BR>
+<A HREF="#opgd">D. Shannon-getallen</A> <BR>
+<A HREF="#opge">E. Pacman</A> <BR>
+<A HREF="#opgf">F. Harmonie</A> <BR>
+<A HREF="#opgg">G. Schilderijen</A> <BR>
+<A HREF="#opgh">H. Quiz</A> <BR>
+</P>
+
+<HR>
+
+<H2><A NAME="opga">A. Factorialiseren</A></H2>
+
+<P>
+Een <I>priemgetal</I> is een natuurlijk getal dat slechts deelbaar is door
+zichzelf en door 1.
+Het getal 1 is zelf echter geen priemgetal.
+Elk natuurlijk getal kan op precies &#233;&#233;n manier worden geschreven
+als het product van een aantal priemgetallen; daarbij is het mogelijk
+dat sommige priemgetallen meer dan &#233;&#233;ns voorkomen.
+We noemen dit de ontbinding van een getal in <I>priemfactoren</I>.
+Zo kunnen we het getal 45 ontbinden in priemfactoren als
+<!-- MATH
+ $3 \times 3 \times 5$
+ -->
+3&#215;3&#215;5.
+
+<P>
+Arjen is een expert op het gebied van priemfactoren, vooral wanneer het gaat
+om priemfactoren van hele grote getallen.
+Het ontbinden van grote getallen is meestal erg moeilijk.
+Er zijn grote supercomputers en buitengewoon ingewikkelde algoritmen
+voor nodig.
+Voor sommige klassen van grote getallen bestaan echter snellere
+en eenvoudigere technieken.
+
+<P>
+Sinds kort bestudeert Arjen een nieuwe klasse van grote getallen:
+de <I>faculteiten</I> (of factorials in het Engels).
+Het getal <I>n</I>! (<I>n</I> faculteit) is het product van de gehele getallen
+1 tot en met <I>n</I>, bijvoorbeeld <!-- MATH
+ $6! = 1 \times 2 \times ... \times 6 = 720$
+ -->
+6! = 1&#215;2&#215;...&#215;6 = 720.
+Deze getallen worden al snel erg groot; het getal 1000! is bijvoorbeeld
+al 2569 cijfers lang.
+
+<BR>
+
+<H3>Probleem</H3>
+
+<P>
+Bedenk voor Arjen een algoritme om <I>n</I>! in priemfactoren te ontbinden,
+en schrijf een computerprogramma om het algoritme te testen.
+
+<H3>Invoer</H3>
+
+<P>
+Op de eerste regel van de invoer staat het aantal getallen <I>a</I> dat nog zal
+volgen.
+Daarna komen <I>a</I> regels, met op elke regel een geheel getal <I>n</I> met
+<!-- MATH
+ $2 \le n \le 1000$
+ -->
+2<IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \le$"><I>n</I><IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \le$">1000 (duizend).
+
+<BR>
+
+<H3>Uitvoer</H3>
+
+<P>
+De uitvoer bestaat uit <I>a</I> regels, met op elke regel een priemontbinding.
+Voor elke ingelezen <I>n</I> geef je de priemontbinding van <I>n</I>! in de vorm
+van een vergelijking.
+Rechts van het <code>=</code> teken geef je een opsomming van de priemfactoren,
+beginnend bij de kleinste en oplopend in grootte.
+Als een factor meer dan &#233;&#233;ns (met een macht) in de ontbinding voorkomt,
+geef je de macht (of multipliciteit) met behulp van de <code>^</code> notatie.
+Bij priemfactoren die slechts &#233;&#233;nmaal voorkomen mag je het
+<code>^</code> symbool <B>niet</B> gebruiken. 
+<BR>
+De <code>=</code> en <code>*</code> symbolen worden van de getallen gescheiden
+door spaties.
+
+<BR>
+
+<H3>Voorbeeld</H3>
+
+<TABLE CELLPADDING=3 BORDER=1>
+<TR><TD ALIGN="CENTER"><B>invoer</B></TD>
+<TD ALIGN="CENTER">bijbehorende <B>uitvoer</B></TD>
+</TR>
+<TR><TD ALIGN="left" VALIGN="top" WIDTH=340>
+<PRE>
+3
+3
+5
+8
+</PRE>
+<BR>
+</TD>
+<TD ALIGN="left" VALIGN="top" WIDTH=340>
+<PRE>
+3! = 2 * 3
+5! = 2^3 * 3 * 5
+8! = 2^7 * 3^2 * 5 * 7
+</PRE>
+<BR>
+</TD>
+</TR>
+</TABLE>
+
+<BR>
+<HR>
+
+<H2><A NAME="opgb">B. Rekeningrijden in Mobilia</A></H2>
+  
+<P>
+Het Mobiliaanse ministerie van geMotoriseerd Particulier Vervoer (MPV) heeft voorgesteld een 
+systeem van rekeningrijden op 's lands rijkswegen in te voeren. 
+Iedere rijksweg in Mobilia vormt altijd een direkte verbinding tussen twee verschillende 
+Mobiliaanse steden. Verder moet nog opgemerkt worden, dat deze wegen onderverdeeld zijn in 
+<I><B>B</B>-wegen</I>, dit zijn de <B>b</B>elangrijke wegen en <I><B>MB</B>-wegen</I>,
+dit zijn de <B>m</B>inder <B>b</B>elangrijke wegen. 
+<BR>
+Tussen twee steden kan overigens meer dan &#233;&#233;n rijksweg liggen.
+
+<P>
+De voor het rekeningrijden benodigde tolpoorten zullen in de steden van Mobilia geplaatst 
+worden.
+Via deze steden zijn immers de bijna altijd verstopte rijkswegen van Mobilia te bereiken. 
+Tot grote vreugde van de lokale overheden zullen de inkomsten van de tolheffing volledig ten 
+goede van de steden komen.
+
+<P>
+Om de hebzucht van de lokale overheden enigszins in te tomen heeft het ministerie van MPV 
+voor plaatsing van de tolpoorten echter de volgende voorwaarden opgesteld:
+
+<OL>
+<LI>In iedere stad mag hoogstens &#233;&#233;n tolpoort geplaatst worden.
+</LI>
+<LI>Als er tussen twee steden <I>S</I><SUB>1</SUB> en <I>S</I><SUB>2</SUB> minstens &#233;&#233;n <B>B</B>-weg aanwezig is,
+dan moet er <I>tenminste &#233;&#233;n</I> tolpoort geplaatst worden in <I>S</I><SUB>1</SUB> en/of <I>S</I><SUB>2</SUB>.
+</LI>
+<LI>Als er tussen twee steden <I>S</I><SUB>1</SUB> en <I>S</I><SUB>2</SUB> tenminste &#233;&#233;n <B>MB</B>-weg loopt,
+dan mag er <I>hoogstens</I> in &#233;&#233;n van deze twee steden een tolpoort geplaatst worden.
+</LI>
+</OL>
+
+<BR>
+
+<H3>Probleem</H3>
+
+<P>
+De ministerraad van Mobilia wil van jou een programma hebben dat in staat is om, gegeven een
+verzameling van steden en rijkswegen,
+
+<UL>
+<LI>na te gaan of het mogelijk is om onder bovenstaande voorwaarden het rekeningrijden in te voeren;
+<LI>als het antwoord op de vorige vraag bevestigend is, de verzameling van steden te geven 
+waar een tolpoort geplaatst moet worden zodat aan alle voorwaarden is voldaan.
+</UL>
+
+<BR>
+
+<H3>Invoer</H3>
+
+<P>
+De invoer begint met een regel met daarop het aantal gevallen dat zal volgen.
+Daarna volgt per geval
+
+<UL>
+<LI>een regel met twee positieve getallen <I>N</I> en <I>M</I>,  
+waarbij <I>N</I> (<!-- MATH
+ $2 \le N \le 100$
+ -->
+2<IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \le$"><I>N</I><IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \le$">100) het aantal steden, en <I>M</I> (<I>M</I><IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img3.png"
+ ALT="$ \ge$">1) het totaal aantal
+verbindingswegen tussen de steden aangeeft;
+<LI><I>M</I> regels met elk twee positieve gehele getallen <I>X</I> en <I>Y</I> gevolgd door
+een string <I>W</I>, waarbij <I>X</I> en <I>Y</I> (<!-- MATH
+ $1 \le X, Y \le N$
+ -->
+1<IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \le$"><I>X</I>, <I>Y</I><IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \le$"><I>N</I>, <I>X</I> <IMG
+ WIDTH="20" HEIGHT="35" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.png"
+ ALT="$ \neq$"> <I>Y</I>) de eindpunten van een verbindingsweg
+zijn en <I>W</I> het type verbindingsweg aangeeft.
+Hierbij staat <I>W</I> = '<TT>B</TT>' voor een belangrijke weg en <I>W</I> = '<TT>MB</TT>' voor 
+een minder belangrijke weg.
+</UL>
+
+<P>
+De invoer is zo gekozen dat er altijd maximaal &#233;&#233;n unieke manier is om de
+tolpoorten te plaatsen.
+
+<BR>
+
+<H3>Uitvoer</H3>
+
+<P>
+De uitvoer dient per geval uit &#233;&#233;n regel te bestaan.
+Als niet aan de voorwaarden voor het rekeningrijden kan worden voldaan dient deze regel
+uit het antwoord '<TT>NO</TT>' te bestaan.
+Anders  moet deze regel een opsomming van de steden(nummers) bevatten
+(in opklimmende volgorde, gescheiden door enkelvoudige spaties) waarin een tolpoort
+geplaatst moet worden.
+
+<BR>
+
+<H3>Voorbeeld</H3>
+
+<TABLE CELLPADDING=3 BORDER=1>
+<TR><TD ALIGN="CENTER"><B>invoer</B></TD>
+<TD ALIGN="CENTER">bijbehorende <B>uitvoer</B></TD>
+</TR>
+<TR><TD ALIGN="left" VALIGN="top" WIDTH=340>
+<PRE>
+2
+3 5
+1 3 B
+2 3 B
+1 2 B
+1 3 MB
+1 2 MB
+4 7
+1 4 B
+1 3 B
+2 3 B
+1 2 B
+1 3 MB
+2 3 MB
+1 2 MB
+</PRE>
+<BR>
+</TD>
+<TD ALIGN="left" VALIGN="top" WIDTH=340>
+<PRE>
+2 3
+NO
+</PRE>
+<BR>
+</TD>
+</TR>
+</TABLE> 
+
+<BR>
+<HR>
+
+<H2><A NAME="opgc">C. Sleutels</A></H2>
+  
+<P>
+In het stadje Sloterdam woont een sleutelmaker, die sleutels maakt. Iedere sleutel heeft een uniek deel, wat bepaalt of een sleutel wel of niet op een bepaald slot past. Dit deel heeft een bepaalde geheeltallige breedte <I>B</I> en een, eveneens geheeltallige, hoogte <I>H</I>. Dit houdt in dat het bestaat uit <I>B</I> 'staafjes', die ieder maximaal <I>H</I> eenheden hoog kunnen zijn. Bijvoorbeeld:
+
+<P>
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="346" HEIGHT="107" BORDER="0"
+ SRC="sleutel.gif"
+ ALT="\begin{figure}\centering\epsfig{file=sleutels.eps}\end{figure}">
+</DIV>
+<BR>
+
+<P>
+Deze sleutel heeft breedte 4 en hoogte 3. De 'staafjes' hebben de hoogten 3, 1, 3 en 2.
+
+<P>
+Nu is het mogelijk om van &#233;&#233;n sleutel een andere sleutel te maken door er &#233;&#233;n of meerdere stukjes af te vijlen. Dit wil de sleutelmaker natuurlijk vermijden. Daarom zorgt hij er altijd voor, dat de sleutels uit &#233;&#233;n set z&#243; van elkaar verschillen, dat dit niet mogelijk is. Hij heeft echter een leerling in dienst die dit idee niet helemaal begrepen heeft. Deze leerling heeft voor de sleutelmaker een groot aantal ontwerpen gemaakt voor sleutelsets, zodat de sleutelmaker aan het ontwerpen niet zoveel tijd kwijt is. Hierbij heeft hij er echter niet op gelet of ze wel aan de eis van de sleutelmaker voldoen. Hij heeft er wel voor gezorgd dat alle sleutels in zo'n set van elkaar verschillen. Voordat de sleutelmaker een sleutelset daadwerkelijk gaat maken, wil hij er natuurlijk wel van verzekerd zijn dat het een goede set is. Gelukkig heeft de leerling zijn ontwerpen in een tekstbestand op de computer opgeslagen, zodat dit makkelijk met een computerprogramma te controleren is.
+
+<BR>
+
+<H3>Probleem</H3>
+
+<P>
+Schrijf een programma dat van een gegeven sleutelset bepaalt of dit een goede set is. Dat wil zeggen een set, waarbij het niet mogelijk is om van een sleutel uit de set een andere sleutel uit dezelfde set te maken, door er &#233;&#233;n of meerdere delen af te vijlen. Indien de set niet goed is, print dan d&#237;e sleutels waarmee de eigenaar de deur van iemand anders zou kunnen openen, indien hij er een deel af zou vijlen.
+
+<BR>
+
+<H3>Invoer</H3>
+
+<P>
+Eerst een regel met daarop een enkele positieve integer: het aantal sets.
+Daarna per set:
+
+<UL>
+<LI>&#233;&#233;n regel met daarop 3 integers: de breedte (<!-- MATH
+ $2 \le B \le 20$
+ -->
+2<IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \le$"><I>B</I><IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \le$">20) en de maximale hoogte (<!-- MATH
+ $2 \le H \le 9$
+ -->
+2<IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \le$"><I>H</I><IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \le$">9) van de sleutels, en het aantal sleutels <I>N</I> in deze set (<!-- MATH
+ $2 \le N \le 100$
+ -->
+2<IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \le$"><I>N</I><IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \le$">100)
+<LI><I>N</I> regels met op iedere regel een integer van <I>B</I> cijfers, die een sleutel uit de set representeert. Ieder cijfer geeft de hoogte <I>h</I> van een van de staafjes weer (<!-- MATH
+ $0 \le h \le H$
+ -->
+0<IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \le$"><I>h</I><IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \le$"><I>H</I>), waarbij deze staafjes uiteraard in de volgorde staan waarin ze op de sleutel zouden komen.
+</UL>
+
+<BR>
+
+<H3>Uitvoer</H3>
+
+<P>
+Voor iedere sleutelset &#233;&#233;n regel met daarop het woord '<TT>GOED</TT>', indien de set goed is. Indien de set niet goed is, alle sleutels die door te vijlen omgezet zouden kunnen worden in een (of meerdere) andere sleutel(s) uit dezelfde set, gescheiden door een spatie. De sleutels dienen door hetzelfde getal te worden gerepresenteerd als bij de invoer, en ook in dezelfde volgorde te staan waarin ze bij de invoer voorkomen.
+
+<BR>
+
+<H3>Voorbeeld</H3>
+
+<TABLE CELLPADDING=3 BORDER=1>
+<TR><TD ALIGN="CENTER"><B>invoer</B></TD>
+<TD ALIGN="CENTER">bijbehorende <B>uitvoer</B></TD>
+</TR>
+<TR><TD ALIGN="left" VALIGN="top" WIDTH=340>
+<PRE>
+2
+3 2 3
+112
+121
+211
+2 3 3
+22
+23
+21
+</PRE>
+<BR>
+</TD>
+<TD ALIGN="left" VALIGN="top" WIDTH=340>
+<PRE>
+GOED
+22 23
+</PRE>
+<BR>
+</TD>
+</TR>
+</TABLE> 
+
+<BR>
+<HR>
+
+<H2><A NAME="opgd">D. Shannon-getallen</A></H2>
+
+<P>
+<DIV ALIGN="CENTER">
+<IMG SRC="shannon.png" WIDTH=145 HEIGHT=200>
+<BR>
+Claude Elwood Shannon
+<BR>
+30-4-1916 - 24-2-2001
+</DIV>
+
+<P>
+Begin dit jaar overleed op 84-jarige leeftijd de Amerikaanse wetenschapper en elektrotechnisch ingenieur Claude Elwood Shannon. Met enkele baanbrekende artikelen, die hij in de jaren na de Tweede Wereldoorlog publiceerde, ontstonden hele nieuwe vakgebieden zoals informatie- en coderings-theorie. Eerder was hij al de eerste die de overeenkomst opmerkte tussen schakel-elektronica en Boolse algebra, en ook schreef hij een klassiek artikel over hoe je een computer zou kunnen programmeren om schaak te spelen, waarin hij het befaamde <I>minimax</I> algoritme introduceert.
+
+<P>
+Naast dit serieuze werk was hij ook een fervent jongleur en liefhebber van vreemde apparaten. Toen het binaire stelsel al lang gemeengoed was voor elektronische computers ontwierp hij de THROBAC, een computer die intern in het Romeinse(!?) talstelsel rekent. Een ander tegendraads artikel van zijn hand gaat over een alternatieve representatie voor getallen. Deze opgave gaat over deze `Shannon-getallen'.
+
+<P>
+Wanneer we een geheel getal <I>G</I> in het <I>r</I>-tallig stelsel uitdrukken gebruiken we daarvoor <I>N</I> cijfers <I>a</I><SUB>i</SUB>, met <!-- MATH
+ $0 \le i < N$
+ -->
+0<IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \le$"><I>i</I> &lt; <I>N</I> en <!-- MATH
+ $a_i \in \{0,1,\ldots,r-2,r-1\}$
+ -->
+<I>a</I><SUB>i</SUB> <IMG
+ WIDTH="17" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$ \in$"> {0, 1,..., <I>r</I> - 2, <I>r</I> - 1}, zodanig dat geldt:
+<BR>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ \begin{eqnarray*}
+G = \sum_{i=0}^{N-1} a_i r^i
+\end{eqnarray*}
+ -->
+<I>G</I> = <IMG
+ WIDTH="34" HEIGHT="72" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$\displaystyle \sum_{i=0}^{N-1}$"><I>a</I><SUB>i</SUB><I>r</I><SUP>i</SUP>
+</DIV>
+
+<P>
+Deze `normale' getalrepresentatie heeft vele mooie eigenschappen. Echter, het is zeker niet de enige manier om effici&#235;nt getallen te representeren!
+
+<P>
+Een alternatieve representatie die zeer veel lijkt op de bovenstaande krijgen we door in plaats van de cijfers <!-- MATH
+ $\{0,1,\ldots,r-2,r-1\}$
+ -->
+{0, 1,..., <I>r</I> - 2, <I>r</I> - 1}, de cijfers <!-- MATH
+ $\{-\frac{r-1}{2},-\frac{r-1}{2}+1,\ldots,\frac{r-1}{2}-1,\frac{r-1}{2}\}$
+ -->
+{ - <IMG
+ WIDTH="33" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$ {\frac{r-1}{2}}$">, - <IMG
+ WIDTH="33" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$ {\frac{r-1}{2}}$"> + 1,...,<IMG
+ WIDTH="33" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$ {\frac{r-1}{2}}$"> - 1,<IMG
+ WIDTH="33" HEIGHT="42" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$ {\frac{r-1}{2}}$">} te nemen. Dit werkt alleen voor een oneven grondtal <I>r</I>. In de rest van deze opgave nemen we het grondtal <I>r</I> = 11 constant, zodat we de cijfers <!-- MATH
+ $\{-5, -4, -3, -2, -1, 0, +1, +2, +3, +4, +5\}$
+ -->
+{ - 5, - 4, - 3, - 2, - 1, 0, + 1, + 2, + 3, + 4, + 5} hebben. Wanneer we nu de negatieve cijfers noteren met een accent (dus 5' in plaats van -5), krijgen we de <I>Shannon-representatie</I>.
+
+<P>
+Een voorbeeld helpt wellicht om dit te verduidelijken. Het getal (Shannon-representatie) <B>12'3'405'</B> kunnen we als volgt converteren naar decimaal:
+
+<P>
+<B>12'3'405'</B> = 
+<BR><!-- MATH
+ $(-5) \cdot 11^0+(0) \cdot 11^1+(4) \cdot 11^2+(-3) \cdot 11^3 +(-2) \cdot 11^4 +(1) \cdot 11^5$
+ -->
+(- 5)<SUP> . </SUP>11<SUP>0</SUP> + (0)<SUP> . </SUP>11<SUP>1</SUP> + (4)<SUP> . </SUP>11<SUP>2</SUP> + (- 3)<SUP> . </SUP>11<SUP>3</SUP> + (- 2)<SUP> . </SUP>11<SUP>4</SUP> + (1)<SUP> . </SUP>11<SUP>5</SUP> =
+<BR><!-- MATH
+ $-5+0+484-3993-29282+161051$
+ -->
+-5 + 0 + 484 - 3993 - 29282 + 161051 =
+<BR><B>128255</B>
+
+<P>
+De Shannon-representatie biedt, vanwege de symmetrische verdeling van de cijfers, bepaalde voordelen tegenover de normale getalrepresentatie. Zo zijn de `vermenigvuldigingstafels' dankzij de symmetrie zeer eenvoudig, hetgeen belangrijk zou kunnen zijn met het oog op machinale verwerking.
+
+<P>
+Het belangrijkste voordeel wordt ook al door Shannon opgemerkt: met de nieuwe representatie is het onmogelijk voor winkeliers om `bedrieglijke' prijzen te hanteren zoals Fl. 4,99 of Fl.99,95!
+
+<BR>
+
+<H3>Probleem</H3>
+
+<P>
+Gegeven een aantal gehele getallen (in standaard decimale notatie), wat is de bijbehorende Shannon-representatie?
+
+<BR>
+
+<H3>Invoer</H3>
+
+<P>
+Op de eerste regel van de invoer staat het aantal runs <I>R</I>.
+Daarna volgen <I>R</I> regels met daarop een geheel getal <I>n</I> in decimale notatie; <!-- MATH
+ $-1000000 \le n \le 1000000$
+ -->
+-1000000<IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \le$"><I>n</I><IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \le$">1000000.
+
+<BR>
+
+<H3>Uitvoer</H3>
+
+<P>
+De uitvoer bestaat uit <I>R</I> regels met daarop in volgorde de Shannon-representatie van de in de invoer gespecificeerde getallen.
+
+<BR>
+
+<H3>Voorbeeld</H3>
+
+<TABLE CELLPADDING=3 BORDER=1>
+<TR><TD ALIGN="CENTER"><B>invoer</B></TD>
+<TD ALIGN="CENTER">bijbehorende <B>uitvoer</B></TD>
+</TR>
+<TR><TD ALIGN="left" VALIGN="top" WIDTH=340>
+<PRE>
+3
+1000
+-1000
+0
+</PRE>
+<BR>
+</TD>
+<TD ALIGN="left" VALIGN="top" WIDTH=340>
+<PRE>
+13'31'
+1'33'1
+0
+</PRE>
+<BR>
+</TD>
+</TR>
+</TABLE> 
+
+<BR>
+<HR>
+
+<H2><A NAME="opge">E. Pacman</A></H2>
+
+<DIV ALIGN="CENTER">
+<IMG
+ WIDTH="191" HEIGHT="93" BORDER="0"
+ SRC="pacman.gif"
+ ALT="\begin{floatingfigure}{6cm}
+\centering\vspace*{-0.5cm}
+\epsfig{file=pacman.eps}\end{floatingfigure}">
+</DIV>
+
+<P>
+<B>Help !</B>
+Pacman is gevangen in een doolhof, waar hij wordt achtervolgd door een spook.
+Hij is dringend op zoek naar een computerprogramma dat voor hem een
+route naar de uitgang kan bepalen.
+
+<P>
+Het doolhof bestaat uit een plat rechthoekig rooster van vakjes.
+Sommige van deze vakjes zijn geblokkeerd door een muur zodat
+niemand er kan komen.
+In 1 of meer vakjes bevindt zich een uitgang in de vorm van
+een teleporter waarmee Pacman naar de volgende level kan vluchten
+(spoken kunnen niet door teleporters).
+
+<P>
+Zowel Pacman als het spook beschikken over een kaart waarop de muren van
+het doolhof en de locatie van de uitgang zijn aangegeven.
+Ook zijn ze voortdurend op de hoogte van elkaars positie.
+
+<P>
+In elke beurt mag eerst Pacman en vervolgens het spook een stapje lopen.
+Dit houdt in dat ze een vakje naar links, rechts, boven of onder mogen bewegen,
+mits het vakje van bestemming niet geblokkeerd is door een muur.
+Het is ook toegestaan om op je plaats te blijven staan.
+Over de rand van het doolhof naar buiten stappen is <B>niet</B> mogelijk.
+
+<P>
+Als Pacman zich in hetzelfde vakje bevindt als het spook (doordat
+hij een vakje met het spook binnenloopt, of doordat het spook zijn vakje
+binnenloopt) wordt hij onmiddellijk opgegeten.
+Zodra Pacman een vakje met een teleporter binnenloopt is hij veilig ontsnapt
+uit het doolhof.
+Het spook kan <B>niet</B> in de vakjes met een teleporter komen.
+
+<P>
+Pacman wil absoluut niet opgegeten worden en probeert om in zo min mogelijk
+beurten veilig de uitgang te bereiken.
+Het spook doet juist haar uiterste best om Pacman te vangen.
+Ook wanneer dat niet lukt zal ze proberen om het Pacman zo lastig
+mogelijk te maken, zodat hij zoveel mogelijk beurten nodig heeft om
+bij de uitgang te komen.
+Zowel Pacman als het spook zijn erg slim en kunnen het hele verdere
+verloop van het spel overzien.
+Beiden volgen daardoor een foutloze strategie.
+
+<BR>
+
+<H3>Probleem</H3>
+
+<P>
+Gegeven een kaart van het doolhof, waarop tevens de beginposities van
+Pacman en het spook zijn gemarkeerd.
+Bepaal of Pacman veilig de uitgang van het doolhof kan bereiken,
+en zo ja, hoeveel beurten hij daarvoor minimaal nodig heeft.
+Houdt er daarbij rekening mee dat het spook het hem zo lastig mogelijk
+zal maken.
+
+<BR>
+
+<H3>Invoer</H3>
+
+<P>
+Op de eerste regel staat een positief geheel getal: het aantal spelletjes.
+Daarna volgt voor elk spelletje een beschrijving in de volgende vorm:
+
+<UL>
+<LI>Een regel met twee getallen <I>w</I> en <I>h</I>; de breedte en hoogte
+      van het doolhof met <!-- MATH
+ $2 \le w, h \le 20$
+ -->
+2<IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \le$"><I>w</I>, <I>h</I><IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \le$">20.
+</LI>
+<LI>Een kaart van het doolhof in de vorm van <I>h</I> regels met op elke
+      regel <I>w</I> karakters.
+      Een muur wordt aangegeven met de letter '<TT>X</TT>', een uitgang
+      met de letter '<TT>U</TT>'.
+      De kamer waarin Pacman het spel begint wordt aangegeven met
+      een '<TT>P</TT>', de kamer van het spook met een '<TT>S</TT>'.
+      Overige (lege) kamers worden aangegeven met een '<TT>.</TT>' (punt).
+</LI>
+</UL>
+Er is altijd precies 1 kamer met een '<TT>P</TT>' en 1 kamer met een '<TT>S</TT>'.
+
+<BR>
+
+<H3>Uitvoer</H3>
+
+<P>
+Voor elk spel geef je 1 regel uitvoer.
+Als Pacman veilig bij de uitgang kan komen, geef je het aantal beurten
+dat hij daarvoor nodig heeft in de volgende vorm:
+`<TT>Pacman bereikt de uitgang in beurt <I>n</I></TT>'.
+Anders geef je als uitvoer de volgende tekst:
+`<TT>Geen veilige route</TT>'
+
+<BR>
+
+<H3>Voorbeeld</H3>
+
+<TABLE CELLPADDING=3 BORDER=1>
+<TR><TD ALIGN="CENTER"><B>invoer</B></TD>
+<TD ALIGN="CENTER">bijbehorende <B>uitvoer</B></TD>
+</TR>
+<TR><TD ALIGN="left" VALIGN="top" WIDTH=227>
+<PRE>
+2
+3 3
+P.S
+.X.
+..U
+5 3
+..P..
+.....
+U.S.U
+</PRE>
+<BR>
+</TD>
+<TD ALIGN="left" VALIGN="top" WIDTH=454>
+<PRE>
+Pacman bereikt de uitgang in beurt 4
+Geen veilige route
+</PRE>
+<BR>
+</TD>
+</TR>
+</TABLE> 
+
+<BR>
+<HR>
+
+<H2><A NAME="opgf">F. Harmonie</A></H2>
+  
+<P>
+De afstand tussen twee tonen - het interval - wordt bepaald door de verhouding van de frequenties.
+Het interval tussen een toon van 400 Hz en een van 800 Hz wordt oktaaf genoemd.
+Een oktaaf correspondeert met een verhouding 1 : 2.
+Het interval tussen 155 Hz en 310 Hz is dus ook een oktaaf, want 155 : 310 = 1 : 2.
+Als de tweede toon hoger is dan de eerste (dat wil zeggen dat de tweede toon een hogere frequentie heeft), dan spreken we van een stijgend interval.
+Is de eerste toon hoger, dan is het interval dalend.
+In deze opgave beschouwen we alleen stijgende intervallen.
+
+<P>
+Een componist wil een muziekstuk maken gebaseerd op zuivere intervallen.
+Hij beschouwt de volgende intervallen als zuiver:
+
+<P>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="CENTER"><B>verhouding</B></TH>
+<TH ALIGN="LEFT"><B>naam</B></TH>
+<TH ALIGN="LEFT"><B>meervoud</B></TH>
+</TR>
+<TR><TD ALIGN="CENTER">1 : 2</TD>
+<TD ALIGN="LEFT">oktaaf</TD>
+<TD ALIGN="LEFT">oktaven</TD>
+</TR>
+<TR><TD ALIGN="CENTER">2 : 3</TD>
+<TD ALIGN="LEFT">kwint</TD>
+<TD ALIGN="LEFT">kwinten</TD>
+</TR>
+<TR><TD ALIGN="CENTER">3 : 4</TD>
+<TD ALIGN="LEFT">kwart</TD>
+<TD ALIGN="LEFT">kwarten</TD>
+</TR>
+<TR><TD ALIGN="CENTER">4 : 5</TD>
+<TD ALIGN="LEFT">terts</TD>
+<TD ALIGN="LEFT">tertsen</TD>
+</TR>
+</TABLE>
+</DIV>
+
+<P>
+Hij vraagt zich af of hij een gegeven stijgend interval (bijvoorbeeld 100 : 1000) kan schrijven als een reeks van zuivere intervallen.
+Dat kan in dit geval:
+
+<BR>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">100 : 125 = 4 : 5</TD>
+<TD ALIGN="LEFT">(terts)</TD>
+</TR>
+<TR><TD ALIGN="LEFT">125 : 250 = 1 : 2</TD>
+<TD ALIGN="LEFT">(oktaaf)</TD>
+</TR>
+<TR><TD ALIGN="LEFT">250 : 500 = 1 : 2</TD>
+<TD ALIGN="LEFT">(oktaaf)</TD>
+</TR>
+<TR><TD ALIGN="LEFT">500 : 1000 = 1 : 2</TD>
+<TD ALIGN="LEFT">(oktaaf)</TD>
+</TR>
+</TABLE>
+
+<P>
+De volgorde van de intervallen ligt niet vast; in het voorafgaande voorbeeld kan de terts ook aan het einde komen: 100 : 200 : 400 : 800 : 1000, of ergens middenin.
+Ook kan een interval soms op meer dan &#233;&#233;n manier worden verdeeld; het interval 3000 : 8000 kan worden gesplitst als:
+
+<BR>
+<TABLE CELLPADDING=3>
+<TR><TD ALIGN="LEFT">3000 : 6000 : 8000</TD>
+<TD ALIGN="LEFT">(een oktaaf en een kwart)</TD>
+</TR>
+<TR><TD ALIGN="LEFT">3000 : 4500 : 6000 : 8000</TD>
+<TD ALIGN="LEFT">(een kwint en twee kwarten)</TD>
+</TR>
+</TABLE>
+
+<P>
+De componist streeft echter naar de eenvoudigste verdeling.
+Daaronder verstaat hij een verdeling in zo weinig mogelijk intervallen.
+
+<BR>
+
+<H3>Probleem</H3>
+
+<P>
+Gegeven een interval, bepaal de eenvoudigste verdeling in zuivere intervallen, als die bestaat.
+
+<BR>
+
+<H3>Invoer</H3>
+
+<P>
+De eerste regel van het invoerbestand bevat een getal: het aantal testgevallen.
+De volgende regels bevatten ieder een testgeval.
+Een testgeval bestaat uit twee gehele getallen <I>l</I> en <I>h</I>, de  frequentie van de laagste, resp. de hoogste toon van het interval.
+Voor deze getallen geldt: <!-- MATH
+ $1 \le l < h \le 20000$
+ -->
+1<IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \le$"><I>l</I> &lt; <I>h</I><IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \le$">20000.
+
+<BR>
+
+<H3>Uitvoer</H3>
+
+<P>
+Voor elke regel in het testbestand een regel met daarop de eenvoudigste verdeling in intervallen (zie voorbeeld).
+De gebruikte intervallen moeten geordend zijn: eerst (eventuele) tertsen, vervolgens eventuele kwarten, kwinten en oktaven.
+Als er geen verdeling in intervallen mogelijk is, de tekst: '<TT>ONMOGELIJK</TT>'.
+
+<BR>
+
+<H3>Voorbeeld</H3>
+
+<TABLE CELLPADDING=3 BORDER=1>
+<TR><TD ALIGN="CENTER"><B>invoer</B></TD>
+<TD ALIGN="CENTER">bijbehorende <B>uitvoer</B></TD>
+</TR>
+<TR><TD ALIGN="left" VALIGN="top" WIDTH=340>
+<PRE>
+4
+155 310
+100 1000
+3000 8000
+1000 1001
+</PRE>
+<BR>
+</TD>
+<TD ALIGN="left" VALIGN="top" WIDTH=340>
+<PRE>
+1 OKTAAF
+1 TERTS 3 OKTAVEN
+1 KWART 1 OKTAAF
+ONMOGELIJK
+</PRE>
+<BR>
+</TD>
+</TR>
+</TABLE> 
+
+<BR>
+<HR>
+
+<H2><A NAME="opgg">G. Schilderijen</A></H2>
+
+<P>
+Een vereniging van schilderijenverzamelaars wil de collectie, die bij haar leden in bezit is, tentoonstellen aan 
+het publiek. Hiervoor willen ze een aantal muren afhuren in een museum.
+
+<P>
+De eigenaars van de schilderijen willen echter wel een kleine vergoeding voor het uitlenen van hun 
+schilderijen. Verder wil het museum een betaling voor het gebruik van de muren en kunnen ze maximaal 
+maar 2 muren verhuren aan de vereniging. De prijs van een muur is afhankelijk van de ligging en breedte 
+van de desbetreffende muur.
+
+<P>
+De vereniging heeft een niet al te groot budget tot haar beschikking en kan dus niet alle schilderijen kwijt. 
+Deze wil daarom zorgen dat de totale publiekswaarde van de schilderijen het hoogst is.
+
+<P>
+In het museum moet tussen de zijkant van een muur en een schilderij en tussen de verschillende schilderijen 
+onderling tenminste 10 cm zitten. Ook mogen schilderijen alleen maar naast elkaar gehangen worden. Uit 
+esthetisch oogpunt wil het museum niet meer dan 4 schilderijen op een muur hangen.
+
+<BR>
+
+<H3>Probleem</H3>
+
+<P>
+Bereken, gegeven een dataset, welke muren en schilderijen gehuurd moeten worden om een zo groot 
+mogelijke publiekswaarde tentoon te stellen. Als er meerdere mogelijkheden zijn met dezelfde 
+publiekswaarde wil men daarvan uiteraard de goedkoopste.
+
+<BR>
+
+<H3>Invoer</H3>
+
+<P>
+Eerst &#233;&#233;n regel met daarop een enkele positieve integer: het aantal datasets.
+Daarna per dataset:
+
+<UL>
+<LI>1 regel met het budgetbedrag <I>b</I> van de vereniging in gehele guldens (<!-- MATH
+ $0 < b \le 1\,000\,000$
+ -->
+0 &lt; <I>b</I><IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \le$">1&nbsp;000&nbsp;000)
+<LI>1 regel met het aantal muren <I>m</I> (<!-- MATH
+ $0 < m \le 5$
+ -->
+0 &lt; <I>m</I><IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \le$">5)
+<LI><I>m</I> regels met daarop twee positieve integers gescheiden door een spatie:
+de breedte <I>mb</I> in cm (<!-- MATH
+ $0 < mb \le 10\,000$
+ -->
+0 &lt; <I>mb</I><IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \le$">10&nbsp;000)
+en de huurprijs <I>mh</I> in gehele guldens (<!-- MATH
+ $0 < mh \le 1\,000\,000$
+ -->
+0 &lt; <I>mh</I><IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \le$">1&nbsp;000&nbsp;000)
+<LI>1 regel met het aantal schilderijen <I>s</I> (<!-- MATH
+ $0 < s \le 10$
+ -->
+0 &lt; <I>s</I><IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \le$">10)
+<LI><I>s</I> regels met daarop drie positieve gehele getallen gescheiden door een spatie:
+de breedte <I>sb</I> in cm <!-- MATH
+ $0 < sb \le 10\,000$
+ -->
+0 &lt; <I>sb</I><IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \le$">10&nbsp;000),
+de huurprijs <I>sh</I> in gehele guldens (<!-- MATH
+ $0 < sh \le 1\,000\,000$
+ -->
+0 &lt; <I>sh</I><IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \le$">1&nbsp;000&nbsp;000)
+en de publiekswaarde <I>sp</I> (<!-- MATH
+ $0 < sp \le 1\,000\,000$
+ -->
+0 &lt; <I>sp</I><IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \le$">1&nbsp;000&nbsp;000)
+</UL>
+
+<BR>
+
+<H3>Uitvoer</H3>
+
+<P>
+Per dataset 1 uitvoerregel met daarop twee positieve integers, gescheiden door een spatie.
+Daarvan is het eerste getal het bestede bedrag in gehele guldens en het tweede getal de
+publiekswaarde.
+
+<BR>
+
+<H3>Voorbeeld</H3>
+
+<TABLE CELLPADDING=3 BORDER=1>
+<TR><TD ALIGN="CENTER"><B>invoer</B></TD>
+<TD ALIGN="CENTER">bijbehorende <B>uitvoer</B></TD>
+</TR>
+<TR><TD ALIGN="left" VALIGN="top" WIDTH=340>
+<PRE>
+1
+2000
+2
+400 1000
+500 1300
+4
+100 200 40
+200 300 30
+150 200 20
+70 400 40
+</PRE>
+<BR>
+</TD>
+<TD ALIGN="left" VALIGN="top" WIDTH=340>
+<PRE>
+1800 100
+</PRE>
+<BR>
+</TD>
+</TR>
+</TABLE> 
+
+<BR>
+<HR>
+
+<H2><A NAME="opgh">H. Quiz</A></H2>
+
+<P>
+Bij de quiz `<I>Geld speelt een rol</I>' spelen twee teams tegen elkaar.
+De teams moeten een aantal vragen beantwoorden.
+Het team dat als eerste de vraag goed beantwoordt krijgt een aantal punten, afhankelijk van de vraag.
+Vorige week was de puntenverdeling als volgt:
+
+<P>
+<DIV ALIGN="CENTER"><TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="CENTER"><B>vraag</B></TH>
+<TH ALIGN="CENTER"><B>punten</B></TH>
+</TR>
+<TR><TD ALIGN="CENTER">1</TD>
+<TD ALIGN="CENTER">3</TD>
+</TR>
+<TR><TD ALIGN="CENTER">2</TD>
+<TD ALIGN="CENTER">6</TD>
+</TR>
+<TR><TD ALIGN="CENTER">3</TD>
+<TD ALIGN="CENTER">9</TD>
+</TR>
+<TR><TD ALIGN="CENTER">4</TD>
+<TD ALIGN="CENTER">6</TD>
+</TR>
+<TR><TD ALIGN="CENTER">5</TD>
+<TD ALIGN="CENTER">9</TD>
+</TR>
+<TR><TD ALIGN="CENTER">6</TD>
+<TD ALIGN="CENTER">3</TD>
+</TR>
+</TABLE>
+</DIV>
+
+<P>
+Wordt de vraag niet binnen de tijd beantwoord, dan krijgt niemand de punten.
+Het team dat aan het eind de meeste punten heeft, wint.
+Voor elke punt die zij m&#233;&#233;r hebben dan het andere team krijgen zij 100 gulden.
+
+<P>
+Vorige week sloot het B-team een weddenschap af, dat zij met precies duizend gulden naar huis zouden gaan.
+Dat illustreert hoe slim zij zijn, want met de bovengenoemde getallen is het onmogelijk om een verschil van 10 punten te realiseren.
+Ze verloren dan ook.
+Ze beantwoordden vraag 2, 4 en 6 goed (totaal 15 punten), maar het ITS-team beantwoordde vraag 3 en 5 goed (totaal 18 punten).
+Het ITS-team ging dus met 300 gulden naar huis.
+Het B-team verloor bovendien de weddenschap, maar dat hadden ze van te voren kunnen weten.
+
+<BR>
+
+<H3>Probleem</H3>
+
+<P>
+Gegeven een rij getallen (de puntenaantallen voor de vragen) en een getal (het verschil).
+Is het mogelijk dat een team eindigt met precies dit puntenaantal voorsprong?
+
+<BR>
+
+<H3>Invoer</H3>
+
+<P>
+De eerste regel van de invoerfile bevat een enkel getal: het aantal testgevallen. 
+Elk testgeval wordt beschreven in twee regels.
+De eerste regel bevat twee niet negatieve gehele getallen: het gewenste verschil <I>v</I> en het aantal vragen <I>n</I> (<!-- MATH
+ $0 < n \le 50$
+ -->
+0 &lt; <I>n</I><IMG
+ WIDTH="20" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$ \le$">50).
+De tweede regel bevat <I>n</I> positieve gehele getallen: voor elke vraag het aantal punten dat de vraag oplevert. Een vraag levert hooguit 50 punten op.
+
+<BR>
+
+<H3>Uitvoer</H3>
+
+<P>
+Voor elk testgeval in de invoer bevat de uitvoer &#233;&#233;n regel, met daarop het woord '<TT>JA</TT>' als het mogelijk is dat de twee teams zodanig op de vragen scoren, dat het ene team aan het eind <I>v</I> punten meer heeft dan het ander team.
+Als dat niet het geval is moet het woordje '<TT>NEEN</TT>' worden gegeven.
+
+<BR>
+
+<H3>Voorbeeld</H3>
+
+<TABLE CELLPADDING=3 BORDER=1>
+<TR><TD ALIGN="CENTER"><B>invoer</B></TD>
+<TD ALIGN="CENTER">bijbehorende <B>uitvoer</B></TD>
+</TR>
+<TR><TD ALIGN="left" VALIGN="top" WIDTH=340>
+<PRE>
+2
+10 6
+3 6 9 6 9 3
+3 6
+1 2 3 4 5 6
+</PRE>
+<BR>
+</TD>
+<TD ALIGN="left" VALIGN="top" WIDTH=340>
+<PRE>
+NEEN
+JA
+</PRE>
+<BR>
+</TD>
+</TR>
+</TABLE> 
+
+<BR>
+<HR>
+
+<!--
+<H1><A NAME="SECTION000340000000000000000">
+Over dit dokument ...</A>
+</H1>
+ <P>
+This document was generated using the
+<A HREF="http://www-dsed.llnl.gov/files/programs/unix/latex2html/manual/"><STRONG>LaTeX</STRONG>2<tt>HTML</tt></A> translator Version 99.2beta6 (1.42)
+<P>
+Copyright &#169; 1993, 1994, 1995, 1996,
+<A HREF="http://cbl.leeds.ac.uk/nikos/personal.html">Nikos Drakos</A>, 
+Computer Based Learning Unit, University of Leeds.
+<BR>
+Copyright &#169; 1997, 1998, 1999,
+<A HREF="http://www.maths.mq.edu.au/~ross/">Ross Moore</A>, 
+Mathematics Department, Macquarie University, Sydney.
+<P>
+The command line arguments were: <BR>
+ <STRONG>latex2html</STRONG> <TT>-t 'Voorronde NKP 2001' -dir html -html_version 3.2,math -no_navigation -split 0 -toc_depth=0 voorronde-nkp2001.tex</TT>
+<P>
+The translation was initiated by Joris van Rantwijk on 2001-09-18
+<BR><HR>
+-->
+
+</BODY>
+</HTML>

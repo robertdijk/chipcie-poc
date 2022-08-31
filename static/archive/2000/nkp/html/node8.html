@@ -1,0 +1,197 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.2 beta6 (August 14th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Maxima Succubus</TITLE>
+<META NAME="description" CONTENT="Maxima Succubus">
+<META NAME="keywords" CONTENT="opgaven">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="opgaven.css">
+<LINK REL="next" HREF="node9.html">
+<LINK REL="previous" HREF="node7.html">
+<LINK REL="up" HREF="opgaven.html">
+<LINK REL="next" HREF="node9.html">
+</HEAD>
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html103"
+ HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next_motif.png"></A> 
+<A NAME="tex2html101"
+ HREF="opgaven.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up_motif.png"></A> 
+<A NAME="tex2html95"
+ HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="previous_motif.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html104"
+ HREF="node9.html">``It's a kind of</A>
+<B> Up:</B> <A NAME="tex2html102"
+ HREF="opgaven.html">opgaven</A>
+<B> Previous:</B> <A NAME="tex2html96"
+ HREF="node7.html">Pietje</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00800000000000000000">
+Maxima Succubus</A>
+</H1>
+Willem-Alexander doet metingen aan een vacu&#252;mkamer, welke de vorm
+van een kubus heeft. Deze kubus is op zijn beurt weer op een
+regelmatige manier onderverdeeld in kubusvormige cellen. Van elk van
+deze cellen kan Willem-Alexander de hoeveelheid energie bepalen. Deze
+kan 0, +1 of -1 eenheid energie bedragen.
+
+<P>
+
+<P>
+Gegeven de meting aan een kubusvormige vacu&#252;mkamer, bepaal de omvang
+van de grootste subkubus binnen deze kubusvormige vacu&#252;mkamer,
+waarin de totale energie (dat wil zeggen: de som van de energie&#235;n in
+alle cellen van die subkubus) nul is.
+
+<P>
+Deze bestaat uit:
+
+<P>
+
+<UL><LI>sep=-1mm
+
+<LI>&#233;&#233;n regel met daarop een enkele positieve integer: het
+    aantal runs;
+
+<LI>per run:
+    <DL>
+<DT><STRONG>1 regel</STRONG>
+<DD>&#233;&#233;n integer <I>r</I> 
+<!-- MATH
+ $(0 \leq r \leq 40)$
+ -->
+<IMG
+ WIDTH="94" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.png"
+ ALT="$(0 \leq r \leq 40)$">:
+het
+aantal meetpunten langs de ribbe van de kubus;
+    
+      <DT><STRONG><B>r<SUP>2</SUP></B> regels</STRONG>
+<DD>met <I>r</I> meetwaarden. Dit zijn dus
+        <I>r</I> doorsneden van de kubus, welke in de gegeven volgorde op
+        elkaar gestapeld zijn. Er zijn drie mogelijke meetwaarden, te
+        weten:
+      <DL>
+<DT><STRONG>`<TT>+</TT>'</STRONG>
+<DD>&#233;&#233;n eenheid positieve energie;
+        <DT><STRONG>`<TT>-</TT>'</STRONG>
+<DD>&#233;&#233;n eenheid negatieve energie;
+        <DT><STRONG>`<TT>0</TT>'</STRONG>
+<DD>geen energie.
+       </DL></DL>
+</UL>
+
+<P>
+
+<P>
+Per run bestaat de uitvoer uit &#233;&#233;n regel met daarop een integer
+die de lengte van de ribben van de maximale subkubus geeft, gemeten in
+aantal cellen. Als de gevraagde maximale subkubus niet bestaat, wordt
+de lengte 0 als uitvoer gegeven.
+
+<P>
+
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="CENTER"><B>invoer</B></TH>
+<TD ALIGN="CENTER">bijbehorende <B>uitvoer</B></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><TABLE  WIDTH="331">
+<TR><TD>
+<PRE>
+3
+3
++-+
+-+-
++-+
+-00
+0+0
+000
+-+-
+---
++++
+4
+0---
++-++
+--+-
++++-
+++0-
++-++
+-+--
++++-
+---+
+-0++
++++-
+-+--
+----
++++-
+-++-
+-+++
+2
+-+
++-
+--
++-
+</PRE>
+<BR>
+</TD></TR>
+</TABLE></TD>
+<TD ALIGN="CENTER"><TABLE  WIDTH="331">
+<TR><TD>
+<PRE>
+2
+3
+0
+</PRE></TD></TR>
+</TABLE></TD>
+</TR>
+</TABLE>
+
+<P>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html103"
+ HREF="node9.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next_motif.png"></A> 
+<A NAME="tex2html101"
+ HREF="opgaven.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up_motif.png"></A> 
+<A NAME="tex2html95"
+ HREF="node7.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="previous_motif.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html104"
+ HREF="node9.html">``It's a kind of</A>
+<B> Up:</B> <A NAME="tex2html102"
+ HREF="opgaven.html">opgaven</A>
+<B> Previous:</B> <A NAME="tex2html96"
+ HREF="node7.html">Pietje</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I>Nederlands Kampioenschap Programmeren 2000</I>
+<BR><I>2000-10-10</I>
+</ADDRESS>
+</BODY>
+</HTML>

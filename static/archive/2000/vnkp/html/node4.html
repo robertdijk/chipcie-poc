@@ -1,0 +1,199 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Raytracing</TITLE>
+<META NAME="description" CONTENT="Raytracing">
+<META NAME="keywords" CONTENT="opgaven">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta6">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="opgaven.css">
+
+</HEAD>
+
+<BODY >
+
+<H1><A NAME="SECTION00400000000000000000">
+Raytracing</A>
+</H1>
+
+<P>
+Gegeven is een vierkant veld van 10 bij 10 eenheden. De
+linkeronderhoek van het veld heeft co&#246;rdinaten <IMG
+ WIDTH="42" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$(0,0)$">. Een
+richting van 0 graden is in de positieve <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$x$">-richting, 90 graden is in
+de positieve <IMG
+ WIDTH="12" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$y$">-richting.
+In dit veld begint op een gegeven punt een foton te bewegen in een gegeven richting.
+
+<P>
+Ook gegeven zijn de begin- en eindpunten van een aantal
+barri&#232;res. Elke barri&#232;re is een lijnstuk: denk aan een
+dubbelzijdige spiegel. Als het foton een barri&#232;re raakt, wordt het
+teruggekaatst waarbij de invalshoek gelijk is aan de uitvalshoek. Als
+het foton meer dan 25 keer een barri&#232;re raakt, dooft het uit en zal
+hij het veld nooit meer verlaten.
+
+<P>
+
+<P>
+Schrijf een programma dat bepaalt op welke positie en na hoeveel
+raakpunten met barri&#232;res het foton het veld verlaat.
+
+<P>
+
+<P>
+De eerste regel van de invoer bevat een enkele positieve integer: het
+aantal runs. Voor elke run volgt dan:
+
+ <UL>
+<LI>een regel met een geheel getal <IMG
+ WIDTH="48" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$\leq 100$">: het aantal
+    barri&#232;res;
+</LI>
+<LI>voor elke barri&#232;re een regel met vier floating-point
+    getallen (in 0.000 notatie, nooit in 0e0 notatie) die
+    respectievelijk <IMG
+ WIDTH="25" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$x-$"> en <IMG
+ WIDTH="25" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.png"
+ ALT="$y-$">co&#246;rdinaten van het beginpunt en
+    <IMG
+ WIDTH="25" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$x-$"> en <IMG
+ WIDTH="25" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.png"
+ ALT="$y-$">co&#246;rdinaten van het eindpunt vastlegggen;
+</LI>
+<LI>een regel met een geheel getal: het aantal fotonen;
+</LI>
+<LI>voor elk foton een regel met drie floating-point getallen die
+    respectievelijk <IMG
+ WIDTH="25" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$x-$"> en <IMG
+ WIDTH="25" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.png"
+ ALT="$y-$">co&#246;rdinaten van het beginpunt, en de
+    beginhoek (0-360 graden) aangeven.
+</LI>
+</UL>
+
+<P>
+Getallen op een regel worden gescheiden door een enkele spatie.
+Alle gegeven co&#246;rdinaten liggen strict binnen het veld.
+
+<P>
+
+<P>
+Voor elke run bestaat de uitvoer uit voor elk foton een regel die,
+afhankelijk van de situatie, het volgende bevat:
+
+ <UL>
+<LI>als het foton het veld niet verlaat, het woord `onmogelijk';
+</LI>
+<LI>als het foton het veld wel verlaat, twee niet-negatieve
+    getallen met drie decimalen achter de decimaalpunt en een geheel
+    getal. Deze stellen respectievelijk voor: de <IMG
+ WIDTH="25" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$x-$"> en
+    <IMG
+ WIDTH="25" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.png"
+ ALT="$y-$">co&#246;rdinaten van het punt waar het foton het veld verlaat en
+    het aantal raakpunten met barri&#232;res voor het het veld verlaat.
+</LI>
+</UL>
+
+<P>
+De uitvoer van elke run wordt gevolgd door een lege regel.
+
+<P>
+
+<P>
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="CENTER"><B>invoer</B></TH>
+<TD ALIGN="CENTER">bijbehorende <B>uitvoer</B></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><TABLE  WIDTH="331">
+<TR><TD>
+<PRE>
+2
+5
+0 9.5 9.5 0
+1 1 2 1
+1 1 1 2
+1 2 2 2
+2 1 2 2
+3
+9 9 225
+3 3 270
+1.5 1.5 33.333
+0
+1
+0.1 5 180
+</PRE>
+<BR>
+</TD></TR>
+</TABLE></TD>
+<TD ALIGN="CENTER"><TABLE  WIDTH="331">
+<TR><TD>
+<PRE>
+10.000 10.000 1
+3.000 0.000 0
+onmogelijk
+
+0.000 5.000 0
+</PRE></TD></TR>
+</TABLE></TD>
+</TR>
+</TABLE>
+
+<P>
+<BR><HR>
+
+<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<A NAME="hint">
+
+<H1><A NAME="SECTION00410000000000000000">
+Hint</A>
+</H1>
+
+<P>
+In verband met het onzekerheidsprincipe van Heisenberg zijn alle
+``moeilijke'' runs in de testinvoer spontaan vervallen.
+
+<P>
+<BR><HR>
+<ADDRESS>
+DKP 2000
+</ADDRESS>
+</BODY>
+</HTML>

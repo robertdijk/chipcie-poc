@@ -1,0 +1,122 @@
+<html><body bgcolor="FFFFFF"><pre><b>program</b> MoebiusDames <b>(</b>input<b>,</b> output<b>)</b><b>;</b>
+
+<font color ="0000A0">{ (c) 25/08/'97 Meinte Boersma
+  Pascal-uitwerking van de NKP'97-opgave
+     "Schaken op een Moebiusband"
+}</font>
+
+<b>const</b>
+   maxgrootte <b>=</b> <font color ="A00000">10</font><b>;</b>
+   keer2 <b>=</b> <font color ="A00000">20</font><b>;</b>   <font color ="0000A0">{ = maxgrootte*2 }</font>
+
+<b>type</b>
+   band <b>=</b> <b>array</b><b>[</b><font color ="A00000">0..</font>keer2<b>,</b> <font color ="A00000">0..</font>maxgrootte<b>]</b> <b>of</b> boolean<b>;</b>
+      <font color ="0000A0">{ true <--> vrij ;; (0,0) is linksboven }</font>
+
+<b>var</b>    <font color ="0000A0">{globaal}</font>
+   bord <b>:</b> band<b>;</b>
+   n<b>,</b> m<b>,</b> run<b>,</b> R <b>:</b> integer<b>;</b>
+
+
+<b>function</b> vrij <b>(</b><b>var</b> x<b>,</b> y <b>:</b> integer<b>)</b> <b>:</b> boolean<b>;</b>
+<font color ="0000A0">{ zoekt eerste vrije plaats op bord vanaf positie (x, y) incl.
+ naar rechtsonder en levert true <==> nog posities over en in
+ (x, y) laatste vrije (of anders: geprobeerde (=(2n, m)) )
+ plaats }</font>
+
+<b>var</b>
+   hebbes <b>:</b> boolean<b>;</b>
+
+<b>begin</b>
+   hebbes <b>:</b><b>=</b> false<b>;</b>
+   <b>while</b> <b>not</b> hebbes <b>and</b> <b>(</b>y<b>&lt;</b>m<b>)</b> <b>do</b> <b>begin</b>
+      <b>while</b> <b>not</b> hebbes <b>and</b> <b>(</b>x<b>&lt;</b><font color ="A00000">2</font><b>*</b>n<b>)</b> <b>do</b> <b>begin</b>
+	 hebbes <b>:</b><b>=</b> bord<b>[</b>x<b>,</b> y<b>]</b><b>;</b>
+	 x <b>:</b><b>=</b> x<b>+</b><font color ="A00000">1</font><b>;</b>
+      <b>end</b><b>;</b>
+      <b>if</b> <b>not</b> hebbes <b>then</b> <b>begin</b>
+	 x <b>:</b><b>=</b> <font color ="A00000">0</font><b>;</b>
+      <b>end</b><b>;</b>
+      y <b>:</b><b>=</b> y<b>+</b><font color ="A00000">1</font><b>;</b>
+   <b>end</b><b>;</b>
+   <b>if</b> hebbes <b>then</b> <b>begin</b>
+      vrij <b>:</b><b>=</b> true<b>;</b>
+      x <b>:</b><b>=</b> x<b>-</b><font color ="A00000">1</font><b>;</b>
+      y <b>:</b><b>=</b> y<b>-</b><font color ="A00000">1</font><b>;</b>
+   <b>end</b> <b>else</b> <b>begin</b>
+      vrij <b>:</b><b>=</b> false<b>;</b>
+   <b>end</b><b>;</b>
+<b>end</b><b>;</b> <font color ="0000A0">{ vrij }</font>
+
+
+<b>procedure</b> plaatsdame <b>(</b>x<b>,</b> y <b>:</b> integer<b>)</b><b>;</b>
+
+<b>var</b>
+   i<b>,</b> j <b>:</b> integer<b>;</b>
+
+<b>begin</b>
+   <font color ="0000A0">{ horizontaal }</font>
+   <b>for</b> j <b>:</b><b>=</b> <font color ="A00000">0</font> <b>to</b> m<b>-</b><font color ="A00000">1</font> <b>do</b> <b>begin</b>
+      bord<b>[</b>x<b>,</b> j<b>]</b> <b>:</b><b>=</b> false<b>;</b>
+   <b>end</b><b>;</b>
+   <font color ="0000A0">{ verticaal }</font>
+   <b>for</b> i <b>:</b><b>=</b> <font color ="A00000">0</font> <b>to</b> <b>(</b><font color ="A00000">2</font><b>*</b>n <b>-</b><font color ="A00000">1</font><b>)</b> <b>do</b> <b>begin</b>
+      bord<b>[</b>i<b>,</b> y<b>]</b> <b>:</b><b>=</b> false<b>;</b>
+   <b>end</b><b>;</b>
+   <font color ="0000A0">{ kruis }</font>
+   <b>for</b> j <b>:</b><b>=</b> <font color ="A00000">0</font> <b>to</b> m<b>-</b><font color ="A00000">1</font> <b>do</b> <b>begin</b>
+      bord<b>[</b><b>(</b>x<b>+</b>m<b>-</b>j<b>)</b> <b>mod</b> m<b>,</b> j<b>]</b> <b>:</b><b>=</b> false<b>;</b>
+      bord<b>[</b><b>(</b>x<b>+</b>m<b>+</b>j<b>)</b> <b>mod</b> m<b>,</b> j<b>]</b> <b>:</b><b>=</b> false<b>;</b>
+   <b>end</b><b>;</b>
+<b>end</b><b>;</b> <font color ="0000A0">{ plaatsdame }</font>
+
+
+<b>function</b> maxdames <b>(</b>dames<b>,</b> x<b>,</b> y <b>:</b> integer<b>)</b> <b>:</b> integer<b>;</b>
+
+<b>var</b>
+   kopie <b>:</b> band<b>;</b>     <font color ="0000A0">{ kopie voor de backtracking }</font>
+   max<b>,</b> terug <b>:</b> integer<b>;</b>
+
+<b>begin</b>
+   max <b>:</b><b>=</b> dames<b>;</b>
+   kopie <b>:</b><b>=</b> bord<b>;</b>
+   <b>while</b> vrij<b>(</b>x<b>,</b> y<b>)</b> <b>do</b> <b>begin</b>
+      plaatsdame<b>(</b>x<b>,</b> y<b>)</b><b>;</b>
+      terug <b>:</b><b>=</b> maxdames<b>(</b>dames<b>+</b><font color ="A00000">1</font><b>,</b> x<b>,</b> y<b>)</b><b>;</b>
+      <b>if</b> terug <b>></b> max <b>then</b> <b>begin</b>
+	 max <b>:</b><b>=</b> terug<b>;</b>
+      <b>end</b><b>;</b>
+      bord <b>:</b><b>=</b> kopie<b>;</b>
+      x <b>:</b><b>=</b> x<b>+</b><font color ="A00000">1</font><b>;</b>
+      <b>if</b> x <b>=</b> <font color ="A00000">2</font><b>*</b>n <b>then</b> <b>begin</b>
+	 <font color ="0000A0">{ over de rand }</font>
+	 x <b>:</b><b>=</b> <font color ="A00000">0</font><b>;</b>
+	 y <b>:</b><b>=</b> y<b>+</b><font color ="A00000">1</font><b>;</b>
+      <b>end</b><b>;</b>
+   <b>end</b><b>;</b>
+   maxdames <b>:</b><b>=</b> max<b>;</b>
+<b>end</b><b>;</b> <font color ="0000A0">{ maxdames }</font>
+
+
+<b>procedure</b> instantie<b>;</b>
+
+<b>var</b>
+   i<b>,</b> j <b>:</b> integer<b>;</b>
+
+<b>begin</b>
+   <b>for</b> i <b>:</b><b>=</b> <font color ="A00000">0</font> <b>to</b> <b>(</b><font color ="A00000">2</font><b>*</b>n <b>-</b><font color ="A00000">1</font><b>)</b> <b>do</b> <b>begin</b>
+      <b>for</b> j <b>:</b><b>=</b> <font color ="A00000">0</font> <b>to</b> m<b>-</b><font color ="A00000">1</font> <b>do</b> <b>begin</b>
+	 bord<b>[</b>i<b>,</b> j<b>]</b> <b>:</b><b>=</b> true<b>;</b>
+      <b>end</b><b>;</b>
+   <b>end</b><b>;</b>
+   writeln<b>(</b>maxdames<b>(</b><font color ="A00000">0</font><b>,</b> <font color ="A00000">0</font><b>,</b> <font color ="A00000">0</font><b>)</b><b>:</b><font color ="A00000">1</font><b>)</b><b>;</b>
+<b>end</b><b>;</b> <font color ="0000A0">{ instantie }</font>
+
+
+<b>begin</b>
+   readln<b>(</b>R<b>)</b><b>;</b>
+   <b>for</b> run <b>:</b><b>=</b> <font color ="A00000">1</font> <b>to</b> R <b>do</b> <b>begin</b>
+      readln<b>(</b>n<b>,</b> m<b>)</b><b>;</b>
+      instantie<b>;</b>
+   <b>end</b><b>;</b>
+<b>end</b><b>.</b>
