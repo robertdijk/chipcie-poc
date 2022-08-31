@@ -1,6 +1,6 @@
 ---
 type: page
-Title: NWERC Problemset Archive
+Title: NWERC Problem Set Archive
 menu: Archive
 ---
 # {.Title}

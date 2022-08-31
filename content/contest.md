@@ -1,8 +1,8 @@
 ---
 title: Contest
-featured_image: "images/notebook.jpg"
 description: What are programming contests?
-featured_image: /images/header-contest.jpeg
+featured_image: /images/YAW02293.webp
+featured_image_alignment: bottom
 type: page
 weight: 10
 menu: main

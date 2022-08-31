@@ -1,6 +1,6 @@
 ---
 type: page
-Title: DAPC Problemset Archive
+Title: DAPC Problem Set Archive
 menu: Archive
 ---
 # {.Title}

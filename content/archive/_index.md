@@ -1,9 +1,11 @@
 ---
-title: "Archive"
-description: "The CHipCie Problemset Archive"
+linkTitle: "Archive"
+title: "The CHipCie Problem Set Archive"
+description: "Problems, solutions and explanations"
 type: page
 weight: 500
-featured_image: /images/header-participants.jpeg
+featured_image: /images/YAW02258.webp
+featured_image_alignment: bottom
 ---
 # Archive
 This page contains exercises, test sets and solutions of several contests. You can use these to practice and maximise your chance of winning:

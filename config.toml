@@ -15,6 +15,7 @@ enableRobotsTXT = true
   featured_image = "/images/chipciegroot2.png"
   recent_posts_number = 0
   custom_css = ["archive.css"]
+  mainSections = ['news']
 
 [sitemap]
   changefreq = "monthly"
