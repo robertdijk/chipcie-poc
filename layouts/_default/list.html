@@ -1,16 +1,19 @@
 {{ define "main" }}
-  <article class="pa3 pa4-ns nested-copy-line-height nested-img">
-    <section class="center cf pv5 ph3 ph4-ns mw7">
-      <header>
-        <h1 class="f1">
-          {{ .Title }}
-        </h1>
-      </header>
-      <div class="nested-copy-line-height lh-copy f4 nested-links nested-img mid-gray">
-        {{ .Content }}
-      </div>
-    </section>
 
+<div class="flex-l mt2 mw8 center">
+  <article class="center cf pv5 ph3 ph4-ns mw7">
+    <header>
+      <h1 class="f1">
+        {{ .Title }}
+      </h1>
+    </header>
+    <div class="nested-copy-line-height lh-copy f4 nested-links nested-img mid-gray">
+      {{ .Content }}
+    </div>
+  </article>
+</div>
+
+  <article class="pa3 pa4-ns nested-copy-line-height nested-img">
     <section class="flex-ns flex-wrap justify-around mt5">
       {{ range .Paginator.Pages }}
         <div class="relative w-100 w-30-l mb4 bg-white">
