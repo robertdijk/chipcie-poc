@@ -1,7 +1,7 @@
 <tr>
   <td><strong>{{ .contest.name }}</strong></td>
   <td>{{ .contest.date }}</td>
-  <td class="link">
+  <td class="archive-link">
     {{if .links.website }}
     <a href="{{.links.website}}">
       <span class="material-symbols-outlined icon" title="Website">
@@ -10,7 +10,7 @@
     </a>
     {{end}}
   </td>
-  <td class="archive-link ">
+  <td class="archive-link">
     {{if .resources.problems}}
     <a href="/archive/{{.contest.year}}/{{.contest.type}}/{{.resources.problems}}">
       <span class="material-symbols-outlined icon" title="Problem Set">
@@ -19,7 +19,7 @@
     </a>
     {{end}}
   </td>
-  <td class="link">
+  <td class="archive-link">
     {{if .resources.slides}}
     <a href="/archive/{{.contest.year}}/{{.contest.type}}/{{.resources.slides}}">
       <span class="material-symbols-outlined icon" title="Presentation">
@@ -28,7 +28,7 @@
     </a>
     {{end}}
   </td>
-  <td class="link">
+  <td class="archive-link">
     {{if .resources.data}}
     <a href="/archive/{{.contest.year}}/{{.contest.type}}/{{.resources.data}}">
       <span class="material-symbols-outlined icon" title="All Data and Solutions">
@@ -37,7 +37,7 @@
     </a>
     {{end}}
   </td>
-  <td class="link">
+  <td class="archive-link">
     {{if .links.result }}
     <a href="{{.links.result}}">
       <span class="material-symbols-outlined icon" title="Scoreboard">
@@ -46,7 +46,7 @@
     </a>
     {{end}}
   </td>
-  <td class="link">
+  <td class="archive-link">
     {{if .links.photos }}
     <a href="{{.links.photos}}">
       <span class="material-symbols-outlined icon" title="Photos">
