@@ -9,7 +9,7 @@ menu: main
 ---
 You can contact the CHipCie with questions or comments using the contact information below. For inquiries regarding possible sponsoring please contact Wiskunde en Informatica Studievereniging 'Christiaan Huygens'.
 
-## Mail/visit address
+## Mail/visit Address
 W.I.S.V. 'Christiaan Huygens'\
 t.a.v. CHipCie\
 Mekelweg 4\
@@ -18,3 +18,7 @@ Mekelweg 4\
 tel:	+31 (0)15 - 278 2532\
 e-mail:	[CHipCie@ch.tudelft.nl](mailto:CHipCie@ch.tudelft.nl)
 
+## Committee Members
+
+The list of current committee members can be found on the
+[website of W.I.S.V. `Christiaan Huygens'](https://ch.tudelft.nl/association/committees/chipcie).
