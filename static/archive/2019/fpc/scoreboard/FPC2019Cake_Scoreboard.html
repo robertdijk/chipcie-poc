@@ -1,0 +1,727 @@
+<!DOCTYPE html>
+<!-- saved from url=(0043)http://163.158.90.226:12345/jury/scoreboard -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- DOMjudge version 7.0.1 sftb-->
+    
+    <title>Scoreboard - DOMjudge</title>
+    <link rel="icon" href="http://163.158.90.226:12345/favicon.ico?v=7.0.1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <link rel="stylesheet" href="./FPC2019Cake_Scoreboard_files/bootstrap.min.css">
+    <link rel="stylesheet" href="./FPC2019Cake_Scoreboard_files/fontawesome-all.min.css">
+    <script src="./FPC2019Cake_Scoreboard_files/jquery.min.js"></script>
+    <script src="./FPC2019Cake_Scoreboard_files/bootstrap.bundle.min.js"></script>
+
+    <script src="./FPC2019Cake_Scoreboard_files/domjudge.js"></script>
+                    <link rel="stylesheet" href="./FPC2019Cake_Scoreboard_files/style_domjudge.css">
+
+        
+    
+    <link rel="stylesheet" href="./FPC2019Cake_Scoreboard_files/style_jury.css">
+
+    
+    <link rel="stylesheet" href="./FPC2019Cake_Scoreboard_files/dataTables.bootstrap4.min.css">
+    <script src="./FPC2019Cake_Scoreboard_files/jquery.dataTables.min.js"></script>
+    <script src="./FPC2019Cake_Scoreboard_files/dataTables.bootstrap4.min.js"></script>
+    <style>
+        .data-table td a, .data-table td a:hover {
+            display: block;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .data-table th {
+            white-space: nowrap;
+        }
+
+        .data-table td {
+            white-space: nowrap;
+            padding-top: 1px;
+            padding-bottom: 1px;
+        }
+
+        .dataTables_filter {
+            text-align: inherit;
+        }
+
+        .table-wrapper {
+            display: inline-block;
+        }
+    </style>
+
+</head>
+<body style="padding-top: 4.5rem;">
+    <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <a class="navbar-brand hidden-sm-down" href="http://163.158.90.226:12345/jury">DOMjudge</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#menuDefault" aria-controls="menuDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="menuDefault" data-update-url="/jury/updates">
+        <ul class="navbar-nav mr-auto">
+
+            
+                            <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://163.158.90.226:12345/jury/scoreboard#" id="navbarDropdownJudgehosts" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-gavel"></i> judgehosts
+                        <span class="badge badge-warning" id="num-alerts-judgehosts" style="display: none;"></span>
+                        <span class="badge badge-danger" id="num-alerts-internalerrors" style="display: none;"></span>
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="http://163.158.90.226:12345/jury/judgehosts" id="menu_judgehosts">
+                            <i class="fas fa-server fa-fw"></i> judgehosts <span class="badge badge-warning" id="num-alerts-judgehosts-sub"></span>
+                        </a>
+                        <a class="dropdown-item disabled" href="http://163.158.90.226:12345/jury/internal-errors" id="menu_internal_error">
+                            <i class="fas fa-bolt fa-fw"></i> internal error <span class="badge badge-danger" id="num-alerts-internalerrors-sub"></span>
+                        </a>
+                    </div>
+                </li>
+            
+                            <li class="nav-item">
+                    <a class="nav-link" href="http://163.158.90.226:12345/jury/clarifications" id="menu_clarifications"><i class="fas fa-comments"></i> clarifications <span class="badge badge-info" id="num-alerts-clarifications" style="display: none;"></span></a>
+                </li>
+
+
+                <li class="nav-item">
+                    <a class="nav-link" href="http://163.158.90.226:12345/jury/submissions"><i class="fas fa-file-code"></i> submissions</a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" href="http://163.158.90.226:12345/jury/rejudgings" id="menu_rejudgings"><i class="fas fa-sync"></i> rejudgings <span class="badge badge-info" id="num-alerts-rejudgings" style="display: none;"></span></a>
+                </li>
+            
+                            <li class="nav-item">
+                    <a class="nav-link" href="http://163.158.90.226:12345/jury/scoreboard"><i class="fas fa-list-ol"></i> scoreboard</a>
+                </li>
+                                </ul>
+
+        <ul class="navbar-nav ml-auto">
+            <li class="ajax-loader-container">
+                <div class="spinner-border spinner-border-sm ajax-loader" style="display: none;" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </li>
+                                        <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="http://163.158.90.226:12345/jury/scoreboard#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user"></i> admin
+                    </a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                                    <a class="dropdown-item disabled" href="http://163.158.90.226:12345/jury/scoreboard#">Administrator</a>
+                        
+                        <a class="dropdown-item d-none" href="http://163.158.90.226:12345/jury/scoreboard#" id="notify_disable">
+                            <i class="fas fa-bell-slash fa-fw"></i> Disable Notifications
+                        </a>
+                        <a class="dropdown-item" href="http://163.158.90.226:12345/jury/scoreboard#" id="notify_enable">
+                            <i class="fas fa-bell fa-fw"></i> Enable Notifications
+                        </a>
+
+                                                    <a class="dropdown-item" href="http://163.158.90.226:12345/jury/scoreboard#" id="refresh-navitem">
+                                <i class="fas fa-sync-alt fa-fw"></i> <span id="refresh-toggle">
+                                        Disable Refresh
+                                  </span>
+                                                                    <span class="small text-muted">(30s)</span>
+                                                            </a>
+                        
+                        <a class="dropdown-item" href="http://163.158.90.226:12345/logout"><i class="fas fa-sign-out-alt fa-fw"></i>Logout </a>
+                    </div>
+                </li>
+            
+            <li class="nav-item dropdown">
+    <a class="nav-link dropdown-toggle" href="http://163.158.90.226:12345/jury/scoreboard#" id="navbarDropdownContests" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <i class="fas fa-trophy"></i> fpc-cake
+    </a>
+    <div class="dropdown-menu scrollable-menu" aria-labelledby="navbarDropdown">
+        <a class="dropdown-item disabled" href="http://163.158.90.226:12345/jury/scoreboard#">Change Contest</a>
+                    <a class="dropdown-item" href="http://163.158.90.226:12345/jury/change-contest/-1">No contest</a>
+            <div class="dropdown-divider"></div>
+                    </div>
+</li>
+        </ul>
+        <div class="navbar-text" style="white-space:nowrap;">
+    <i style="padding-left: 10px;" class="fas fa-clock"></i>
+        <span id="timeleft">contest over</span>
+</div>
+
+<script>
+    var initial = 1559210824;
+    var activatetime = 1559203200.000000000;
+    var starttime = 1559205420.000000000;
+    var endtime = 1559210820.000000000;
+    var offset = 0;
+    var date = new Date(initial * 1000);
+    var timeleftelt = document.getElementById("timeleft");
+
+    setInterval(function () {
+        updateClock();
+    }, 1000);
+    updateClock();
+</script>
+    </div>
+</nav>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-12">
+                                                                        
+
+                    
+    <div data-ajax-refresh-target=""><div class="card">
+        <div class="card-header" style="font-family: Roboto, sans-serif; display: flex;">
+            <span style="font-weight: bold;">FPC for Cake and Eternal Glory</span>
+            <span style="color: DimGray; margin-left: auto;">
+                                                            preliminary results - not final
+                                                </span>
+        </div>
+
+            </div> 
+    
+                    <div class="alert alert-warning" role="alert" style="font-size: 80%;">
+                                    <a href="http://163.158.90.226:12345/public">The public scoreboard</a>
+                    was frozen with 30 minutes remaining
+                            </div>
+        
+        	<div class="dropdown">
+            <button class="btn btn-outline-secondary btn-sm m-2 dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" id="filter-toggle">
+                <i class="fas fa-filter"></i>
+                                    Filter
+                            </button>
+
+            <div class="dropdown-menu" aria-labelledby="filter-toggle">
+                <form action="http://163.158.90.226:12345/jury/scoreboard" method="get">
+                    <div class="m-2 p-2 form-inline">
+                                                                                                    <select class="form-control mr-2" multiple="" size="8" name="categories[]">
+                                                                    <option value="1">System</option>
+                                                                    <option value="2">Self-Registered</option>
+                                                                    <option value="3">Participants</option>
+                                                                    <option value="4">Observers</option>
+                                                                    <option value="5">Organisation</option>
+                                                            </select>
+                                            <input type="submit" class="btn btn-primary btn-sm align-top" name="filter" value="filter">
+                    <input type="submit" class="btn btn-secondary btn-sm align-top" name="clear" value="clear">
+                    </div>
+                </form>
+            </div>
+        </div>
+         
+                
+
+<table class="scoreboard center scoreboard_jury">
+
+        <colgroup>
+        <col id="scorerank">
+                    <col id="scoreflags">
+                        <col id="scoreteamname">
+    </colgroup>
+    <colgroup>
+        <col id="scoresolv">
+        <col id="scoretotal">
+    </colgroup>
+    <colgroup>
+                                    <col class="scoreprob">
+                            <col class="scoreprob">
+                            <col class="scoreprob">
+                            <col class="scoreprob">
+                            <col class="scoreprob">
+                            <col class="scoreprob">
+                            <col class="scoreprob">
+                            <col class="scoreprob">
+                        </colgroup>
+
+        
+    <thead>
+    <tr class="scoreheader">
+        <th title="rank" scope="col">rank</th>
+        <th title="team name" scope="col" colspan="2">team</th>
+        <th title="# solved / penalty time" colspan="2" scope="col">score</th>
+                                                                                                                                                                    <th title="problem Alternative Blockchain Algorithms" scope="col">
+                    <a href="http://163.158.90.226:12345/jury/problems/21" target="_self">
+                        a
+                                                    <div class="circle" style="background: #FF0000;"></div>
+                                                                    </a>
+                </th>
+                                                                                                                                                            <th title="problem Balloon Party" scope="col">
+                    <a href="http://163.158.90.226:12345/jury/problems/17" target="_self">
+                        b
+                                                    <div class="circle" style="background: #000000;"></div>
+                                                                    </a>
+                </th>
+                                                                                                                                                            <th title="problem Circus Tent" scope="col">
+                    <a href="http://163.158.90.226:12345/jury/problems/11" target="_self">
+                        c
+                                                    <div class="circle" style="background: #FFC300;"></div>
+                                                                    </a>
+                </th>
+                                                                                                                                                            <th title="problem Darts" scope="col">
+                    <a href="http://163.158.90.226:12345/jury/problems/16" target="_self">
+                        d
+                                                    <div class="circle" style="background: #00FFFF;"></div>
+                                                                    </a>
+                </th>
+                                                                                                                                                            <th title="problem Encryptastrophy" scope="col">
+                    <a href="http://163.158.90.226:12345/jury/problems/15" target="_self">
+                        e
+                                                    <div class="circle" style="background: #FFFF00;"></div>
+                                                                    </a>
+                </th>
+                                                                                                                                                            <th title="problem Forest Run" scope="col">
+                    <a href="http://163.158.90.226:12345/jury/problems/14" target="_self">
+                        f
+                                                    <div class="circle" style="background: #0000FF;"></div>
+                                                                    </a>
+                </th>
+                                                                                                                                                            <th title="problem Game Night" scope="col">
+                    <a href="http://163.158.90.226:12345/jury/problems/13" target="_self">
+                        g
+                                                    <div class="circle" style="background: #FF00FF;"></div>
+                                                                    </a>
+                </th>
+                                                                                                                                                            <th title="problem Hurry the Hedgehog" scope="col">
+                    <a href="http://163.158.90.226:12345/jury/problems/12" target="_self">
+                        h
+                                                    <div class="circle" style="background: #00FF00;"></div>
+                                                                    </a>
+                </th>
+                        </tr>
+    </thead>
+    <tbody>
+                                                                                        
+                                            <tr class="sortorderswitch" id="team:3">
+            <td class="scorepl">
+                                                    1
+                                            </td>
+            <td class="scoreaf">
+                                                                </td>
+                                                                                <td class="scoretn cl_FFFFFF" title="Phoenix">
+                                                                                                                                                <a href="http://163.158.90.226:12345/jury/teams/3">
+                                        <span class="forceWidth">
+                        Phoenix
+                    </span>
+                                            <span class="univ forceWidth">
+                                                    </span>
+                                    </a>
+            </td>
+                                                <td class="scorenc">6</td>
+            <td class="scorett">420</td>
+
+                                                                                                                                                                                                                
+                                        
+                                                                                                                                                                                    
+                                                                                                            
+                    <td class="score_cell">
+                                                    <a href="http://163.158.90.226:12345/jury/teams/3?restrict%5Bprobid%5D=21">
+                                <div class="score_correct score_first">
+                                    25
+                                    <span>
+                                                                                    3 tries
+                                                                            </span>
+                                </div>
+                            </a>
+                                            </td>
+                                                                                                                        
+                                        
+                                                            
+                                                                                                            
+                    <td class="score_cell">
+                                                    <a href="http://163.158.90.226:12345/jury/teams/3?restrict%5Bprobid%5D=17">
+                                <div class="score_incorrect">
+                                    &nbsp;
+                                    <span>
+                                                                                    1 try
+                                                                            </span>
+                                </div>
+                            </a>
+                                            </td>
+                                                                                                                                                                                                    
+                                        
+                                                                                                                                                                                    
+                                                                                                            
+                    <td class="score_cell">
+                                                    <a href="http://163.158.90.226:12345/jury/teams/3?restrict%5Bprobid%5D=11">
+                                <div class="score_correct score_first">
+                                    17
+                                    <span>
+                                                                                    1 try
+                                                                            </span>
+                                </div>
+                            </a>
+                                            </td>
+                                                                            
+                                        
+                                                            
+                                                                                                            
+                    <td class="score_cell">
+                                            </td>
+                                                                                                                                                                                                    
+                                        
+                                                                                                                                                                                    
+                                                                                                            
+                    <td class="score_cell">
+                                                    <a href="http://163.158.90.226:12345/jury/teams/3?restrict%5Bprobid%5D=15">
+                                <div class="score_correct score_first">
+                                    76
+                                    <span>
+                                                                                    2 tries
+                                                                            </span>
+                                </div>
+                            </a>
+                                            </td>
+                                                                                                                                                                                                    
+                                        
+                                                                                                                                                                                    
+                                                                                                            
+                    <td class="score_cell">
+                                                    <a href="http://163.158.90.226:12345/jury/teams/3?restrict%5Bprobid%5D=14">
+                                <div class="score_correct score_first">
+                                    82
+                                    <span>
+                                                                                    2 tries
+                                                                            </span>
+                                </div>
+                            </a>
+                                            </td>
+                                                                                                                                                                                                    
+                                        
+                                                                                                                                                                                    
+                                                                                                            
+                    <td class="score_cell">
+                                                    <a href="http://163.158.90.226:12345/jury/teams/3?restrict%5Bprobid%5D=13">
+                                <div class="score_correct score_first">
+                                    69
+                                    <span>
+                                                                                    1 try
+                                                                            </span>
+                                </div>
+                            </a>
+                                            </td>
+                                                                                                                                                                                                    
+                                        
+                                                                                                                                                                                    
+                                                                                                            
+                    <td class="score_cell">
+                                                    <a href="http://163.158.90.226:12345/jury/teams/3?restrict%5Bprobid%5D=12">
+                                <div class="score_correct score_first">
+                                    51
+                                    <span>
+                                                                                    2 tries
+                                                                            </span>
+                                </div>
+                            </a>
+                                            </td>
+                                    </tr>
+    
+                    <tr style="border-top: 2px solid black;">
+                                    <td id="scoresummary" title="Summary" colspan="3">Summary</td>
+                            <td title="total solved" class="scorenc">
+                    6
+                </td>
+                        <td></td>
+                                            <td style="text-align: left;">
+                                                                                                        <a href="http://163.158.90.226:12345/jury/problems/21">
+                        <i class="fas fa-thumbs-up fa-fw"></i>
+                        <span style="font-size:90%;" title="number of accepted submissions">
+                                1
+                            </span>
+                        <br>
+
+                        <i class="fas fa-thumbs-down fa-fw"></i>
+                        <span style="font-size:90%;" title="number of rejected submissions">
+                                2
+                            </span>
+                        <br>
+
+                        <i class="fas fa-question-circle fa-fw"></i>
+                        <span style="font-size:90%;" title="number of pending submissions">
+                                0
+                            </span>
+                        <br>
+
+                        <i class="fas fa-clock fa-fw"></i>
+                        <span style="font-size:90%;" title="first solved">
+                                                            25min
+                                                    </span>
+                    </a>
+                </td>
+                                            <td style="text-align: left;">
+                                                                                                        <a href="http://163.158.90.226:12345/jury/problems/17">
+                        <i class="fas fa-thumbs-up fa-fw"></i>
+                        <span style="font-size:90%;" title="number of accepted submissions">
+                                0
+                            </span>
+                        <br>
+
+                        <i class="fas fa-thumbs-down fa-fw"></i>
+                        <span style="font-size:90%;" title="number of rejected submissions">
+                                1
+                            </span>
+                        <br>
+
+                        <i class="fas fa-question-circle fa-fw"></i>
+                        <span style="font-size:90%;" title="number of pending submissions">
+                                0
+                            </span>
+                        <br>
+
+                        <i class="fas fa-clock fa-fw"></i>
+                        <span style="font-size:90%;" title="first solved">
+                                                            n/a
+                                                    </span>
+                    </a>
+                </td>
+                                            <td style="text-align: left;">
+                                                                                                        <a href="http://163.158.90.226:12345/jury/problems/11">
+                        <i class="fas fa-thumbs-up fa-fw"></i>
+                        <span style="font-size:90%;" title="number of accepted submissions">
+                                1
+                            </span>
+                        <br>
+
+                        <i class="fas fa-thumbs-down fa-fw"></i>
+                        <span style="font-size:90%;" title="number of rejected submissions">
+                                0
+                            </span>
+                        <br>
+
+                        <i class="fas fa-question-circle fa-fw"></i>
+                        <span style="font-size:90%;" title="number of pending submissions">
+                                0
+                            </span>
+                        <br>
+
+                        <i class="fas fa-clock fa-fw"></i>
+                        <span style="font-size:90%;" title="first solved">
+                                                            17min
+                                                    </span>
+                    </a>
+                </td>
+                                            <td style="text-align: left;">
+                                                                                                        <a href="http://163.158.90.226:12345/jury/problems/16">
+                        <i class="fas fa-thumbs-up fa-fw"></i>
+                        <span style="font-size:90%;" title="number of accepted submissions">
+                                0
+                            </span>
+                        <br>
+
+                        <i class="fas fa-thumbs-down fa-fw"></i>
+                        <span style="font-size:90%;" title="number of rejected submissions">
+                                0
+                            </span>
+                        <br>
+
+                        <i class="fas fa-question-circle fa-fw"></i>
+                        <span style="font-size:90%;" title="number of pending submissions">
+                                0
+                            </span>
+                        <br>
+
+                        <i class="fas fa-clock fa-fw"></i>
+                        <span style="font-size:90%;" title="first solved">
+                                                            n/a
+                                                    </span>
+                    </a>
+                </td>
+                                            <td style="text-align: left;">
+                                                                                                        <a href="http://163.158.90.226:12345/jury/problems/15">
+                        <i class="fas fa-thumbs-up fa-fw"></i>
+                        <span style="font-size:90%;" title="number of accepted submissions">
+                                1
+                            </span>
+                        <br>
+
+                        <i class="fas fa-thumbs-down fa-fw"></i>
+                        <span style="font-size:90%;" title="number of rejected submissions">
+                                1
+                            </span>
+                        <br>
+
+                        <i class="fas fa-question-circle fa-fw"></i>
+                        <span style="font-size:90%;" title="number of pending submissions">
+                                0
+                            </span>
+                        <br>
+
+                        <i class="fas fa-clock fa-fw"></i>
+                        <span style="font-size:90%;" title="first solved">
+                                                            76min
+                                                    </span>
+                    </a>
+                </td>
+                                            <td style="text-align: left;">
+                                                                                                        <a href="http://163.158.90.226:12345/jury/problems/14">
+                        <i class="fas fa-thumbs-up fa-fw"></i>
+                        <span style="font-size:90%;" title="number of accepted submissions">
+                                1
+                            </span>
+                        <br>
+
+                        <i class="fas fa-thumbs-down fa-fw"></i>
+                        <span style="font-size:90%;" title="number of rejected submissions">
+                                1
+                            </span>
+                        <br>
+
+                        <i class="fas fa-question-circle fa-fw"></i>
+                        <span style="font-size:90%;" title="number of pending submissions">
+                                0
+                            </span>
+                        <br>
+
+                        <i class="fas fa-clock fa-fw"></i>
+                        <span style="font-size:90%;" title="first solved">
+                                                            82min
+                                                    </span>
+                    </a>
+                </td>
+                                            <td style="text-align: left;">
+                                                                                                        <a href="http://163.158.90.226:12345/jury/problems/13">
+                        <i class="fas fa-thumbs-up fa-fw"></i>
+                        <span style="font-size:90%;" title="number of accepted submissions">
+                                1
+                            </span>
+                        <br>
+
+                        <i class="fas fa-thumbs-down fa-fw"></i>
+                        <span style="font-size:90%;" title="number of rejected submissions">
+                                0
+                            </span>
+                        <br>
+
+                        <i class="fas fa-question-circle fa-fw"></i>
+                        <span style="font-size:90%;" title="number of pending submissions">
+                                0
+                            </span>
+                        <br>
+
+                        <i class="fas fa-clock fa-fw"></i>
+                        <span style="font-size:90%;" title="first solved">
+                                                            69min
+                                                    </span>
+                    </a>
+                </td>
+                                            <td style="text-align: left;">
+                                                                                                        <a href="http://163.158.90.226:12345/jury/problems/12">
+                        <i class="fas fa-thumbs-up fa-fw"></i>
+                        <span style="font-size:90%;" title="number of accepted submissions">
+                                1
+                            </span>
+                        <br>
+
+                        <i class="fas fa-thumbs-down fa-fw"></i>
+                        <span style="font-size:90%;" title="number of rejected submissions">
+                                1
+                            </span>
+                        <br>
+
+                        <i class="fas fa-question-circle fa-fw"></i>
+                        <span style="font-size:90%;" title="number of pending submissions">
+                                0
+                            </span>
+                        <br>
+
+                        <i class="fas fa-clock fa-fw"></i>
+                        <span style="font-size:90%;" title="first solved">
+                                                            51min
+                                                    </span>
+                    </a>
+                </td>
+                    </tr>
+        </tbody>
+</table>
+
+    <p><br><br></p>
+
+        
+                    <table id="cell_legend" class="scoreboard scorelegend scoreboard_jury">
+            <thead>
+            <tr>
+                <th scope="col">Cell colours</th>
+            </tr>
+            </thead>
+            <tbody>
+                                                <tr class="score_first">
+                        <td>Solved first</td>
+                    </tr>
+                                                                <tr class="score_correct">
+                        <td>Solved</td>
+                    </tr>
+                                                                <tr class="score_incorrect">
+                        <td>Tried, incorrect</td>
+                    </tr>
+                                                                                            <tr class="score_neutral">
+                        <td>Untried</td>
+                    </tr>
+                                        </tbody>
+        </table>
+    
+<style>
+            
+        .cl_FFFFFF {
+            background-color: #FFFFFF;
+        }
+
+                
+        .cl_FFFFFF .forceWidth.toolong:after {
+            background: linear-gradient(to right,
+                rgba(255,255,255,0) 0%,
+                rgba(255,255,255,1) 96%);
+        }
+    </style>
+<script>
+    document.querySelectorAll(".forceWidth:not(.toolong)").forEach(el => {
+        if (el instanceof Element && el.scrollWidth > el.offsetWidth) {
+            el.classList.add("toolong");
+        }
+    });
+</script>
+
+     
+    <p id="lastmod">
+        Last Update: Thu 30 May 2019 12:08:35 CEST<br>
+        using <a href="https://www.domjudge.org/" target="_top">DOMjudge</a>
+    </p></div>
+
+            </div>
+        </div>
+    </div>
+
+<script>
+    var domjudge_base_url = "";
+    $(function () {
+        $('body').on('change', '.custom-file-input', function () {
+            var files = this.files;
+            var fileNames = [];
+            for (var i = 0; i < files.length; i++) {
+                fileNames.push(files.item(i).name);
+            }
+            $(this).next('.custom-file-label').html(fileNames.join(", "));
+            $(this).next('.custom-file-label').removeClass('text-muted');
+        });
+
+        /* toggle refresh if set */
+                $('#refresh-navitem').on('click', function () {
+            toggleRefresh('/jury/scoreboard', 30, 1);
+        });
+                /* Enable page refresh if set if wanted by the page, and wanted by the user */
+                enableRefresh('/jury/scoreboard', 30, 1);
+        
+        initializeAjaxModals();
+    });
+</script>
+    <script>
+        $(function () {
+            /* Show the notification options if the browser supports it */
+            if ('Notification' in window) {
+                $('#notify_disable').click(disableNotifications);
+                $('#notify_enable').click(enableNotifications);
+                if (getCookie('domjudge_notify') != 1) {
+                    $('#notify_enable').removeClass('d-none');
+                } else {
+                    $('#notify_disable').removeClass('d-none');
+                }
+            }
+
+            updateMenuAlerts();
+            setInterval(updateMenuAlerts, 20000);
+        });
+    </script>
+
+
+</body></html>

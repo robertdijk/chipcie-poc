@@ -1,0 +1,981 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+
+<!--Converted with LaTeX2HTML 2K.1beta (1.48)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+
+<!-- Heavily modified after conversion by Joris, 9 okt 2001 -->
+
+<HTML>
+<HEAD>
+<TITLE>Opgaven NKP 2001</TITLE>
+<META NAME="description" CONTENT="Opgaven NKP 2001">
+<META NAME="keywords" CONTENT="nkp2001,nkp,opgaven,2001,programmeerwedstrijd,Nederlands Kampioenschap Programmeren,Delft,TU Delft">
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=iso-8859-1">
+</HEAD>
+
+<BODY>
+
+<H1>Opgaven NKP 2001</H1>
+
+<IMG
+ WIDTH="227" HEIGHT="151" ALIGN="BOTTOM" BORDER="0"
+ SRC="img1.png"
+ ALT="NKP 2001"> 
+<BR>
+
+<P>
+6 oktober 2001 
+<BR>
+TU Delft 
+<BR>
+
+<HR>
+
+<H2><A NAME="inhoudsopgave">Inhoudsopgave</A></H2>
+
+<P>
+<A HREF="#opga">A. De spin en zijn prooi</A> <BR>
+<A HREF="#opgb">B. Palindromië</A> <BR>
+<A HREF="#opgc">C. Boeken</A> <BR>
+<A HREF="#opgd">D. Schrikkeljaren</A> <BR>
+<A HREF="#opge">E. Binaire Codes</A> <BR>
+<A HREF="#opgf">F. Verkiezingen</A> <BR>
+<A HREF="#opgg">G. Fusiegolf</A> <BR>
+<A HREF="#opgh">H. Polygonesië</A> <BR>
+</P>
+
+<HR>
+
+<H2><A NAME="opga">A. De spin en zijn prooi</A></H2>
+
+<P>
+Zoals jullie allemaal weten, vangen spinnen hun vliegen niet met uitvouwbare, kubusvormige kamers, maar gewoon met spinnenwebben. De huisspin in studentenhuis `Het Spinnehol' heeft zoveel te eten dat het vliegenvangen hem een beetje gaat vervelen. Ook het van te voren berekenen van de route die hem de minste stappen kost om bij de vlieg te komen vindt hij niet leuk meer. Hij heeft daarentegen wel iets nieuws gevonden. Het blijkt dat er soms meerdere kortste routes zijn. Deze routes zijn dan uiteraard allemaal even lang, maar verschillen op &#233;&#233;n of meerdere punten van elkaar.
+
+<P>
+Een spinnenweb bestaat hier altijd uit drie of meer spandraden, die allemaal vanuit het midden van het web uiteen lopen en &#233;&#233;n of meer tussendraden. De tussendraden zijn allemaal gesloten krommen en raken elkaar nooit. Zowel de spin als de vlieg bevinden zich altijd op een knooppunt van twee of meer draden. Een vlieg is niet helemaal gek en vliegt dus nooit het web in op de plaats waar de spin zit. Zodra de vlieg gevangen is in het web kan hij niet meer bewegen. De spin kan over alle draden en knooppunten lopen. Een stap is voor de spin een beweging over &#233;&#233;n van de draden vanaf het knooppunt waar hij zich bevindt tot aan het eerste knooppunt dat hij tegenkomt.
+
+<P>
+<IMG
+ WIDTH="654" HEIGHT="490" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.png"
+ ALT="spin.eps">
+<BR>
+
+<H3>Probleem</H3>
+
+<P>
+Schrijf een programma dat, gegeven een beschrijving van een spinnenweb en de posities van de spin en de gevangen vlieg daarin, berekent langs hoeveel verschillende routes de spin, over zijn web, naar de vlieg kan kruipen, zodat hij daarbij een minimaal aantal stappen zet.
+
+<BR>
+<H3>Invoer</H3>
+
+<P>
+De eerste regel van de invoer bevat een enkel positief getal: het aantal runs.
+Voor iedere run volgen er drie regels, met elk twee gehele getallen gescheiden
+door een spatie:
+<UL>
+<LI>Het aantal spandraden <I>s</I> en tussendraden <I>t</I> (<!-- MATH
+ $2 < s \le 15$
+ -->
+2 &lt; <I>s</I> &le; 15 ; <!-- MATH
+ $0 < t \le 20$
+ -->
+0 &lt; <I>t</I> &le; 20).
+<LI>De positie van de spin <I>a</I>, <I>b</I> (<!-- MATH
+ $0 < a \le s$
+ -->
+0 &lt; <I>a</I> &le; <I>s</I> ; <!-- MATH
+ $0 \le b \le t$
+ -->
+0 &le; <I>b</I> &le; <I>t</I>).
+<LI>De positie van de vlieg <I>c</I>, <I>d</I> (<!-- MATH
+ $0 < c \le s$
+ -->
+0 &lt; <I>c</I> &le; <I>s</I> ; <!-- MATH
+ $0 \le d \le t$
+ -->
+0 &le; <I>d</I> &le; <I>t</I>).
+</UL>
+
+<P>
+De tussendraden zijn genummerd van 1 tot <I>t</I>.
+Tussendraad 1 is de binnenste tussendraad en nummer <I>t</I> is de buitenste.
+Een positie met <I>b</I> = 0 of <I>d</I> = 0 betekent dat de spin, dan wel de vlieg,
+zich in het middelpunt van het web bevindt.
+
+<BR>
+<H3>Uitvoer</H3>
+
+<P>
+Per run, steeds op een nieuwe regel, het aantal verschillende kortste routes.
+
+<BR>
+<H3>Voorbeeld</H3>
+
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="CENTER"><B>invoer</B></TD>
+<TD ALIGN="CENTER">bijbehorende <B>uitvoer</B></TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="top" WIDTH=340>
+<PRE>
+2
+3 3
+2 1
+1 3
+10 5
+7 2
+1 4
+</PRE>
+<BR>
+</TD>
+<TD ALIGN="LEFT" VALIGN="top" WIDTH=340>
+<PRE>
+3
+16
+</PRE>
+<BR>
+</TD>
+</TR>
+</TABLE> 
+
+<BR>
+<HR>
+
+<H2><A NAME="opgb">B. Palindromi&#235;</A></H2>
+
+<P>
+Er was eens een land genaamd Palindromi&#235;, waar alle mensen dol waren
+op palindromen.
+Een <I>palindroom</I> is een woord waarbij de volgorde van de letters van
+links naar rechts exact hetzelfde is als van rechts naar links.
+'<TT>parterretrap</TT>' is een heel bekend voorbeeld.
+
+<P>
+In een groot kasteel in Palindromi&#235; woont prinses Anna.
+Ze is heel mooi en heel lief, en prins Otto is dan ook waanzinnig verliefd
+op haar.
+Voordat hij met haar mag trouwen, moet hij echter het raadsel van
+de koning oplossen.
+
+<P>
+De koning heeft een lange reeks letters gekozen.
+Het is mogelijk om een palindroom te vormen door uit deze reeks bepaalde
+letters weg te laten; de overgebleven letters moeten daarbij in de
+oorspronkelijke volgorde blijven staan.
+De koning is op zoek naar het langste palindroom dat op deze manier
+gevormd kan worden.
+
+<P>
+Otto wil graag weten hoeveel letters hij weg moet laten om het langste
+palindroom te kunnen vinden.
+Met jouw hulp kunnen Otto en Anna trouwen en nog lang en gelukkig
+samen leven ...
+
+<BR>
+<H3>Probleem</H3>
+
+<P>
+Gegeven een string van letters, hoeveel letters moet je minimaal
+uit de string weglaten om een palindroom over te houden.
+
+<BR>
+<H3>Invoer</H3>
+
+<P>
+De invoer bevat een aantal afzonderlijke gevallen van het raadsel.
+Op de eerste regel staat het aantal gevallen <I>n</I>.
+Dan volgen <I>n</I> regels, met op elke regel een string.
+Elke string bevat uitsluitend kleine letters, en is minimaal 1
+en maximaal 200 letters lang.
+
+<BR>
+<H3>Uitvoer</H3>
+
+<P>
+Voor elk geval geef je 1 regel uitvoer met daarop het kleinste aantal
+letters dat moet worden weggelaten om een palindroom te vormen.
+
+<BR>
+<H3>Voorbeeld</H3>
+
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="CENTER"><B>invoer</B></TD>
+<TD ALIGN="CENTER">bijbehorende <B>uitvoer</B></TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="top" WIDTH=340>
+<PRE>
+3
+anna
+hallo
+programmeerwedstrijd
+</PRE>
+<BR>
+</TD>
+<TD ALIGN="LEFT" VALIGN="top" WIDTH=340>
+<PRE>
+0
+3
+14
+</PRE>
+<BR>
+</TD>
+</TR>
+</TABLE> 
+
+<BR>
+<HR>
+
+<H2><A NAME="opgc">C. Boeken - weet je nog?</A></H2>
+  
+<P>
+Guy Montag is een aardige jongen, maar hij houdt er wat vreemde idee&#235;n op na.
+Hij denkt dat er informatie bestaat, belangrijke informatie, die niet op het
+Internet is te vinden.
+Ik bedoel: hij koopt soms een boek!
+Als hij een boek uit heeft legt hij het op een stapel.
+Als die stapel dreigt om te vallen begint hij een nieuwe stapel.
+
+<BR>
+Dat wil zeggen, dat deed hij, tot hij Mildred tegenkwam.
+Mildred ontdekte bij een antiquair een paar enige boekenkastjes,
+en haalde Guy over die te kopen, en zijn boeken er in te zetten:
+"Ze passen er toch wel in?"
+Passen ze er in?
+
+<BR>
+<H3>Probleem</H3>
+
+<P>
+Schrijf een programma dat nagaat of de boeken van Guy passen in de kasten
+van Mildred.
+Als ze niet passen moet het programma vertellen hoeveel er overblijven.
+
+<P>
+Een boek heeft een hoogte, bijvoorbeeld 200 mm, en een diepte.
+Als het boek gesloten voor je op tafel ligt zou je dat waarschijnlijk niet de
+diepte van het boek noemen, maar de breedte.
+De breedte van het boek bepaalt echter de diepte die een kast moet hebben,
+opdat het boek in die kast past.
+Daarom spreken we van de diepte van het boek.
+
+<BR>
+Als regel zijn sommige boeken dikker dan andere.
+Of je het gelooft of niet, Guy bezit alleen maar boeken van 20mm dik!
+
+<P>
+Een boekenkast heeft een breedte, dat is de breedte aan de binnenkant.
+Deze breedte bepaalt het aantal boeken dat je naast elkaar op een plank in de
+kast kunt zetten.
+
+<BR>
+Een boekenkast heeft een diepte.
+De diepte van de kast bepaalt de diepte van de boeken die je er in kunt zetten.
+Als de diepte van een kast 200 mm bedraagt, kun je boeken met een diepte van
+ten hoogste 200 mm in de kast plaatsen - tenminste als de hoogte dat toelaat.
+
+<BR>
+Een boekenkast heeft een aantal planken. Elke plank heeft een hoogte.
+Eigenlijk is de hoogte niet een eigenschap van de plank, maar van de ruimte
+boven de plank.
+Op een plank met hoogte 280 mm kun je boeken kwijt met een hoogte van ten
+hoogste 280 mm - tenminste als de diepte dat toelaat.
+
+<BR>
+Boeken worden rechtop in de kast gezet.
+Mildred heeft aan scheef hangende boeken al net zo'n hekel als aan boeken
+op stapels.
+
+<BR>
+<H3>Invoer</H3>
+
+<P>
+De eerste regel van de invoerfile bevat een enkel getal:
+het aantal testgevallen.
+De eerste regel van elk testgeval bevat een getal <I>k</I> (<!-- MATH
+ $0 < k < 10$
+ -->
+0 &lt; <I>k</I> &lt; 10),
+het aantal boekenkasten.
+Hierna volgen de <I>k</I> beschrijvingen van de boekenkasten. 
+<BR>
+De eerste regel van de beschrijving van een boekenkast bevat drie positieve
+getallen: de breedte, de diepte en het aantal planken <I>p</I> (<!-- MATH
+ $0 < p < 10$
+ -->
+0 &lt; <I>p</I> &lt; 10).
+De volgende regel bevat <I>p</I> getallen: de hoogte van de planken. 
+<BR>
+De beschrijving van de kasten wordt gevolgd door de beschrijving van de boeken.
+De eerste regel van de beschrijving van de boeken bevat een positief getal
+<I>b</I> (<I>b</I> &lt; 1000), het aantal boeken.
+De volgende <I>b</I> regels bevatten elk twee getallen:
+eerst de diepte, dan de hoogte van een boek. 
+<BR>
+Alle afmetingen zijn gehele getallen in millimeters.
+Breedten, diepten en hoogten zijn ten hoogste 1000 mm.
+
+<BR>
+<H3>Uitvoer</H3>
+
+<P>
+De uitvoer bevat, voor elk testgeval op een aparte regel, het aantal boeken
+dat overblijft, nadat er zo veel mogelijk boeken in de kasten zijn gezet.
+Als alle boeken in de kasten passen is dat aantal natuurlijk 0.
+
+<BR>
+<H3>Voorbeeld</H3>
+
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="CENTER"><B>invoer</B></TD>
+<TD ALIGN="CENTER">bijbehorende <B>uitvoer</B></TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=340>
+<PRE>
+2
+2
+1000 200 3
+180 210 250
+700 250 2
+300 300
+3
+250 300
+200 280
+300 200
+1
+22 200 1
+250
+1
+200 250
+</PRE>
+<BR>
+</TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=340>
+<PRE>
+1
+0
+</PRE>
+<BR>
+</TD>
+</TR>
+</TABLE> 
+
+<BR>
+<HR>
+
+<H2><A NAME="opgd">D. Schrikkeljaren</A></H2>
+
+<P>
+Iedere programmeur heeft of krijgt nog wel eens te maken met het fenomeen <I>schrikkeljaar</I><A NAME="footref1" HREF="#footnote1"><SUP>1</SUP></A>. De oorzaak van een schrikkeljaar is gelegen in de duur van de omloop van de aarde rond de zon, gemeten in dagen. Dit is helaas niet precies een geheel getal en daarom is het nodig om eens in de vier jaar een extra dag in een jaar te stoppen.
+
+<P>
+Dit is weer iets teveel zodat er in eeuwjaren (jaartal deelbaar door honderd) geen schrikkeldag is - althans, vanaf 1800; in 1700 zag men het probleem nog niet zo en dit was dus gewoon een schrikkeljaar. Op de "eeuwjaren"-regel is er dan nog de uitzondering dat eeuwjaren, deelbaar door 400, juist weer wel schrikkeljaar zijn! Deze laatste regel werd vorig jaar (2000) voor het eerst toegepast.
+
+<P>
+Bovenstaande regels zijn specifiek geschikt voor de aarde. Op andere planeten zijn andere regelingen, afhankelijk van de precieze omlooptijd (gemeten in dagen) een stuk handiger.
+
+<P>
+Het is 2001, en je bent op weg naar Saturnus in het ruimteschip Endeavour. De verwachting is dat deze reis zal leiden tot contact met buitenaardse beschavingen, elk met een vreemde schrikkeljaar-regeling.
+
+<BR>
+<H3>Probleem</H3>
+
+<P>
+Aan jou de vraag om een programma te schrijven waarmee de boordcomputer (een HRN-9000) op basis van een gespecificeerde schrikkeljaar-regeling, de omlooptijd in dagen weer kan geven.
+
+<BR>
+<H3>Invoer</H3>
+
+<P>
+Op de eerste regel staat het aantal runs <I>R</I>. Hierna volgen precies <I>R</I> schrikkeljaar-regeling specificaties. Elke specificatie begint met het aantal regels <I>N</I> (<!-- MATH
+ $1 \le N \le 20$
+ -->
+1 &le; <I>N</I> &le; 20) waaruit de regeling bestaat. Hierna volgen <I>N</I> regels met twee getallen, <I>D</I><SUB>i</SUB> en <I>L</I><SUB>i</SUB> (<!-- MATH
+ $1 \le D_i \le 10000$
+ -->
+1 &le; <I>D</I><SUB>i</SUB> &le; 10000, <!-- MATH
+ $1 \le L_i \le 10000$
+ -->
+1 &le; <I>L</I><SUB>i</SUB> &le; 10000, <!-- MATH
+ $1 \le i \le N$
+ -->
+1 &le; <I>i</I> &le; <I>N</I>), die een deler <I>D</I><SUB>i</SUB> aangeven met een bijbehorende jaar-lengte <I>L</I><SUB>i</SUB>.
+
+<P>
+Zo'n regel moet als volgt worden gelezen: "indien het jaartal deelbaar is door <I>D</I><SUB>i</SUB>, dan is de lengte van het jaar gelijk aan <I>L</I><SUB>i</SUB> dagen".
+
+<P>
+In de schrikkeljaar-regelingen zoals hier beschouwd geldt altijd dat de eerst passende regel wordt gebruikt om te kijken of een jaar schrikkeljaar is; indien een ``match'' wordt gevonden, worden de overige regels genegeerd.
+
+<P>
+Regelingen die op deze wijze worden gespecificeerd zijn altijd periodiek (i.e., herhalen zich na een aantal jaren); er is gegeven dat deze periode een lengte heeft van ten hoogste 10000 jaar. Verder is gegeven dat er altijd een regel is met <I>D</I><SUB>i</SUB> = 1, zodat elk jaar een goed gedefinieerde lengte heeft.
+
+<P>
+<B>NB.</B> Sommige schrikkeljarenstelsels bevatten overbodige, of zelfs
+strijdige regels! Zoals gezegd wordt in alle gevallen altijd de eerste regel die opgaat toegepast.
+
+<BR>
+<H3>Uitvoer</H3>
+
+<P>
+<I>R</I> regels, met op elke regel de berekende omlooptijd voor een schrikkeljaar-regeling, uitgedrukt in dagen.
+Druk het getal af met altijd precies vijf cijfers achter de decimale punt. Rond af op de gebruikelijke manier: omhoog als het volgende cijfer
+&ge; 5, anders omlaag.
+
+<BR>
+<H3>Voorbeeld</H3>
+
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="CENTER"><B>invoer</B></TD>
+<TD ALIGN="CENTER">bijbehorende <B>uitvoer</B></TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=340>
+<PRE>
+2
+4
+400 366
+100 365
+4 366
+1 365
+3
+25 117
+50 119
+1 115
+</PRE>
+<BR>
+</TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=340>
+<PRE>
+365.24250
+115.08000
+</PRE>
+<BR>
+</TD>
+</TR>
+</TABLE> 
+
+<BR>
+<DL>
+<DT><A NAME="footnote1">...<I>schrikkeljaar</I></A>
+<A HREF="#footref1"><SUP>1</SUP></A>
+<DD>Een echte programmeur zorgt er immers voor dat zijn of haar programma in ieder geval tot het jaar 2038 correct blijft werken, en liefst nog veel langer!
+</DL>
+
+<BR>
+<HR>
+
+<H2><A NAME="opge">E. Binaire Codes</A></H2>
+
+<P>
+Een vaak gebruikte manier om data te comprimeren is om de te coderen symbolen te vervangen door bitrijen van verschillende lengte. Stel dat we bijvoorbeeld een bestand hebben met de 4 symbolen A, B, C en D, die in de volgende verhouding voorkomen:
+
+<P>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="CENTER">symbool</TD>
+<TD ALIGN="RIGHT">percentage</TD>
+</TR>
+<TR><TD ALIGN="CENTER">A</TD>
+<TD ALIGN="RIGHT">54%</TD>
+</TR>
+<TR><TD ALIGN="CENTER">B</TD>
+<TD ALIGN="RIGHT">42%</TD>
+</TR>
+<TR><TD ALIGN="CENTER">C</TD>
+<TD ALIGN="RIGHT">3%</TD>
+</TR>
+<TR><TD ALIGN="CENTER">D</TD>
+<TD ALIGN="RIGHT">1%</TD>
+</TR>
+</TABLE>
+</DIV>
+<BR>
+
+<P>
+In dit geval is het voordelig om de A te representeren door 1 bit, de B door 2 bits, en de C en D door 3 bits. Dit kan op verschillende manieren. Hieronder zijn er twee gegeven:
+
+<P>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="CENTER">symbool</TD>
+<TD ALIGN="LEFT">code&nbsp;1a</TD>
+<TD ALIGN="LEFT">code&nbsp;1b</TD>
+</TR>
+<TR><TD ALIGN="CENTER">A</TD>
+<TD ALIGN="LEFT">0</TD>
+<TD ALIGN="LEFT">1</TD>
+</TR>
+<TR><TD ALIGN="CENTER">B</TD>
+<TD ALIGN="LEFT">10</TD>
+<TD ALIGN="LEFT">00</TD>
+</TR>
+<TR><TD ALIGN="CENTER">C</TD>
+<TD ALIGN="LEFT">110</TD>
+<TD ALIGN="LEFT">011</TD>
+</TR>
+<TR><TD ALIGN="CENTER">D</TD>
+<TD ALIGN="LEFT">111</TD>
+<TD ALIGN="LEFT">010</TD>
+</TR>
+</TABLE>
+</DIV>
+<BR>
+
+<P>
+Merk op dat we ervoor zorgen dat `terugvertalen' eenvoudig is, door de codewoorden zo te kiezen dat langere codewoorden nooit beginnen met een bitrij die ook een korter codewoord is. Dergelijke codes worden <I>prefix</I>-codes genoemd.
+Prefix-codes kunnen handig worden weergegeven in een binaire boom, waarin iedere interne knoop overeenkomt met de keuze tussen 0 en 1, en de bladen van de boom overeenkomen met een gecodeerd symbool:
+
+<P>
+<DIV ALIGN="CENTER">
+<IMG WIDTH=328 HEIGHT=229 SRC="binair1.png" ALT="binair1.eps">
+</DIV>
+<BR>
+
+<P>
+Bovenstaande twee prefix-codes zijn <I>equivalent</I> in de zin dat ze, ongeacht het te comprimeren bestand, altijd dezelfde graad van compressie zullen opleveren. Er bestaan echter ook niet-equivalente prefix-codes, die andere compressie-eigenschappen hebben, bijvoorbeeld:
+
+<P>
+<DIV ALIGN="CENTER">
+<IMG WIDTH=399 HEIGHT=229 SRC="binair2.png" ALT="binair2.eps">
+</DIV>
+<BR>
+
+<P>
+De boom voor code&nbsp;2 lijkt weliswaar op die voor code&nbsp;1a, maar er zijn symbolen verwisseld waardoor de compressie-eigenschappen van de code heel anders zijn. Van code&nbsp;3 is meteen duidelijk dat het een heel andere code is.
+
+<P>
+Een handige manier om alle niet-equivalente prefix-codes te onderscheiden is door een lijst te maken waarin voor ieder symbool is gegeven door hoeveel bits het gerepresenteerd wordt. Voor vier symbolen blijken er dan 13 verschillende niet-equivalente prefix-codes te bestaan:
+
+<P>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="CENTER">symbool</TD>
+<TD ALIGN="CENTER">bits per symbool</TD>
+</TR>
+<TR><TD ALIGN="CENTER">A</TD>
+<TD ALIGN="CENTER">1 1 1 2 3 3 2 3 3 2 3 3 2</TD>
+</TR>
+<TR><TD ALIGN="CENTER">B</TD>
+<TD ALIGN="CENTER">2 3 3 1 1 1 3 2 3 3 2 3 2</TD>
+</TR>
+<TR><TD ALIGN="CENTER">C</TD>
+<TD ALIGN="CENTER">3 2 3 3 2 3 1 1 1 3 3 2 2</TD>
+</TR>
+<TR><TD ALIGN="CENTER">D</TD>
+<TD ALIGN="CENTER">3 3 2 3 3 2 3 3 2 1 1 1 2</TD>
+</TR>
+</TABLE>
+</DIV>
+<BR>
+
+<BR>
+<H3>Probleem</H3>
+
+<P>
+Gegeven een aantal symbolen, hoeveel niet-equivalente prefix-codes zijn er dan mogelijk?
+
+<BR>
+<H3>Invoer</H3>
+
+<P>
+De eerste regel bevat een aantal runs <I>R</I>. Op de <I>R</I> volgende regels staat steeds een getal <I>S</I>, dat het aantal te coderen symbolen bevat (<!-- MATH
+ $2 \le S \le 100$
+ -->
+2 &le; <I>S</I> &le; 100).
+
+<BR>
+<H3>Uitvoer</H3>
+
+<P>
+<I>R</I> regels met het aantal mogelijke niet-equivalente prefix-codes. Gezien de grootte van de getallen dienen de aantallen te worden weergegeven als <code>2^x</code>, waarbij <code>x</code> een op drie cijfers achter de decimale punt afgerond getal is. Rond af op de gebruikelijke manier: omhoog als het volgende cijfer
+&ge; 5, anders omlaag.
+
+<BR>
+<H3>Voorbeeld</H3>
+
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="CENTER"><B>invoer</B></TD>
+<TD ALIGN="CENTER">bijbehorende <B>uitvoer</B></TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=340>
+<PRE>
+5
+2
+3
+4
+5
+100
+</PRE>
+<BR>
+</TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=340><PRE>
+2^0.000
+2^1.585
+2^3.700
+2^6.229
+2^548.176
+</PRE>
+<BR>
+</TD>
+</TR>
+</TABLE> 
+
+<BR>
+<HR>
+
+<H2><A NAME="opgf">F. Verkiezingen</A></H2>
+
+<P>
+Het koninkrijk der Verenigde Steden wordt bewoond door twee stammen: de Burgers en de Nomaden. De Burgers wonen in de steden. De Nomaden daarentegen hebben geen vaste woon- of verblijfplaats, zij trekken rond met hun vee.
+
+<P>
+Elke vijf jaar wordt in de Verenigde Steden een nieuwe koning gekozen. Deze verkiezing vindt in twee fasen plaats. In de eerste fase kiest elke stad zijn kiesmannen, in de tweede fase kiezen alle kiesmannen samen in een gezamelijke slotvergadering de nieuwe koning. 
+
+<P>
+In de eerste fase wordt in elke stad bepaald welke kiesmannen naar de slotvergadering gaan. De kiezers stemmen in deze fase echter niet op een kiesman, zoals men zou verwachten, maar op een van de konings-kandidaten. Indien &#233;&#233;n van de konings-kandidaten in een stad de meerderheid van de stemmen heeft, dan zullen alle kiesmannen van deze stad in de slotvergadering voor deze kandidaat kiezen (als er totaal <I>s</I> stemmen worden uitgebracht, dan is <I>m</I> een meerderheid als <!-- MATH
+ $2 \times m > s$
+ -->
+2&#215;<I>m</I> &gt; <I>s</I>). Als geen van de kandidaten de meerderheid heeft in een stad, dan gaan er geen kiesmannen van deze stad naar de slotvergadering. Vroeger gebeurde dat nog wel eens, als er meer dan twee kandidaten waren. Tegenwoordig zijn er eigenlijk altijd maar twee kandidaten: de kandidaat van de Burgers, en de kandidaat van de Nomaden. Nochtans kunnen de stemmen staken, zodat er geen kiesmannen naar de slotvergadering gaan.
+
+<P>
+Het aantal kiesmannen dat een stad mag afvaardigen naar de slotvergadering (de tweede fase) hangt af van het totaal aantal uitgebrachte stemmen in de stad: voor elke volle duizend uitgebrachte stemmen mag de stad &#233;&#233;n kiesman afvaardigen. (Sommige mensen gaan om die reden niet stemmen. Als je weet dat jouw kandidaat toch niet gaat winnen, draagt jouw stem alleen maar bij aan het aantal kiesmannen voor de andere kandidaat.) 
+<P>
+In de tweede fase, de slotvergadering, wordt de koning gekozen door de gezamenlijke kiesmannen. Een koning is gekozen als hij of zij de meerderheid van de stemmen heeft in de slotvergadering. Er zijn regels die voorschrijven wat te doen als geen van de kandidaten een meerderheid krijgt, maar die doen voor deze opgave niet terzake. 
+<P>
+Hoewel er veel meer Nomaden dan Burgers in de Verenigde Steden wonen, werd in het verleden meestal de kandidaat van de Burgers gekozen. De Nomaden moesten naar de steden gaan om te stemmen, maar menig Nomade had niet eens in de gaten dat er verkiezingen waren. Tegenwoordig hebben de meeste Nomaden mobiele telefoons. Het verkiezingsteam van de Nomaden maakt daar dankbaar gebruik van, en dirigeert zoveel Nomaden naar de steden als nodig is om de verkiezingen te winnen. Van elke stad is bekend hoeveel Burgers er wonen, en we mogen er van uitgaan dat die voor hun Burger kandidaat stemmen. 
+
+<BR>
+<H3>Probleem</H3>
+
+<P>
+Neem aan dat de Nomaden zo slim mogelijk naar de steden worden gedirigeerd. Wat is het minimum aantal Nomaden dat moet gaan stemmen? De bedoeling is natuurlijk dat de kandidaat van de Nomaden wint.
+
+<BR>
+<H3>Invoer</H3>
+
+<P>
+De eerste regel van de invoerfile bevat een positief getal: het aantal testgevallen. De eerste regel van elk testgeval bevat het aantal steden <I>n</I> (<!-- MATH
+ $0 < n < 20$
+ -->
+0 &lt; <I>n</I> &lt; 20). De volgende <I>n</I> regels bevatten ieder &#233;&#233;n getal: het aantal (Burger-)bewoners van de stad. Dit aantal is altijd positief. Een stad heeft nooit meer dan 100000 inwoners.
+
+<BR>
+<H3>Uitvoer</H3>
+
+<P>
+De uitvoer bevat, voor elk testgeval in de invoerfile, op een aparte regel, het minimale aantal Nomaden dat moet gaan stemmen om te zorgen dat de kandidaat van de Nomaden wint.
+
+<BR>
+<H3>Voorbeeld</H3>
+
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="CENTER"><B>invoer</B></TD>
+<TD ALIGN="CENTER">bijbehorende <B>uitvoer</B></TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=340>
+<PRE>
+2
+3
+400
+800
+1200
+3
+999
+1000
+1001
+</PRE>
+<BR>
+</TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=340>
+<PRE>
+1200
+1001
+</PRE>
+<BR>
+</TD>
+</TR>
+</TABLE> 
+
+<BR>
+<HR>
+
+<H2><A NAME="opgg">G. De Fusiegolf</A></H2>
+
+<P>
+De immer alerte Argus van de Nieuwe Rommeldamsche Courant wil in een
+alarmerend artikel het ragfijn spel van het <SMALL>GROOTKAPITAAL</SMALL> in
+de om zich heen grijpende fusiegolf aan de kaak stellen.
+Hij beschikt over een lijst van de omzetten van de companies in
+miljoenen dollars (sorry boys, ze kumpeni lengwidz is inglisch),
+en een chronologische lijst van fusies van telkens twee companies
+die samen gaan onder de naam van de oudste.
+
+<P>
+Argus vreest niet ten onrechte dat zijn lezertjes het betoog niet
+zullen kunnen volgen zonder een schematisch diagram van het verloop
+van de fusies.
+Kruisende lijnen zouden het diagram onleesbaar maken,
+daarom wil hij de companies zo ordenen dat steeds twee buren fuseren,
+en bovendien wil hij - om zijn punt te maken - de grootste company
+steeds voorop hebben.
+Op de journalistenschool heeft hij zo iets nooit geleerd.
+Help hem!
+
+<P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ $\epsfig{file=fusie.eps}$
+ -->
+<IMG
+ WIDTH="399" HEIGHT="183" ALIGN="BOTTOM" BORDER="0"
+ SRC="img8.png"
+ ALT="fusie.eps">
+</DIV>
+
+<BR>
+<H3>Probleem</H3>
+
+<P>
+Gegeven zijn een aantal companies, genummerd van 1 tot en met <I>NC</I>,
+waarbij de laagste nummers corresponderen met de oudste bedrijven,
+de omzetten van de bedrijven en een chronologische
+lijst van fusies.
+Bepaal de volgorde waarin Argus de bedrijven moet ordenen
+om een diagram te krijgen dat aan bovenstaande eisen voldoet.
+
+<BR>
+<H3>Invoer</H3>
+
+<P>
+De input bestaan uit <I>N</I> gevallen.
+De eerste regel van de input bevat alleen het positieve getal <I>N</I>.
+Daarna volgen de afzonderlijke gevallen.
+De eerste regel van een geval bevat een geheel getal <I>NC</I>:
+het aantal companies (<!-- MATH
+ $1 \le NC \le 4000$
+ -->
+1 &le; 4000).
+Hierna volgen <I>NC</I> regels met de omzetten van de companies (<!-- MATH
+ $0 \le \mbox{omzet} \le 10\,000$
+ -->
+0 &le; omzet &le; 10&nbsp;000).
+Vervolgens <I>NC</I> - 1 regels met telkens 2 getallen gescheiden door een spatie: de fusiepartners
+van een fusie.
+
+<P>
+De invoer is zodanig dat de gevraagde volgorde eenduidig bepaald is.
+
+<BR>
+<H3>Uitvoer</H3>
+
+<P>
+Voor ieder van de gevallen een enkele regel met daarop een
+opsomming van de nummers van de companies in de gevraagde volgorde.
+Nummers van companies dienen te worden gescheiden door een spatie.
+
+<BR>
+<H3>Voorbeeld</H3>
+
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="CENTER"><B>invoer</B></TD>
+<TD ALIGN="CENTER">bijbehorende <B>uitvoer</B></TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=340>
+<PRE>
+1
+5
+100
+110
+90
+40
+80
+2 4
+3 5
+1 3
+1 2
+</PRE>
+<BR>
+</TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=340>
+<PRE>
+3 5 1 2 4
+</PRE>
+<BR>
+</TD>
+</TR>
+</TABLE> 
+
+<BR>
+<HR>
+
+<H2><A NAME="opgh">H. De stranden van Polygonesi&#235;</A></H2>
+  
+<P>
+Zoals bekend is <EM>Polygonesi&#235;</EM> een eilandengroep in de Verre Oceaan.
+Elk eiland heeft de vorm van een polygon (veelhoek);
+dat wil zeggen: de kust wordt gevormd door een vezameling aaneengesloten
+rechte lijnen.
+
+<P>
+De Polygonesische eilanden zijn nogal klein en liggen vrij dicht bij elkaar.
+Als je met een bootje in de buurt van de eilanden op zee vaart, kun je
+ze allemaal zien liggen. Dat wil zeggen, voor zover ze niet achter
+andere eilanden verscholen liggen.
+
+<P>
+De Kleine Kapitein maakt een lange reis met zijn roeiboot.
+Onderweg vaart hij toevallig door Polygonesi&#235;.
+Wanneer hij om zich heen naar de horizon kijkt, ziet hij in sommige
+richtingen uitsluitend water en lucht.
+In andere richtingen kan hij echter in de verte een strand van een
+Polygonesisch eiland zien liggen.
+
+<P>
+De kapitein vraagt zich af welk deel van de horizon in beslag wordt
+genomen door eilandkust, en welk deel slechts uitzicht biedt op
+het water van de zee.
+Misschien kan hij met behulp van de boordcomputer van de roeiboot
+een antwoord vinden op dit belangrijke vraagstuk.
+
+<P>
+<DIV ALIGN="CENTER">
+<!-- MATH
+ $\epsfig{file=polygon.eps}$
+ -->
+<IMG
+ WIDTH="669" HEIGHT="256" ALIGN="BOTTOM" BORDER="0"
+ SRC="img9.png"
+ ALT="polygon.eps">
+</DIV>
+
+<BR>
+<H3>Probleem</H3>
+
+<P>
+Verplaats je in de situatie van de kapitein. Schrijf een programma
+dat voor een gegeven positie van de roeiboot, berekent welke fractie
+van de horizon door de eilanden wordt bezet.
+
+<BR>
+<H3>Invoer</H3>
+
+<P>
+De invoer beschrijft een aantal afzonderlijke situaties.
+Op de eerste regel staat het aantal situaties in de vorm van
+een positief geheel getal.
+Dan volgt voor elke situatie:
+<UL>
+<LI>Een regel met het aantal eilanden (<!-- MATH
+ $1 \le n \le 20$
+ -->
+1 &le; <I>n</I> &le; 20).
+<LI>Vervolgens <I>n</I> regels met op elke regel de beschrijving van een eiland.
+      Een eiland wordt beschreven door een opsomming van gehele getallen,
+      van elkaar gescheiden door spaties.
+      Het eerste getal is het aantal hoekpunten <I>p</I> van het eiland
+      (<!-- MATH
+ $3 \le p \le 20$
+ -->
+3 &le; <I>p</I> &le; 20).
+      Daarachter komen nog <I>p</I> maal twee getallen: de <I>x</I>- en
+      <I>y</I>-co&#246;rdinaten van de hoekpunten in meters (<!-- MATH
+ $0 \le x,\, y \le 1000$
+ -->
+0 &le; <I>x</I>,&nbsp;<I>y</I> &le; 1000).
+      Tussen twee opeenvolgende hoekpunten <B>en ook</B> tussen het laatste
+      en het eerste hoekpunt van een eiland, loopt de eilandkust in een
+      rechte lijn.
+<LI>Tot slot een regel met twee gehele getallen, gescheiden door
+      een spatie: de <I>x</I>- en <I>y</I>-co&#246;rdinaten van de roeiboot
+      (<!-- MATH
+ $0 \le x, y \le 1000$
+ -->
+0 &le; <I>x</I>, <I>y</I> &le; 1000).
+      De boot ligt vrij in het water, los van alle eilanden.
+</UL>
+
+<P>
+<B>Opmerking:</B>
+Elk eiland vormt een aaneengesloten gebied.
+Alle eilanden liggen los van elkaar.
+
+<BR>
+<H3>Uitvoer</H3>
+
+<P>
+Voor elke situatie geef je &#233;&#233;n regel, met daarop het deel van
+de horizon waar eilandkust te zien is, in de vorm van
+een getal <I>k</I> (<!-- MATH
+ $0 \le k \le 1$
+ -->
+0 &le; <I>k</I> &le; 1).
+Schrijf het antwoord altijd met precies 1 cijfer voor de
+decimale <B>punt</B> en precies 4 cijfers er achter.
+Rond af op de gebruikelijke manier: omhoog als volgende cijfer
+&ge; 5,
+anders omlaag.
+
+<BR>
+<H3>Voorbeeld</H3>
+
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="CENTER"><B>invoer</B></TD>
+<TD ALIGN="CENTER">bijbehorende <B>uitvoer</B></TD>
+</TR>
+<TR><TD ALIGN="LEFT" VALIGN="TOP" WIDTH=340>
+<PRE>
+2
+1
+3 0 0 0 1 1 0
+1 1
+2
+4 0 0 0 3 1 1 3 0
+3 2 1 4 1 4 2
+2 2
+</PRE>
+</TD>
+<TD ALIGN="LEFT" VALIGN="TOP" WIDTH=340>
+<PRE>
+0.2500
+0.5738
+</PRE>
+<BR>
+</TD>
+</TR>
+</TABLE> 
+
+<BR>
+
+<!--
+<H1><A NAME="SECTION000340000000000000000">
+Over dit dokument ...</A>
+</H1>
+ <P>
+This document was generated using the
+<A HREF="http://www-texdev.mpce.mq.edu.au/l2h/docs/manual/"><STRONG>LaTeX</STRONG>2<tt>HTML</tt></A> translator Version 2K.1beta (1.48)
+<P>
+Copyright &#169; 1993, 1994, 1995, 1996,
+<A HREF="http://cbl.leeds.ac.uk/nikos/personal.html">Nikos Drakos</A>, 
+Computer Based Learning Unit, University of Leeds.
+<BR>
+Copyright &#169; 1997, 1998, 1999,
+<A HREF="http://www.maths.mq.edu.au/~ross/">Ross Moore</A>, 
+Mathematics Department, Macquarie University, Sydney.
+<P>
+The command line arguments were: <BR>
+ <STRONG>latex2html</STRONG> <TT>-t 'Opgaven NKP 2001' -dir html -html_version 3.2,math -no_navigation -split 0 nkp2001.tex</TT>
+<P>
+The translation was initiated by Joris van Rantwijk on 2001-10-08
+-->
+
+<BR><HR>
+<ADDRESS>
+Nederlands Kampioenschap Programmeren 2001 <BR>
+6 oktober 2001 -- TU Delft <BR>
+<A HREF="mailto:chipcie@ch.its.tudelft.nl">chipcie@ch.its.tudelft.nl</A>
+</ADDRESS>
+
+</BODY>
+</HTML>

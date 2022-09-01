@@ -1,0 +1,159 @@
+<HTML>
+<TITLE>DKP99 Opgave G - Feest 2000</TITLE>
+
+<P>
+
+<DIV ALIGN="CENTER">
+<FONT SIZE="+4"><B>G</B></FONT> &nbsp;&nbsp;
+<FONT SIZE="+3"><B>Feest 2000</B></FONT>
+
+</DIV>
+
+<P>
+
+<P><P>
+<BR>
+
+<P>
+<FONT SIZE="+2"><B>Beschrijving</B></FONT>
+
+<P>
+Er wordt een grandioos feest georganiseerd om Nieuwjaar 2000 te
+vieren.  Uiteraard wil iedereen handen schudden met iedere andere
+gast.  Om dit soepel en efficient te laten verlopen vindt het
+handenschudden in een aantal rondes plaats.
+
+<BR>
+
+<P>
+<FONT SIZE="+2"><B>Probleem</B></FONT>
+
+<P>
+Schrijf een programma dat een schema opstelt waarin staat wie in elke ronde
+met wie handen schudt, zodanig dat het aantal rondes minimaal is.
+
+<P>
+Verder moet het schema aan de volgende eisen voldoen:
+
+<UL><LI>In elke ronde kan iedere gast van maximaal &#233;&#233;n andere gast
+de hand schudden.
+
+<LI>Na afloop van de laatste ronde moet iedere gast van iedere andere gast
+precies &#233;&#233;nmaal de hand geschud hebben.
+
+</UL>
+
+<P>
+In het algemeen zijn er meerdere correcte schema's mogelijk. Het maakt dan
+niet uit welk schema je geeft, zolang het maar aan bovenstaande eisen voldoet.
+
+<BR>
+
+<P>
+<FONT SIZE="+2"><B>Invoer</B></FONT> <B>(lezen uit: <TT>feest.in</TT>)</B>
+
+<P>
+De eerste regel bevat een getal <MATH CLASS="INLINE">
+r
+</MATH>, het aantal testgevallen.
+Op de volgende <MATH CLASS="INLINE">
+r
+</MATH> regels staat telkens een getal <MATH CLASS="INLINE">
+n
+</MATH> (
+<!-- MATH
+ $1 \le n \le 100$
+ -->
+<MATH CLASS="INLINE">
+1  &lt;= n  &lt;= 100
+</MATH>),
+het aantal gasten bij dat testgeval.
+De gasten zijn genummerd van 
+<!-- MATH
+ $0 \ldots n-1$
+ -->
+<MATH CLASS="INLINE">
+0 ... n-1
+</MATH>.
+
+<BR>
+
+<P>
+<FONT SIZE="+2"><B>Uitvoer</B></FONT> <B>(schrijven naar standard-output)</B>
+
+<P>
+Per testgeval bevat de uitvoer als eerste een regel met daarop een
+getal <MATH CLASS="INLINE">
+k
+</MATH> (<MATH CLASS="INLINE">
+0  &lt;= k
+</MATH>), het aantal rondes voor het schema van dat testgeval.
+Daarna volgen <MATH CLASS="INLINE">
+k
+</MATH> regels met op iedere regel een aantal paren
+<MATH CLASS="INLINE">
+a<SUB>2i</SUB>
+</MATH><TT>-</TT><MATH CLASS="INLINE">
+a<SUB>2i+1</SUB>
+</MATH>, met 
+<!-- MATH
+ $0 \le a_i < n$
+ -->
+<MATH CLASS="INLINE">
+0  &lt;= a<SUB>i</SUB> &lt; n
+</MATH> en alle <MATH CLASS="INLINE">
+a<SUB>i</SUB>
+</MATH> verschillend; dit
+zijn de gasten die elkaar de handen schudden in die ronde.
+Tussen de nummers van gasten die elkaar de hand schudden staat alleen
+een '<TT>-</TT>'.
+De verschillende gast-paren zijn van elkaar gescheiden door telkens
+&#233;&#233;n spatie.
+
+<BR>
+
+<P>
+
+<P>
+<FONT SIZE="+2"><B>Voorbeeld</B></FONT>
+
+<P>
+<B>Invoer</B>
+
+<P>
+<TT>2	
+<BR>
+3	
+<BR>
+6	
+<BR>
+</TT>
+
+<P>
+<B>Uitvoer</B>
+
+<P>
+<TT>3		
+<BR>
+0-1		
+<BR>
+1-2		
+<BR>
+0-2		
+<BR>
+5		
+<BR>
+0-1 2-3 4-5	
+<BR>
+1-2 3-4 5-0	
+<BR>
+0-3 1-5 2-4	
+<BR>
+1-4 0-2 3-5	
+<BR>
+2-5 1-3 0-4	
+<BR>
+</TT>
+
+<P>
+</HTML>

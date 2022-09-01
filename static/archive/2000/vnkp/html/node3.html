@@ -1,0 +1,142 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Bits &amp; Bussen</TITLE>
+<META NAME="description" CONTENT="Bits &amp; Bussen">
+<META NAME="keywords" CONTENT="opgaven">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta6">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="opgaven.css">
+
+</HEAD>
+
+<BODY >
+
+<H1><A NAME="SECTION00300000000000000000">
+Bits &amp; Bussen</A>
+</H1>
+Er staat een aantal bits aan het begin van een databus. Deze bits
+moeten met z'n allen binnen zo kort mogelijke tijd aan de andere kant
+van de bus staan. Helaas leven we nog in het stenen tijdperk en kunnen
+er maximaal twee bits tegelijk door de bus. Tot overmaat van ramp zijn
+ze niet eens gestandaardiseerd en reizen ze niet allemaal even snel
+door de bus.
+
+<P>
+De bits zijn nog niet volledig ge&#235;volueerd en kunnen niet zonder
+meer de weg door de bus heen vinden, maar gelukkig is er een kaart
+beschikbaar van de route die de bits door de bus moeten afleggen. Deze
+kaart wordt door &#233;&#233;n bit meegenomen, maar als twee bits samen
+reizen kunnen ze beiden op de kaart kijken. Ze reizen dan samen net zo
+snel als het langzaamste bitje.
+
+<P>
+De kaart bevindt zich initi&#235;el aan het begin van de bus bij de
+bits. Als de kaart naar de andere kant getransporteerd is, moet hij
+natuurlijk ook weer terug. Voor het terugbrengen van de kaart is een
+dunnere bus beschikbaar, waar maar &#233;&#233;n bit doorheen kan (dat dan
+natuurlijk wel al aan die kant van de bus moet staan). Reizen door
+deze bus gaat even snel als reizen door de andere bus.
+
+<P>
+
+<P>
+Schrijf nu een programma dat, gegeven een aantal bits met hun
+snelheden, de minimale tijd die nodig is om alle bits door de bus te
+transporteren, uitrekent.
+
+<P>
+
+<P>
+
+ <UL>
+<LI>&#233;&#233;n regel met daarop een enkele positieve integer: het aantal runs;
+</LI>
+<LI>per run twee regels:
+    <DL>
+<DD></DD>
+<DT><STRONG>regel 1</STRONG></DT>
+<DD>&#233;&#233;n integer <IMG
+ WIDTH="13" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$n$"> (<!-- MATH
+ $0 \leq n \leq 100$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img4.png"
+ ALT="$0 \leq n \leq 100$">) die het
+        aantal bits representeert dat door de bus moet;
+      
+</DD>
+<DT><STRONG>regel 2</STRONG></DT>
+<DD><IMG
+ WIDTH="13" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$n$"> integers die de tijden <!-- MATH
+ $(0 \leq t \leq 1000)$
+ -->
+<IMG
+ WIDTH="109" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$(0 \leq t \leq 1000)$">
+        representeren die de bits nodig hebben om door de bus heen te komen.
+    
+</DD>
+</DL>
+</LI>
+</UL>
+
+<P>
+
+<P>
+Per run &#233;&#233;n regel met daarop een integer: de minimale tijd die
+nodig is om alle bits door de bus te transporteren.
+
+<P>
+
+<P>
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="CENTER"><B>invoer</B></TH>
+<TD ALIGN="CENTER">bijbehorende <B>uitvoer</B></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><TABLE  WIDTH="331">
+<TR><TD>
+<PRE>
+2
+4
+4 5 6 7
+2
+1000 1
+</PRE>
+<BR>
+</TD></TR>
+</TABLE></TD>
+<TD ALIGN="CENTER"><TABLE  WIDTH="331">
+<TR><TD>
+<PRE>
+26
+1000
+</PRE></TD></TR>
+</TABLE></TD>
+</TR>
+</TABLE>
+
+<P>
+<BR><HR>
+<ADDRESS>
+DKP 2000
+</ADDRESS>
+</BODY>
+</HTML>

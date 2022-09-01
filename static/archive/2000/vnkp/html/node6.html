@@ -1,0 +1,169 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Landjes veroveren I</TITLE>
+<META NAME="description" CONTENT="Landjes veroveren I">
+<META NAME="keywords" CONTENT="opgaven">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta6">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="opgaven.css">
+
+</HEAD>
+
+<BODY >
+
+<H1><A NAME="SECTION00500000000000000000">
+Landjes veroveren I</A>
+</H1>
+Twee legers -het &#233;&#233;n rood, het andere blauw- staan verspreid
+over een slagveld: een rechthoekig, regelmatig rooster van landjes. In
+een aantal landjes staat een regiment, bestaande uit een aantal
+soldaten, van &#233;&#233;n van de twee legers. Het rode leger wil de
+thuisbasis van het blauwe leger dat zich in de rechteronderhoek
+bevindt, veroveren. Het blauwe leger is wat vredelievender en
+verdedigt alleen maar.
+
+<P>
+Er gaat een veldslag uitgevochten worden die verdeeld is in
+tijdseenheden. Elke tijdseenheid beweegt elk rood regiment dat zich
+niet aan de ondergrens van het slagveld bevindt een land naar
+beneden. Elk rood regiment dat zich aan de ondergrens bevindt,
+beweegt een land naar rechts.
+
+<P>
+Als een rood regiment een land binnengaat waar een blauw regiment
+staat, dan wordt er slag geleverd waarbij er (simultaan) verliezen
+geleden worden in de verhouding 1:1, dat wil zeggen: zolang er nog aan
+beide kanten soldaten over zijn, leggen &#233;&#233;n rode soldaat en
+&#233;&#233;n blauwe soldaat gelijktijdig het loodje.
+Als er na afloop van de schermutseling nog soldaten van het rode
+regiment over zijn, dan heeft het rode regiment gewonnen en neemt het
+het land in. In alle andere gevallen blijft het blauwe regiment staan.
+
+<P>
+Het is mogelijk dat een blauw regiment door twee rode regimenten
+aangevallen wordt: &#233;&#233;n van boven en &#233;&#233;n van links. Als dat zo
+is, dan worden de overblijfselen van de twee rode regimenten in geval
+van winst, samengevoegd.
+
+<P>
+De thuisbasis van het blauwe leger is veroverd zodra er minstens
+&#233;&#233;n rode soldaat in die thuisbasis staat.
+
+<P>
+
+<P>
+Schrijf een programma dat bepaalt &#243;f het rode leger de thuisbasis
+van het blauwe leger verovert en zo ja, hoe lang dat duurt.
+
+<P>
+
+<P>
+
+<P>
+De eerste regel van de invoer bevat een enkele positieve integer: het
+aantal runs. Voor elke run volgt dan:
+
+ <UL>
+<LI>een regel met twee gehele getallen: respectievelijk de hoogte
+    <IMG
+ WIDTH="13" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$h$"> (<!-- MATH
+ $2 \leq h \leq 100$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img13.png"
+ ALT="$2 \leq h \leq 100$">) en de breedte <IMG
+ WIDTH="13" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$b$"> (<!-- MATH
+ $2 \leq b \leq 100$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img15.png"
+ ALT="$2 \leq b \leq 100$">)
+    van het slagveld;
+</LI>
+<LI><IMG
+ WIDTH="13" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$h$"> regels met <IMG
+ WIDTH="13" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img14.png"
+ ALT="$b$"> gehele getallen: de regimentgroottes. Een
+    positief getal duidt de aanwezigheid van een rood regiment aan, en
+    een negatief een blauw regiment waarbij de grootte van het
+    regiment de absolute waarde van het gehele getal is. Het getal 0
+    representeert een leeg land.
+</LI>
+</UL>
+
+<P>
+Getallen op een regel worden gescheiden door een spatie.
+
+<P>
+
+<P>
+Voor elke run bestaat de uitvoer uit een enkele regel met daarop
+
+ <UL>
+<LI>het woord `verslagen' als het rode leger de thuisbasis van
+    blauw niet heeft veroverd, <B>&#243;f</B>:
+</LI>
+<LI>het aantal tijdseenheden dat verloopt voordat het rode leger
+    de thuisbasis van blauw verovert.
+</LI>
+</UL>
+
+<P>
+
+<P>
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="CENTER"><B>invoer</B></TH>
+<TD ALIGN="CENTER">bijbehorende <B>uitvoer</B></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><TABLE  WIDTH="331">
+<TR><TD>
+<PRE>
+2
+2 2
+10 0
+0 -9
+2 2
+10 0
+0 -11
+</PRE>
+<BR>
+</TD></TR>
+</TABLE></TD>
+<TD ALIGN="CENTER"><TABLE  WIDTH="331">
+<TR><TD>
+<PRE>
+2
+verslagen
+</PRE></TD></TR>
+</TABLE></TD>
+</TR>
+</TABLE>
+
+<P>
+<BR><HR>
+<ADDRESS>
+DKP 2000
+</ADDRESS>
+</BODY>
+</HTML>

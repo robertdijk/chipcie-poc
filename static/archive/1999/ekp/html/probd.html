@@ -1,0 +1,119 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Problem D</title>
+</head>
+
+<body bgcolor="#D6D6D6" text="#637BBD">
+<P ALIGN="CENTER">Problem D</P>
+</FONT><FONT SIZE=2><P ALIGN="CENTER">  </FONT><FONT FACE="Arial" SIZE=5>Dungeon of Doom</P>
+<P ALIGN="CENTER">Input: d.in</P>
+</FONT><FONT SIZE=2>
+<P>The Dungeon of Doom is a game, which is loosely based on the legend of the Minotaur. This legend describes how, in the ancient city of Thebe, there was once a great maze, and in this maze lived a big monster: the Minotaur. Every year maids were sacrificed to the Minotaur: they were led to some point in the maze and released there, and had to find their way back out of the maze. Most of the time the Minotaur would find the poor girls before they found the exit, and the girl was never seen outside of the maze again.</P>
+
+<P>In this problem you’re a given a maze with not just one Minotaur, but possibly many more than one Monster, and you have to find a way out of the maze from a given starting point. But, you have a number of advantages over the people in the legend:</P>
+
+
+<UL>
+<LI>You know the layout of the maze, as it will be given to you as input;</LI>
+<LI>You know where the exit is located (it’s also marked in the input);</LI>
+<LI>At every turn you have 5 choices: stand still, take one step north, take one step west, take one step south or take on step east. Of course, you can only take a step if there is nothing blocking you in that direction, i.e. there is no wall or monster directly adjacent to you in the direction in which you want to move.</LI>
+<LI>You alternate your moves with the moves of all the Monsters (they all move at the same time), and you get to begin with the first move;</LI>
+<LI>Although there are many more Monsters, they are all of the exact same type, which is the ‘not very bright’-type. Each Monster has a fixed set of rules that completely describes how it thinks and reacts, based on its position in the maze and the direction it is facing. It is actually pretty simple, for each move a Monster does only the following:</LI></UL>
+
+<OL>
+
+<LI>If the Monster sees you, it goes into an absolute feeding frenzy, and runs towards you. If this ever happens you are utterly lost and will die. However, the Monster only sees you if you are standing in its exact line of sight in the direction it is looking: any deviation of the direct line of sight will take you out of harms way. Also, the Monster can not see you if you are standing behind another Monster, or behind a wall.</LI>
+<LI>If the Monster does not see you, it will try to take a step in the direction it is facing. However, if it sees another Monster in the direction it is looking in, it will not move in that direction, and neither will it do so if there is a wall directly in front of it. If neither of these two conditions is met, the Monsters takes one step forward and its move ends. If it does not take a step, the Monster always turns 90 degrees clock-wise (to the right), and its move then also ends.</LI></OL>
+<DIR>
+
+<P>All the Monsters take their move in parallel: they all first look, and then decide what to do. This means that the decision of what a monster does is only based on the start position of the other Monsters at the beginning of the move, and more than one Monster can end up in the same position at the end of a turn!</P>
+</DIR>
+
+<P>Note that from these rules it follows that you are much more agile than your opponents, since you can turn while running (e.g. when facing north, you can immediately take a step east or even south). A Monster will always lose a move when it turns to face another direction.</P>
+
+<P>You are to determine the shortest time it will take for the player to reach the exit from a given start position of the player and start positions of all the Monsters in the maze. Stepping onto the exit is enough to win the game (but this final step also counts as a step). So, if you start next to the exit, you will always win in 1 step, since you get to make the first move.</P>
+
+<P>&nbsp;</P>
+</FONT><FONT FACE="Arial" SIZE=2><P>&nbsp;</P>
+</FONT><FONT FACE="Arial" SIZE=4><P>Input</P>
+</FONT><FONT SIZE=2><P>The first line of the input contains the number of runs <I>R</I> (1 &#8804; <I>R </I>&#8804; 50). For each run there is one line with 2 integers <I>h</I>  </P>
+<P>(3 <FONT FACE="Symbol">&#163;</FONT>
+ <I>h <FONT FACE="Symbol">&#163;</FONT>
+</I>25) and <I>w</I>  (4 <FONT FACE="Symbol">&#163;</FONT>
+ <I>w <FONT FACE="Symbol">&#163;</FONT>
+</I>80), giving the height and width of the maze that follows. Then exactly <I>h</I> lines will follow, where each line will contain exactly <I>w</I> characters. Each of these characters can only be one of the following:</P>
+<DIR>
+<DIR>
+
+</FONT><FONT FACE="Courier New" SIZE=2><P>| + -</FONT><FONT SIZE=2>&#9;These are used to denote walls in the maze (there is no distinction between these walls, it just makes for a more pleasing maze to have different characters for the walls);</P></DIR>
+</DIR>
+
+</FONT><FONT FACE="Courier New" SIZE=2><P>@</FONT><FONT SIZE=2>&#9;This is used to denote your start position;</P>
+</FONT><FONT FACE="Courier New" SIZE=2><P>X</FONT><FONT SIZE=2>&#9;This is used to denote the exit;</P>
+</FONT><FONT FACE="Courier New" SIZE=2><P>M</FONT><FONT SIZE=2>&#9;This is used to denote a monster;</P>
+</FONT><FONT FACE="Courier New" SIZE=2><P>.</FONT><FONT SIZE=2>&#9;This is used to denote an open space in the maze.</P>
+
+<P>There will always be exactly one </FONT><FONT FACE="Courier New" SIZE=2>@</FONT><FONT SIZE=2> and exactly one </FONT><FONT FACE="Courier New" SIZE=2>X</FONT><FONT SIZE=2> in the maze. There will also be at least one </FONT><FONT FACE="Courier New" SIZE=2>M</FONT><FONT SIZE=2>, and no more than 100 </FONT><FONT FACE="Courier New" SIZE=2>M</FONT><FONT SIZE=2>’s in the input. All the monsters in the maze start facing east (that is to the right). </P>
+<P>The surrounding of the maze will always be completely walls (i.e. any character on the first and last line, and the first and last character of all the lines in between will be a wall type character). Note that ‘rooms’ (large open areas in the maze) may exist!</P>
+</FONT><FONT FACE="CG Times" SIZE=2>
+</FONT><FONT FACE="Arial" SIZE=4><P>Output</P>
+</FONT><FONT SIZE=2><P>For each test case, you must output a line containing the minimal number of steps it takes to reach the exit. If you cannot reach the exit, or cannot reach it within 10,000 steps, you must output the number 0. </P>
+</FONT>
+<TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=642>
+<TR><TD WIDTH="50%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=4><P>Sample Input</FONT></TD>
+<TD WIDTH="50%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=4><P>Output for the Sample Input</FONT></TD>
+</TR>
+<TR><TD WIDTH="50%" VALIGN="TOP">
+<FONT FACE="Courier New" SIZE=2><P>5</P>
+<P>10 10</P>
+<P>++-------+</P>
+<P>++.......|</P>
+<P>|........|</P>
+<P>|...+-+.M|</P>
+<P>|...|@|..|</P>
+<P>|...|.|..|</P>
+<P>|...+.|..|</P>
+<P>|-+...|..|</P>
+<P>|.....|X.|</P>
+<P>+--------+</P>
+<P>5 5</P>
+<P>+---+</P>
+<P>|..X|</P>
+<P>|M..|</P>
+<P>|@MM|</P>
+<P>+---+</P>
+<P>5 5</P>
+<P>+---+</P>
+<P>|.MX|</P>
+<P>|M..|</P>
+<P>|@MM|</P>
+<P>+---+</P>
+<P>5 5</P>
+<P>+---+</P>
+<P>|M.X|</P>
+<P>|M..|</P>
+<P>|@MM|</P>
+<P>+---+</P>
+<P>5 5</P>
+<P>+---+</P>
+<P>|M@X|</P>
+<P>|MMM|</P>
+<P>|MMM|</P>
+<P>+---+</FONT></TD>
+<TD WIDTH="50%" VALIGN="TOP">
+<FONT FACE="Courier New" SIZE=2><P>23</P>
+<P>5</P>
+<P>0</P>
+<P>12</P>
+<P>1</FONT></TD>
+</TR>
+</TABLE>
+
+
+
+</body>
+</html>

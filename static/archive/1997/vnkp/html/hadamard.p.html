@@ -1,0 +1,98 @@
+<html><body bgcolor="FFFFFF"><pre><b>program</b> Hadamard <b>(</b>input<b>,</b> output<b>)</b><b>;</b>
+
+<font color ="0000A0">{ (c) 01/10/'97
+  Pascal-uitwerking van de NKP'97-opgave "Hadamard"
+}</font>
+
+<b>const</b>
+   max <b>=</b> <font color ="A00000">1000</font><b>;</b>
+
+<b>type</b>
+   bucketsort <b>=</b> <b>array</b><b>[</b><font color ="A00000">0..</font>max<b>]</b> <b>of</b> integer<b>;</b>
+   Hmatrix <b>=</b> <b>record</b>
+         rijbucket<b>,</b> kolombucket <b>:</b> bucketsort<b>;</b>
+      <b>end</b><b>;</b>
+
+<b>var</b>
+   I<b>,</b> n<b>,</b> run <b>:</b> integer<b>;</b>  <font color ="0000A0">{ n(globaal) = dimensie van de H-matrices }</font>
+
+
+<b>procedure</b> leesHadamard <b>(</b><b>var</b> H <b>:</b> Hmatrix<b>)</b><b>;</b>
+
+<b>type</b>
+   tabel <b>=</b> <b>array</b><b>[</b><font color ="A00000">1..</font>max<b>]</b> <b>of</b> integer<b>;</b>
+
+<b>var</b>
+   rijeen<b>,</b> kolomeen <b>:</b> tabel<b>;</b>
+   i<b>,</b> j<b>,</b> getal<b>,</b> aantal <b>:</b> integer<b>;</b>
+
+<b>begin</b>
+   <b>with</b> H <b>do</b> <b>begin</b>
+      <font color ="0000A0">{ buckets legen }</font>
+      <b>for</b> i <b>:</b><b>=</b> <font color ="A00000">0</font> <b>to</b> n <b>do</b> <b>begin</b>
+         rijbucket<b>[</b>i<b>]</b> <b>:</b><b>=</b> <font color ="A00000">0</font><b>;</b>
+         kolombucket<b>[</b>i<b>]</b> <b>:</b><b>=</b> <font color ="A00000">0</font><b>;</b>
+      <b>end</b><b>;</b>
+      <font color ="0000A0">{ 1_i (H^t) initialiseren }</font>
+      <b>for</b> i <b>:</b><b>=</b> <font color ="A00000">1</font> <b>to</b> n <b>do</b> <b>begin</b>
+	 kolomeen<b>[</b>i<b>]</b> <b>:</b><b>=</b> <font color ="A00000">0</font><b>;</b>
+      <b>end</b><b>;</b>
+      <font color ="0000A0">{ matrix lezen en 1_i (H(t)), rij-bucket bijhouden }</font>
+      <b>for</b> i <b>:</b><b>=</b> <font color ="A00000">1</font> <b>to</b> n <b>do</b> <b>begin</b>
+         aantal <b>:</b><b>=</b> <font color ="A00000">0</font><b>;</b>
+         <b>for</b> j <b>:</b><b>=</b> <font color ="A00000">1</font> <b>to</b> n <b>do</b> <b>begin</b>
+	    read<b>(</b>getal<b>)</b><b>;</b>
+	    <b>if</b> getal<b>=</b><font color ="A00000">1</font> <b>then</b> <b>begin</b>
+	       aantal <b>:</b><b>=</b> aantal <b>+</b> <font color ="A00000">1</font><b>;</b>
+	       kolomeen<b>[</b>j<b>]</b> <b>:</b><b>=</b> kolomeen<b>[</b>j<b>]</b> <b>+</b> <font color ="A00000">1</font><b>;</b>
+	    <b>end</b><b>;</b>
+	 <b>end</b><b>;</b>
+	 readln<b>;</b>
+	 rijeen<b>[</b>j<b>]</b> <b>:</b><b>=</b> aantal<b>;</b>
+         rijbucket<b>[</b>aantal<b>]</b> <b>:</b><b>=</b> rijbucket<b>[</b>aantal<b>]</b><b>+</b><font color ="A00000">1</font><b>;</b>
+      <b>end</b><b>;</b>
+      <font color ="0000A0">{ kolom-bucket bepalen }</font>
+      <b>for</b> j <b>:</b><b>=</b> <font color ="A00000">1</font> <b>to</b> n <b>do</b> <b>begin</b>
+	 aantal <b>:</b><b>=</b> kolomeen<b>[</b>j<b>]</b><b>;</b>
+	 kolombucket<b>[</b>aantal<b>]</b> <b>:</b><b>=</b> kolombucket<b>[</b>aantal<b>]</b> <b>+</b> <font color ="A00000">1</font><b>;</b>
+      <b>end</b><b>;</b>
+   <b>end</b><b>;</b>
+<b>end</b><b>;</b> <font color ="0000A0">{ leesHadamard }</font>
+
+
+<b>procedure</b> instantie<b>;</b>
+<font color ="0000A0">{ werkt een probleem-instantie af }</font>
+
+<b>var</b>
+   t <b>:</b> integer<b>;</b>
+   H1<b>,</b> H2 <b>:</b> Hmatrix<b>;</b>
+   equivalent <b>:</b> boolean<b>;</b>
+
+<b>begin</b>
+   readln<b>(</b>n<b>)</b><b>;</b>
+   leesHadamard<b>(</b>H1<b>)</b><b>;</b>
+   readln<b>;</b>     <font color ="0000A0">{ lege regel weglezen }</font>
+   leesHadamard<b>(</b>H2<b>)</b><b>;</b>
+   <font color ="0000A0">{ buckets matchen }</font>
+   t <b>:</b><b>=</b> <font color ="A00000">0</font><b>;</b>
+   equivalent <b>:</b><b>=</b> true<b>;</b>
+   <b>while</b> equivalent <b>and</b> <b>(</b>t<b>&lt;</b><b>=</b>n<b>)</b> <b>do</b> <b>begin</b>
+      equivalent <b>:</b><b>=</b> <b>(</b><b>(</b>H1<b>.</b>rijbucket<b>[</b>t<b>]</b><b>=</b>H2<b>.</b>rijbucket<b>[</b>t<b>]</b><b>)</b> <b>and</b>
+                     <b>(</b>H1<b>.</b>kolombucket<b>[</b>t<b>]</b><b>=</b>H2<b>.</b>kolombucket<b>[</b>t<b>]</b><b>)</b><b>)</b><b>;</b>
+      t <b>:</b><b>=</b> t<b>+</b><font color ="A00000">1</font><b>;</b>
+   <b>end</b><b>;</b>
+   <font color ="0000A0">{ buckets gelijk ==> H1 ~ H2 }</font>
+   <b>if</b> equivalent <b>then</b> <b>begin</b>
+      writeln<b>(</b><font color ="00A000">'equivalent'</font><b>)</b><b>;</b>
+   <b>end</b> <b>else</b> <b>begin</b>
+      writeln<b>(</b><font color ="00A000">'niet equivalent'</font><b>)</b><b>;</b>
+   <b>end</b><b>;</b>
+<b>end</b><b>;</b> <font color ="0000A0">{ instantie }</font>
+
+
+<b>begin</b>
+   readln<b>(</b>I<b>)</b><b>;</b>
+   <b>for</b> run <b>:</b><b>=</b> <font color ="A00000">1</font> <b>to</b> I <b>do</b> <b>begin</b>
+      instantie<b>;</b>
+   <b>end</b><b>;</b>
+<b>end</b><b>.</b>

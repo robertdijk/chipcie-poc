@@ -1,0 +1,211 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Hardlopers = doodlopers?</TITLE>
+<META NAME="description" CONTENT="Hardlopers = doodlopers?">
+<META NAME="keywords" CONTENT="opgaven">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta6">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="opgaven.css">
+
+</HEAD>
+
+<BODY >
+
+<H1><A NAME="SECTION00700000000000000000">
+Hardlopers = doodlopers?</A>
+</H1>
+
+<P>
+Als studenten trainen we natuurlijk niet alleen onze hersenen, maar
+moeten we ook af en toe onze spieren los schudden. E&#233;n van de
+mogelijkheden om dit te doen is hardlopen; waarschijnlijk heeft
+iedereen wel eens van de Batavierenrace, de Lauwersloop of de Hart van
+Brabantloop gehoord.
+
+<P>
+Zo ook het team de <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="$\beta$">-runners. De <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="$\beta$">-runners zijn zo overtuigd van hun
+kunnen dat ze een weddenschap hebben afgesloten met de ``luie''
+studenten, die thuisgebleven zijn: ze zullen minimaal de <IMG
+ WIDTH="37" HEIGHT="34" ALIGN="MIDDLE" BORDER="0"
+ SRC="img19.png"
+ ALT="$50^{ste}$">
+plaats bezetten. Als ze lager eindigen (dus plaats <IMG
+ WIDTH="39" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img20.png"
+ ALT="$&gt;50$">) dan
+verliezen ze hun weddenschap en moeten er biertjes betaald worden aan
+de ``luie'' studenten. Daar staat natuurlijk tegenover dat als ze
+hoger (dus plaats <IMG
+ WIDTH="39" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img21.png"
+ ALT="$&lt;50$">) eindigen, ze dan juist biertjes
+ontvangen. Als ze precies de vijftigste plaats bezetten, dan verliezen
+en winnen ze niet en wordt er ook niks uitbetaald.
+
+<P>
+Het uitbetalen wordt gerelateerd aan het aantal km/uur dat het team
+<I>als geheel</I> gemiddeld sneller/langzamer heeft gelopen dan de
+vijftigste plaats. Per km/uur verschil zal een biertje worden gegeven
+danwel betaald moeten worden. Het aantal biertjes wordt altijd naar
+het dichtbijzijnste gehele getal afgerond. Een getal met fractioneel
+deel <IMG
+ WIDTH="14" HEIGHT="38" ALIGN="MIDDLE" BORDER="0"
+ SRC="img22.png"
+ ALT="$\frac{1}{2}$"> wordt hierbij naar boven afgerond.
+
+<P>
+
+<P>
+Schrijf een programma dat gegeven de afgesproken plaats en de behaalde
+plaats van het <IMG
+ WIDTH="14" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img18.png"
+ ALT="$\beta$">-runnersteam, uitrekent hoeveel biertjes het team
+krijgt danwel moet betalen. Verder wordt gegeven: het aantal etappes,
+het aantal participerende teams en de verschillende etappeafstanden.
+De tijden van de teams worden gegeven in minuten.
+
+<P>
+
+<P>
+
+ <UL>
+<LI>&#233;&#233;n regel met daarop een positieve integer: het aantal runs;
+</LI>
+<LI>per run
+    <DL>
+<DD></DD>
+<DT><STRONG>regel 1</STRONG></DT>
+<DD>&#233;&#233;n positieve integer <IMG
+ WIDTH="60" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img23.png"
+ ALT="$n \leq 100$">: het
+          totale aantal teams dat meedoet aan de estafetteloop;
+        
+</DD>
+<DT><STRONG>regel 2</STRONG></DT>
+<DD>twee positieve integers <IMG
+ WIDTH="48" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$\leq 100$">:
+          respectievelijk de afgesproken plaats en daadwerkelijk
+          behaalde plaats;
+        
+</DD>
+<DT><STRONG>regel 3</STRONG></DT>
+<DD>&#233;&#233;n positieve integer <IMG
+ WIDTH="64" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img24.png"
+ ALT="$m \leq 100$">: het
+          aantal etappes in de estafetteloop;
+        
+</DD>
+<DT><STRONG>regel 4</STRONG></DT>
+<DD><IMG
+ WIDTH="17" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$m$"> integers die de etappeafstanden voorstellen
+          in km;
+        
+</DD>
+<DT><STRONG><IMG
+ WIDTH="13" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img2.png"
+ ALT="$n$"> regels</STRONG></DT>
+<DD>met <IMG
+ WIDTH="17" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img1.png"
+ ALT="$m$"> integers met de etappeuitslagen van
+          de verschillende teams in minuten. Deze regels zijn
+          gerangschikt van snel naar langzaam.
+    
+</DD>
+</DL>
+</LI>
+</UL>
+
+<P>
+
+<P>
+Per run twee regels met daarop:
+<DL>
+<DD></DD>
+<DT><STRONG>regel 1</STRONG></DT>
+<DD>`betalen' (als het team de wedschap heeft
+  verloren), `ontvangen'  (als het team de weddenschap heeft
+  gewonnen) of `gelijk' (precies de gewedde plaats behaald);
+  
+</DD>
+<DT><STRONG>regel 2</STRONG></DT>
+<DD>het aantal biertjes dat wordt betaald/ontvangen.
+</DD>
+</DL>
+
+<P>
+
+<P>
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="CENTER"><B>invoer</B></TH>
+<TD ALIGN="CENTER">bijbehorende <B>uitvoer</B></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><TABLE  WIDTH="331">
+<TR><TD>
+<PRE>
+2
+6
+3 5
+2
+5 7
+10 10
+20 20
+30 30
+40 40
+50 50
+60 60
+2
+2 1
+1
+5
+30
+60
+</PRE>
+<BR>
+</TD></TR>
+</TABLE></TD>
+<TD ALIGN="CENTER"><TABLE  WIDTH="331">
+<TR><TD>
+<PRE>
+betalen
+5
+ontvangen
+5
+</PRE></TD></TR>
+</TABLE></TD>
+</TR>
+</TABLE>
+
+<P>
+<BR><HR>
+<ADDRESS>
+DKP 2000
+</ADDRESS>
+</BODY>
+</HTML>

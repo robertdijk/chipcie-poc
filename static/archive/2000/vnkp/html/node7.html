@@ -1,0 +1,217 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+
+<!--Converted with LaTeX2HTML 99.2beta6 (1.42)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Romeinse Letter Encodering</TITLE>
+<META NAME="description" CONTENT="Romeinse Letter Encodering">
+<META NAME="keywords" CONTENT="opgaven">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<META NAME="Generator" CONTENT="LaTeX2HTML v99.2beta6">
+<META HTTP-EQUIV="Content-Style-Type" CONTENT="text/css">
+
+<LINK REL="STYLESHEET" HREF="opgaven.css">
+
+</HEAD>
+
+<BODY >
+
+<H1><A NAME="SECTION00600000000000000000">
+Romeinse Letter Encodering</A>
+</H1>
+De Romeinen. ``Rare jongens'', volgens sommigen. Bekijk maar eens hun
+schrijfwijze van getallen. Zo wordt <IMG
+ WIDTH="30" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img16.png"
+ ALT="$888$"> geschreven als:
+<TT>DCCCLXXXVIII</TT>.
+
+<P>
+Er zijn meerdere versies van de Romeinse schrijfwijze van getallen in
+omloop; in deze opgave kiezen we echter voor een eenduidige versie,
+welke neerkomt op:
+
+<P>
+
+ <OL>
+<LI>De schrijfwijze bevat uitsluitend Romeinse letters die
+    voorkomen in de eerste kolom van onderstaande tabel: de zogenaamde
+    <I>numeralen</I>. In de tweede kolom staat welke decimale waarde
+    elke numeraal representeert.
+
+<P>
+<DIV ALIGN="CENTER">
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TD ALIGN="RIGHT">Romeins</TD>
+<TD ALIGN="RIGHT">decimaal</TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><TT>I</TT></TD>
+<TD ALIGN="RIGHT">1</TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><TT>V</TT></TD>
+<TD ALIGN="RIGHT">5</TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><TT>X</TT></TD>
+<TD ALIGN="RIGHT">10</TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><TT>L</TT></TD>
+<TD ALIGN="RIGHT">50</TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><TT>C</TT></TD>
+<TD ALIGN="RIGHT">100</TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><TT>D</TT></TD>
+<TD ALIGN="RIGHT">500</TD>
+</TR>
+<TR><TD ALIGN="RIGHT"><TT>M</TT></TD>
+<TD ALIGN="RIGHT">1000</TD>
+</TR>
+</TABLE>
+</DIV>
+
+<P>
+</LI>
+<LI>In geen geval staan er meer dan drie gelijke numeralen direct
+    achter elkaar, dus <TT>IIII</TT> mag niet, maar moet <TT>IV</TT>
+    zijn.
+
+<P>
+</LI>
+<LI>Het plaatsen van een numeraal voor een andere numeraal met
+    een grotere decimale waarde is gebonden aan de volgende regels:
+  <BR>
+  
+ <OL>
+<LI>Alleen <TT>I</TT>, <TT>X</TT> en <TT>C</TT> mogen voor een
+      numeraal met grotere decimale waarde geplaatst worden.
+</LI>
+<LI><UL>
+<LI><TT>I</TT> mag alleen voor de numeraal <TT>V</TT>
+        &#243;f <TT>X</TT> geplaatst worden.
+</LI>
+<LI><TT>X</TT> mag alleen voor de numeraal <TT>L</TT>
+        &#243;f <TT>C</TT> geplaatst worden.
+</LI>
+<LI><TT>C</TT> mag alleen voor de numeraal <TT>D</TT>
+        &#243;f <TT>M</TT> geplaatst worden.
+    
+</LI>
+</UL> 
+</LI>
+<LI>Elk van de numeralen <TT>I</TT>, <TT>X</TT> en <TT>C</TT>,
+     mag slecht &#233;&#233;nmaal voor een numeraal met hogere decimale
+     waarde geplaatst worden.
+</LI>
+<LI>De numeralen moeten, voor zover mogelijk in verband met (a),
+     (b) en (c), van links naar rechts geordend zijn op afnemende
+     decimale waarde. Dit sluit <TT>MCMM</TT> uit, maar staat
+     <TT>MMCM</TT> toe.  
+</LI>
+</OL>
+
+<P>
+
+<P>
+</LI>
+</OL>
+
+<P>
+Al met al is de Romeinse representatie nogal ineffici&#235;nt. Misschien
+kan het wel wat korter. Laten we daarom eens <B>R</B>omeinse
+<B>L</B>etter <B>E</B>ncodering toe passen.
+Bij <B>RLE</B> coderen we het Romeinse getal door voor elke
+maximale reeks van opeenvolgende gelijke numeralen, de
+lengte van die reeks op de Romeinse wijze te noteren, gevolgd door die
+numeraal.
+Voorbeeld: <IMG
+ WIDTH="48" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img17.png"
+ ALT="$888 = $"> <TT>DCCCLXXXVIII</TT> wordt dus eerst omgezet in
+de tussenrepresentatie <TT>IDIIICILIIIXIVIIII</TT>.
+
+<P>
+Dit is (gewoonlijk) een expressie die niet aan de hierboven
+gespecificeerde schrijfwijze voldoet. Deze tussenrepresentatie zetten
+we vervolgens om tot een Romeins geschreven getal met behulp van de
+volgende regels:
+
+ <OL>
+<LI>Elke numeraal die voor een numeraal met een grotere decimale
+    waarde komt, draagt zijn waarde <I>negatief</I> bij aan de
+    decimale waarde van het uiteindelijke Romeinse getal;
+</LI>
+<LI>In elk ander geval draagt de numeraal zijn waarde
+    <I>positief</I> bij.
+</LI>
+</OL>
+
+<P>
+<TT>IDIIICILIIIXIVIIII</TT> wordt dus weer omgezet in
+<TT>DCLX</TT>. In totaal luidt de ge-<B>RLE</B>'de versie van
+<TT>DCCCLXXXVIII</TT> dus <TT>DCLX</TT>.
+
+<P>
+
+<P>
+Gegeven een Romeins geschreven getal, pas hierop <B>RLE</B> toe en
+zet het resultaat volgens hierboven gegevens regels weer om naar een
+Romeins getal.
+
+<P>
+
+<P>
+
+ <UL>
+<LI>&#233;&#233;n regel met daarop een enkele positieve integer: het
+    aantal runs;
+</LI>
+<LI>per run &#233;&#233;n regel met daarop een Romeins geschreven getal
+    kleiner dan 4000.
+</LI>
+</UL>
+
+<P>
+Per run &#233;&#233;n regel met daarop het Romeins geschreven getal dat men
+verkrijgt na toepassing van <B>RLE</B>.
+
+<P>
+
+<P>
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="CENTER"><B>invoer</B></TH>
+<TD ALIGN="CENTER">bijbehorende <B>uitvoer</B></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><TABLE  WIDTH="331">
+<TR><TD>
+<PRE>
+2
+DCCCLXXXVIII
+XLV
+</PRE>
+<BR>
+</TD></TR>
+</TABLE></TD>
+<TD ALIGN="CENTER"><TABLE  WIDTH="331">
+<TR><TD>
+<PRE>
+DCLX
+XLII
+</PRE></TD></TR>
+</TABLE></TD>
+</TR>
+</TABLE>
+
+<P>
+<BR><HR>
+<ADDRESS>
+DKP 2000
+</ADDRESS>
+</BODY>
+</HTML>

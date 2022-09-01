@@ -1,0 +1,154 @@
+<HTML>
+<TITLE>DKP99 Opgave B - Convexi&euml;</TITLE>
+
+<P>
+
+<DIV ALIGN="CENTER">
+<FONT SIZE="+4"><B>B</B></FONT> &nbsp;&nbsp;
+<FONT SIZE="+3"><B>Convexi&#235;</B></FONT>
+
+</DIV>
+
+<P>
+
+<P><P>
+<BR>
+
+<P>
+<FONT SIZE="+2"><B>Beschrijving</B></FONT>
+
+<P>
+Zoals bekend is <EM>Convexi&#235;</EM> een eilandengroep in de Verre Oceaan.
+De eilanden hebben een kenmerkende vorm: de kust bestaat uit aaneengesloten
+rechte lijnen.
+Bovendien is elk eiland convex; dat wil zeggen dat je van elk hoekpunt
+in een rechte lijn naar een willekeurig ander hoekpunt kan lopen,
+zonder dat je water hoeft over te steken.
+Convexi&#235; is zeer dun bevolkt; op de meeste eilanden woont slechts &#233;&#233;n
+persoon.
+In verband met de bevolkingsgroei moet daar nu verandering in komen.
+
+<P>
+De koning heeft besloten dat op elk eiland best twee mensen kunnen wonen.
+Omdat convexianen hun privacy erg belangrijk vinden, moet er op elk eiland
+een duidelijke grens komen tussen de gebieden van de bewoners.
+Om het eenvoudig te maken wil de koning op elk eiland de grens vaststellen
+als een rechte lijn tussen twee van de hoekpunten van het eiland.
+Natuurlijk is het ook belangrijk dat beide bewoners ongeveer evenveel ruimte
+krijgen.
+
+<BR>
+
+<P>
+<BR>
+<IMG
+ WIDTH="617" HEIGHT="298" ALIGN="BOTTOM" BORDER="0"
+ SRC="img2.gif"
+ ALT="eiland voorbeeld">
+<BR>
+
+<P>
+<FONT SIZE="+2"><B>Probleem</B></FONT>
+
+<P>
+De koning staat er op dat elk eiland verdeeld wordt door het trekken
+van een rechte lijn tussen twee van de hoekpunten.
+Onder deze voorwaarde blijkt het helaas niet altijd mogelijk te zijn om
+de twee gebieden exact even groot te maken.
+
+<P>
+Schrijf een programma dat, gegeven een beschrijving van de vorm van een
+eiland, bepaalt wat het kleinst mogelijke verschil in oppervlakte is wanneer
+het eiland op bovenstaande wijze in twee gebieden wordt verdeeld.
+
+<BR>
+
+<P>
+
+<P>
+<FONT SIZE="+2"><B>Invoer</B></FONT> <B>(lezen uit: <TT>convex.in</TT>)</B>
+
+<P>
+Op de eerste regel staat het aantal eilanden dat gesplitst moet worden.
+Dan volgt per eiland:
+
+<UL><LI>Een regel met het aantal hoekpunten van het eiland (
+<!-- MATH
+ $4 \le n \le 100$
+ -->
+<MATH CLASS="INLINE">
+4  &lt;= n  &lt;= 100
+</MATH>).
+
+<LI>Een opsomming van de <MATH CLASS="INLINE">
+n
+</MATH> hoekpunten van het eiland, tegen de volgorde
+van de klok in (linksom dus).
+Per hoekpunt is er een regel met twee gehele getallen, gescheiden door een
+spatie: de co&#246;rdinaten van het hoekpunt in meters (
+<!-- MATH
+ $0 \le x, y \le 10000$
+ -->
+<MATH CLASS="INLINE">
+0  &lt;= x, y  &lt;= 10000
+</MATH>).
+
+</UL>
+
+<P>
+<FONT SIZE="+2"><B>Uitvoer</B></FONT> <B>(schrijven naar standard-output)</B>
+
+<P>
+Voor elk eiland geef je een regel met daarop het minimale verschil in
+oppervlakte in vierkante meters (<MATH CLASS="INLINE">
+d  &gt;= 0.0
+</MATH>).
+Geef alle antwoorden met precies &#233;&#233;n cijfer achter de decimale punt!
+
+<BR>
+
+<P>
+<FONT SIZE="+2"><B>Voorbeeld</B></FONT>
+
+<P>
+<B>Invoer</B>
+
+<P>
+<TT>2	
+<BR>
+4	
+<BR>
+0 0	
+<BR>
+2 0	
+<BR>
+2 3	
+<BR>
+1 3	
+<BR>
+5	
+<BR>
+10 1	
+<BR>
+12 1	
+<BR>
+12 4	
+<BR>
+10 3	
+<BR>
+9 2	
+<BR>
+</TT>
+
+<P>
+<B>Uitvoer</B>
+
+<P>
+<TT>1.5	
+<BR>
+0.0	
+<BR>
+</TT>
+
+<P>
+</HTML>

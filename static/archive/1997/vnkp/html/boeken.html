@@ -1,0 +1,79 @@
+<HTML>
+<HEAD>
+   <TITLE>Voorronde NKP 1997</TITLE>
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.01Gold (X11; I; HP-UX B.10.20 9000/735) [Netscape]">
+</HEAD>
+
+<H1>Boekenkasten</H1>
+
+<H2>Beschrijving</H2>
+
+Berend is bibliothecaris. Hij beheert de boeken van de
+universiteitsbibliotheek in Preh Fiks. Vanwege de gestage groei van de
+collectie is het huidige gebouw te klein geworden, dus de bibliotheek
+gaat verhuizen.
+
+<H2>Het Probleem</H2>
+
+Van deze gelegenheid wil Berend gebruik maken om de boeken op een
+andere manier te verdelen over de nieuwe kasten. Hij wil op elke plank
+boeken hebben staan, waarvan de naam dezelfde prefix heeft. Maar
+de grootste prefix van alle boeken op een plank mag niet voorkomen als
+begin van zo'n prefix op iedere andere plank, zodat boeken gemakkelijk
+op prefix te vinden zijn.
+<BR><BR>
+Voorbeeld: als `Verwachting' en `Verwarring' op &eacute;&eacute;n plank
+staan (prefix <tt>verwa</tt>), mogen `Vermoedens' en
+`Verlakkerij' niet samen op &eacute;&eacute;n andere plank staan (prefix
+<tt>ver</tt>, begin van <tt>verwa</tt>), maar `Vroomheid' en
+`Vrede' wel (prefix <tt>vr</tt>).
+
+Nou is er altijd te weinig geld, dus hoe minder kasten Berend nodig
+heeft, hoe beter.
+
+<H2>De Invoer</H2>
+
+De eerste regel bevat een getal dat de hoeveelheid runs aangeeft. Dan volgt per
+run:
+<UL>
+  <LI> Een regel met de hoeveelheid planken k in &eacute;&eacute;n kast
+    (<i>1 &lt;= k &lt;= 10</i>).
+  <LI> Een regel met het aantal boeken p dat (maximaal) op &eacute;&eacute;n plank
+    past (<i>1 &lt;= p &lt;= 30</i>). Neem aan dat alle boeken evenveel ruimte
+    innemen.
+  <LI> Een regel met een getal dat het aantal boeken aangeeft.
+  <LI> Voor ieder boek een regel met daarop de titel. Een titel bestaat
+    uit de tekens <tt>`a'</tt>-<tt>`z'</tt>, aangevuld met spaties
+    tot een lengte van 20 tekens. Alle titels binnen een run zijn verschillend.
+</ul>
+
+<h2>De Uitvoer</h2>
+
+Per run &eacute;&eacute;n getal: de minimale hoeveelheid kasten die Berend nodig heeft.
+
+<h2>Voorbeeld</h2>
+Bij de <B>invoer</b>
+<PRE>
+2
+1
+2
+2
+past
+precies
+1
+2
+5
+past
+pijnlijk
+genoeg
+niet
+precies
+</PRE>
+hoort de <B>uitvoer</b>
+<PRE>
+1
+5
+</PRE>
+
+</BODY>
+</HTML>

@@ -1,0 +1,56 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Problem G</title>
+</head>
+
+<body bgcolor="#D6D6D6" text="#637BBD">
+</FONT><FONT FACE="Arial" SIZE=6><P ALIGN="CENTER">Problem G</P>
+</FONT><FONT FACE="Arial" SIZE=5><P ALIGN="CENTER">Bits of Trinity</P>
+<P ALIGN="CENTER">Input: g.in</P>
+</FONT><FONT SIZE=2>
+<P>In the Trinity Galaxy, spaceships use an elaborate method of communication to receive messages from the Home World. Scientists have created a numbered list of 1,000,000 different Messages. In order to send out a message the sender first looks up the index number of the selected message. This number is then encoded into a binary bit stream of exactly 200 bits and sent into space with a highly focussed solar impulse laser. Because the energy requirements for sending out a pulse (i.e. a 1-bit) are very high the president of the energy committee has decided that a bit stream may contain at most 3 ones. All the allowed bit streams are ordered in a large ascending list, where the ordering is based on the normal binary representation of the number. The allowed bit streams are numbered consecutively starting with the bit stream consisting of all 0’s, which has index 1. You see the start of the big list in the box below (note that the dots represent a leading string of 0’s).</P>
+<P></P>
+<P>Recently, the Admiralty has decided that the risk of carrying a list like this around on all the spaceships is too large it might fall into the hands of the wrong people, and they could decipher all the messages between the space ships and the Home World. Therefore they request a computer program that will do the conversion from index number to corresponding Allowed Bit Stream.</P>
+
+<P>You are asked to write this program and help to protect the spaceships and the Home World.</P>
+
+</FONT><FONT FACE="Arial" SIZE=4><P>Input</P>
+</FONT><FONT SIZE=2>
+<P>The first line of the input contains the number of runs <I>R</I> (1 &#8804; <I>R </I>&#8804; 10,000).</P>
+<P>This line is followed by exactly one line for each of the runs. Each line will contain one number, the index number <I>i</I> (1 &#8804; <I>i </I>&#8804; 1,000,000) for which you must find the corresponding Allowed Bit Stream.</P>
+
+</FONT><FONT FACE="Arial" SIZE=4><P>Output</P>
+
+</FONT><FONT SIZE=2><P>For each test case, you must output a line containing the corresponding Allowed Bit Stream, without leading 0’s. You will always print at least 1 bit, i.e. in the special case where the index number is 1, you must print a single 0.</P>
+
+<P>&nbsp;</P></FONT>
+<TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=642>
+<TR><TD WIDTH="50%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=4><P>Sample Input</FONT></TD>
+<TD WIDTH="50%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=4><P>Output for the Sample Input</FONT></TD>
+</TR>
+<TR><TD WIDTH="50%" VALIGN="TOP">
+<FONT FACE="Courier New" SIZE=2><P>6</P>
+<P>1</P>
+<P>2</P>
+<P>3</P>
+<P>4</P>
+<P>5</P>
+<P>100</FONT></TD>
+<TD WIDTH="50%" VALIGN="TOP">
+<FONT FACE="Courier New" SIZE=2><P>0</P>
+<P>1</P>
+<P>10</P>
+<P>11</P>
+<P>100</P>
+<P>100000110</FONT></TD>
+</TR>
+</TABLE>
+
+
+
+</body>
+</html>

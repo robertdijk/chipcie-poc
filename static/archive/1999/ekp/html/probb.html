@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Problem B</title>
+</head>
+
+<body bgcolor="#D6D6D6" text="#637BBD">
+</FONT><FONT FACE="Arial" SIZE=5><P ALIGN="CENTER">&nbsp;</P>
+</FONT><FONT FACE="Arial" SIZE=6><P ALIGN="CENTER">Problem B</P>
+</FONT><FONT FACE="Arial" SIZE=5><P ALIGN="CENTER">Love You, Disney World</P>
+<P ALIGN="CENTER">Input: b.in</P>
+</FONT><B><FONT FACE="CG Times" SIZE=2>
+</B></FONT><FONT SIZE=2><P>A lot of people work behind the scenes at Disney World, the world’s largest theme park, located in Orlando, USA. During the day all these people have to work fulltime. They are allowed to take only one break per day, but only when absolutely no attractions or rides are active in the part of the park they are assigned to.</P>
+
+<P>Two of the people, Donald and Daisy, are madly in love with each other. Fortunately they work in the same area of the park, so they are able to take their breaks at the same time. They want to spend as much time together as possible. So at the beginning of each day they look at the schedule for the rides for that day and figure out when they can have the longest break.</P>
+
+<P>You are to write a program that reads in the scheduled start and end times of all the rides, and tell Donald and Daisy when to take their break in order for them to be able to spend as much time together as possible. Note that management forbids taking a break before the first and after the last ride of the day.</P>
+
+</FONT><FONT FACE="Arial" SIZE=4><P>Input</P>
+</FONT><FONT SIZE=2><P>The first line of the input contains the number of runs <I>R</I> (1 &#8804; <I>R </I>= 1,000). For each run there is one line with a single integer <I>n</I>, 2 <FONT FACE="Symbol">&#163;</FONT>
+ <I>n <FONT FACE="Symbol">&#163;</FONT>
+</I>1,000. This number denotes the number of rides during the day. The next <I>n</I> lines each contain 2 numbers <I>s<SUB>n</I></SUB> and <I>e<SUB>n</I></SUB>, (0 <FONT FACE="Symbol">&#163;</FONT>
+ <I>s<SUB>n </SUB>&lt; e<SUB>n</I></SUB> <FONT FACE="Symbol">&#163;</FONT>
+ 10,000) denoting the start and end time of ride <I>n</I>. These times are inclusive, i.e. a brake can only start in the time slot <I>after</I> a ride has ended and must end in the time slot <I>before</I> the next ride starts. Note that the scheduled times may overlap (they may be different attractions).</P>
+
+</FONT><FONT FACE="Arial" SIZE=4><P>Output</P>
+</FONT><FONT SIZE=2><P>For each test case, you must output a line containing the start time <I>b<SUB>s</I></SUB> and the end time <I>e<SUB>s</I></SUB> of the longest break Donald and Daisy will be able take. Make certain that for each time <I>t</I> (<I>b<SUB>s</I></SUB> <FONT FACE="Symbol">&#163;</FONT>
+ <I>t <FONT FACE="Symbol">&#163;</FONT>
+</I> <I>b<SUB>e</I></SUB>) no ride is active. If there is more than one solution, output the earliest one (with the smallest <I>b<SUB>s</I></SUB> ). If there is no brake possibility for Donald and Daisy, output a single number 0.</P>
+</FONT>
+<TABLE BORDER CELLSPACING=1 CELLPADDING=4 WIDTH=652>
+<TR><TD WIDTH="50%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=4><P>Sample Input</FONT></TD>
+<TD WIDTH="50%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=4><P>Output for the Sample Input</FONT></TD>
+</TR>
+<TR><TD WIDTH="50%" VALIGN="TOP" HEIGHT=150>
+<FONT FACE="Courier New" SIZE=2><P>2</P>
+<P>5</P>
+<P>13 18</P>
+<P>22 40</P>
+<P>3 7</P>
+<P>1 5</P>
+<P>12 17</P>
+<P>2</P>
+<P>7 12</P>
+<P>13 20</FONT></TD>
+<TD WIDTH="50%" VALIGN="TOP" HEIGHT=150>
+<FONT FACE="Courier New" SIZE=2><P>8 11</P>
+<P>0</FONT></TD>
+</TR>
+</TABLE>
+
+
+
+</body>
+</html>

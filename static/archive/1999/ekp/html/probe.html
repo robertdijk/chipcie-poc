@@ -1,0 +1,99 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Problem E</title>
+</head>
+
+<body bgcolor="#D6D6D6" text="#637BBD">
+<FONT SIZE=2><P ALIGN="CENTER"></P>
+</FONT><FONT FACE="Arial" SIZE=6><P ALIGN="CENTER">Problem E</P>
+</FONT><FONT FACE="Arial" SIZE=5><P ALIGN="CENTER">Papergirl Paradise</P>
+<P ALIGN="CENTER">Input: e.in</P>
+</FONT><FONT SIZE=2>
+<P>The life of a papergirl is not always easy.  Suburbs often have a maze of little streets, and subscribers to the newspaper may live quite far apart. Compared to that, a papergirl who makes her round in the city center of Skyscraper Sity has a far simpler task. There are often enough subscribers in one single skyscraper from which to make a living, so the round of a papergirl rarely consists of more than one flat. A papergirl just starts at the ground floor of the flat and works her way up to the top, delivering the newspaper on each floor as she goes along. The only thing she has to take care of is that each subscriber gets her/his newspaper before 8:00 in the morning.</P>
+
+<P>Jill is one of the papergirls in Skyscraper Sity, and she is given a number of skyscrapers to choose from for her round. Since she wants to earn money, but doesn’t want to get up too early in the morning, she tries to figure out which skyscraper takes the least amount of time in which to deliver the newspapers. For each skyscraper she knows the layout of the skyscraper, including the position of the entrance on the ground floor and where each of the subscribers is located. She knows that in each flat the stairs are always at the left end and the right end of the flat, and they always go up from the ground floor all the way to the top. She has set one ground rule for herself: she doesn’t want to take more stairs than strictly necessary with all those newspapers on her back, so she will always deliver all the newspapers on a floor before moving on to the next floor.</P>
+
+<P>You are asked by Jill to help her determine the time it would take for her to deliver all the newspapers in a given skyscraper. </P>
+
+</FONT><FONT FACE="Arial" SIZE=4><P>Input</P>
+</FONT><FONT SIZE=2><P>The first line of the input contains the number of skyscrapers <I>S</I> (1 &#8804; <I>S </I>&#8804; 100). For each skyscraper there follows one line with 2 integers:  <I>f</I>  (1 <FONT FACE="Symbol">&#163;</FONT>
+ <I>f <FONT FACE="Symbol">&#163;</FONT>
+</I>30) and <I>w</I>  (4 <FONT FACE="Symbol">&#163;</FONT>
+ <I>w <FONT FACE="Symbol">&#163;</FONT>
+</I>80), giving the number of floors and the width of each floor in the skyscraper. Then exactly <I>f</I>+1 lines will follow giving the layout of the skyscraper, where every line will contain exactly <I>w</I> characters. </P>
+<P>The first line is the roof of the skyscraper, which is a ‘</FONT><FONT FACE="Courier New" SIZE=2>+</FONT><FONT SIZE=2>’, followed by <I>w</I>-2 ‘</FONT><FONT FACE="Courier New" SIZE=2>-</FONT><FONT SIZE=2>’ characters and a ‘</FONT><FONT FACE="Courier New" SIZE=2>+</FONT><FONT SIZE=2>’ again.</P>
+<P>Each of the following lines starts and ends with a ‘</FONT><FONT FACE="Courier New" SIZE=2>%</FONT><FONT SIZE=2>’ (representing the stairs at the left and right side of the flat), and in between are by <I>w</I>-2 characters from the following set:</P>
+</FONT><FONT FACE="Courier New" SIZE=2><P>*</FONT><FONT SIZE=2>&#9;The apartment of a subscriber to the newspaper</P>
+</FONT><FONT FACE="Courier New" SIZE=2><P>.</FONT><FONT SIZE=2>&#9;The apartment of someone who is not a subscriber to the newspaper, and therefor irrelevant for you.</P>
+<P>On the ground floor (that is the last floor in the input of a skyscraper), there is also exactly one ‘</FONT><FONT FACE="Courier New" SIZE=2>@</FONT><FONT SIZE=2>’ character between the stair symbols, which denotes the entrance to the skyscraper. The number of subscribers on a floor is only limited by the width of the floor. There will always be at least one subscriber on the top floor.</P>
+
+<P>A newspaper is delivered by moving past a subscriber apartment. Moving up a stair takes the same amount of time as moving one step in a horizontal direction.</P>
+
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+<P>Take a look at the next example input, with 5 floors (<I>f</I>=5) and 10 apartments per floor (<I>w</I>=12):</P>
+</FONT><FONT FACE="Courier New" SIZE=2>
+<P>5 12</P>
+<P>+----------+</P>
+<P>%...*..*..*%&#9;</FONT><FONT SIZE=2>Fourth floor = top floor</P>
+</FONT><FONT FACE="Courier New" SIZE=2><P>%..........%&#9;</FONT><FONT SIZE=2>Third floor</P>
+</FONT><FONT FACE="Courier New" SIZE=2><P>%*..*******%&#9;</FONT><FONT SIZE=2>Second floor</P>
+</FONT><FONT FACE="Courier New" SIZE=2><P>%*.*.***.*.%&#9;</FONT><FONT SIZE=2>First floor</P><DIR>
+<DIR>
+<DIR>
+<DIR>
+
+</FONT><FONT FACE="Courier New" SIZE=2><P>%...@.*...*%&#9;</FONT><FONT SIZE=2>Ground floor</P>
+
+<P>&nbsp;</P></DIR>
+</DIR>
+
+<P>[Note:&#9;the names of the floors are not in the real input!]</P>
+</DIR>
+</DIR>
+
+<P>In this example the entrance is at position 3 on the ground floor. There are 2 subscribers on the ground floor (at locations 5 and 9), 6 at the first floor, 8 at the second floor but none at the third floor, while there are 3 subscribers at the top floor.</P>
+
+</FONT><FONT FACE="Arial" SIZE=4><P>Output</P>
+</FONT><FONT SIZE=2><P>For each test case, you must output a line containing the least number of steps it takes to deliver the last newspaper.</P>
+</FONT>
+<TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=642>
+<TR><TD WIDTH="50%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=4><P>Sample Input</FONT></TD>
+<TD WIDTH="50%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=4><P>Output for the Sample Input</FONT></TD>
+</TR>
+<TR><TD WIDTH="50%" VALIGN="TOP">
+<FONT FACE="Courier New" SIZE=2><P>2</P>
+<P>5 12</P>
+<P>+----------+</P>
+<P>%...*..*..*%</P>
+<P>%..........%</P>
+<P>%*..*******%</P>
+<P>%*.*.***.*.%</P>
+<P>%...@.*...*%</P>
+<P>10 10</P>
+<P>+--------+</P>
+<P>%...**...%</P>
+<P>%**.....*%</P>
+<P>%.*....**%</P>
+<P>%.**...*.%</P>
+<P>%..*..**.%</P>
+<P>%..**.*..%</P>
+<P>%...***..%</P>
+<P>%...**...%</P>
+<P>%....*..*%</P>
+<P>%@......*%</P>
+</FONT></TD>
+<TD WIDTH="50%" VALIGN="TOP">
+<FONT FACE="Courier New" SIZE=2><P>40</P>
+<P>93</FONT></TD>
+</TR>
+</TABLE>
+
+
+
+</body>
+</html>

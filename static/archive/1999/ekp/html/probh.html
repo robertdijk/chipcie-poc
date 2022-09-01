@@ -1,0 +1,66 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+
+<html>
+<head>
+	<title>Problem H</title>
+</head>
+
+<body bgcolor="#D6D6D6" text="#637BBD">
+</FONT><FONT FACE="Arial" SIZE=6><P ALIGN="CENTER">Problem H</P>
+</FONT><FONT FACE="Arial" SIZE=5><P ALIGN="CENTER">Land Lords</P>
+<P ALIGN="CENTER">Input: h.in</P>
+</FONT><FONT SIZE=2>
+<P>In the history of the world many stories are known of the arguments of large families about the distribution of the lands of the parents after their deaths. In some societies, the eldest living son would always receive the entire estate, making the position of eldest living son sometimes a dangerous one. In other societies, the estate would be divided up into equal parts, and each child would receive one part of the estate. This meant that a sizeable estate would be reduced to a large collection of small patches of land within a few generations.</P>
+
+<P>In the land of Dukeswood a very rich farmer lived with a number of children, and he wanted to distribute his land over his children. He had a number of maps of his farmstead, which were fairly simple to make since his farmstead was a rectangular sized piece of land, and on each such map he drew a number of lines, thereby dividing the land into pieces. When drawing lines, he would always start on one of the boundaries of his land and draw a line to one of the other boundaries. The end point of this line was then the starting point of the next line, which would again lead to another boundary. The farmer would never draw a line that would a cross another line at a position where this other line was already crossing a different line (i.e. there would never be more than two lines crossing at any single point at once). One of the maps he drew is shown below:</P>
+<P ALIGN="CENTER"><IMG SRC="Image5.gif" WIDTH=375 HEIGHT=270></P>
+<P>The start point for this division can be either of the two points marked with a star. After he made a number of maps like this, the farmer counted the number of pieces of land in the map, to see if he had created enough pieces of land for each of his children. For instance, the map above contained 18 pieces of land, as the numbering clearly shows. However, the farmer would often lose count when he counted the pieces of land on a map, and that is where your help is requested.</P>
+
+<P>You are asked to give the number of pieces of land on a map with a rectangular size and a number of lines drawn on it.</P>
+
+<P>&nbsp;</P>
+<P>&nbsp;</P>
+</FONT><FONT FACE="Arial" SIZE=4><P>Input</P>
+</FONT><FONT SIZE=2>
+<P>The first line of the input contains the number of maps <I>M</I> (1 &#8804; <I>M </I>&#8804; 1,000). The description of one map starts with a line with two integers, the width <I>w</I> (1 &#8804; <I>w </I>&#8804; 1,000) and the height <I>h</I> (1 &#8804; <I>h </I>&#8804; 1,000) of the farmers land. The next line contains the number of lines <I>L</I> (1 &#8804; <I>L </I>&#8804; 1,000) the farmer has drawn on the map. Finally there are <I>L+1</I> lines, each containing a co-ordinate (<I>X<SUB>i</SUB>, Y<SUB>i</I></SUB>) on a boundary of the land (i.e. either <I>X<SUB>i</I></SUB> is 0 or <I>w</I>, or <I>Y<SUB>i</I></SUB> is 0 or <I>h</I>). The lines on the map are then formed by the points (<I>X<SUB>i</I></SUB>,<I>Y<SUB>i</I></SUB>)  and (<I>X<SUB>i+1</I></SUB>, <I>Y<SUB>i+1</I></SUB>), for all i from 1 up to <I>L</I> (inclusive).</P>
+
+<P>&nbsp;</P>
+</FONT><FONT FACE="Arial" SIZE=4><P>Output</P>
+</FONT><FONT SIZE=2>
+<P>For each test case, you must output a line containing the number of separate pieces of land on the map.</P>
+</FONT>
+<TABLE BORDER CELLSPACING=1 CELLPADDING=7 WIDTH=642>
+<TR><TD WIDTH="50%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=4><P>Sample Input</FONT></TD>
+<TD WIDTH="50%" VALIGN="TOP">
+<FONT FACE="Arial" SIZE=4><P>Output for the Sample Input</FONT></TD>
+</TR>
+<TR><TD WIDTH="50%" VALIGN="TOP">
+<FONT FACE="Courier New" SIZE=2><P>2</P>
+<P>18 12</P>
+<P>8</P>
+<P>2 0</P>
+<P>6 12</P>
+<P>10 0</P>
+<P>18 9</P>
+<P>15 12</P>
+<P>0 6</P>
+<P>14 0</P>
+<P>10 12</P>
+<P>0 9</P>
+<P>7 6</P>
+<P>6</P>
+<P>2 0</P>
+<P>5 6</P>
+<P>7 3</P>
+<P>0 3</P>
+<P>3 0</P>
+<P>3 6</P>
+<P>0 5</FONT></TD>
+<TD WIDTH="50%" VALIGN="TOP">
+<FONT FACE="Courier New" SIZE=2><P>18</P>
+<P>13</FONT></TD>
+</TR>
+</TABLE>
+</body>
+</html>

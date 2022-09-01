@@ -1,0 +1,219 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.2 beta6 (August 14th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Jantje</TITLE>
+<META NAME="description" CONTENT="Jantje">
+<META NAME="keywords" CONTENT="opgaven">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="opgaven.css">
+<LINK REL="next" HREF="node4.html">
+<LINK REL="previous" HREF="node2.html">
+<LINK REL="up" HREF="opgaven.html">
+<LINK REL="next" HREF="node4.html">
+</HEAD>
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html53"
+ HREF="node4.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next_motif.png"></A> 
+<A NAME="tex2html51"
+ HREF="opgaven.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up_motif.png"></A> 
+<A NAME="tex2html45"
+ HREF="node2.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="previous_motif.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html54"
+ HREF="node4.html">Y2K</A>
+<B> Up:</B> <A NAME="tex2html52"
+ HREF="opgaven.html">opgaven</A>
+<B> Previous:</B> <A NAME="tex2html46"
+ HREF="node2.html">De erfenis van professor</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00300000000000000000">
+Jantje</A>
+</H1>
+Jantje, een artistieke kleuter, heeft een opdracht van school
+gekregen. Hij moet een collage maken door reepjes gekleurd papier op
+een ondergrond te plakken. Hij heeft daarvoor alleen het stuk papier
+tot zijn beschikking dat de juffrouw aan hem heeft gegeven. Dit papier
+bestaat uit een regelmatig rooster, waarbij elk roosterhokje vierkant
+is en een kleur heeft. Het papier is enkelzijdig bedrukt. Uit dit
+papier gaat hij een aantal papierstrookjes knippen. Zo'n
+papierstrookje heeft altijd een breedte van 1 roosterhokje en een
+lengte van een geheel aantal roosterhokjes.
+
+<P>
+Jantje is eigenlijk meer technisch dan artistiek en heeft
+dus twee linkerhanden, wat het knippen er niet gemakkelijker op
+maakt. Maar Jantje beproeft zijn technische kwaliteiten en wil een
+uitvinding maken. Deze uitvinding moet voor hem uit het papier van de
+juffrouw de gewenste papierstrookjes knippen.
+
+<P>
+Omdat Jantje zijn kwaliteiten toch wat overschat heeft, vraagt hij ons
+het algoritme voor zijn uitvinding te schrijven. Het programma krijgt
+als invoer het papier van de juffrouw en de gevraagde papierstrookjes
+die Jantje uitknippen wil.
+
+<P>
+Als antwoord volstaat of het mogelijk danwel onmogelijk is,
+om alle gewenste stukjes papier uit te knippen. Het uitknippen kan
+alleen recht dat wil zeggen horizontaal/verticaal en uit te knippen
+strookjes mogen elkaar niet overlappen.
+
+<P>
+
+<P>
+Deze bestaat uit:
+
+<UL><LI>sep=-1mm
+
+<LI>&#233;&#233;n regel met daarop een enkele positieve integer: het
+    aantal runs; 
+
+<LI>per run:
+    <DL>
+<DT><STRONG>1 regel</STRONG>
+<DD>twee integers <I>l</I>, <I>b</I> (
+<!-- MATH
+ $0 \leq l,b \leq
+        50$
+ -->
+<IMG
+ WIDTH="94" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img5.png"
+ ALT="$0 \leq l,b \leq
+50$">)
+gescheiden door een enkele spatie: respectievelijk lengte
+        en breedte van het papier;
+        <DT><STRONG><B>l</B> regels</STRONG>
+<DD>met <I>b</I>
+          characters <I>char</I> (`<TT>a</TT>' 
+<!-- MATH
+ $\leq char \leq$
+ -->
+<IMG
+ WIDTH="71" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img6.png"
+ ALT="$\leq char \leq$">
+          `<TT>z</TT>'): het papier van de juffrouw;
+        <DT><STRONG>1 regel</STRONG>
+<DD>&#233;&#233;n integer <I>n</I> (
+<!-- MATH
+ $0 \leq n
+          \leq 20$
+ -->
+<IMG
+ WIDTH="81" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img7.png"
+ ALT="$0 \leq n
+\leq 20$">): het aantal te knippen strookjes papier;
+        <DT><STRONG><B>n</B> regels</STRONG>
+<DD>per regel &#233;&#233;n strookje papier (<IMG
+ WIDTH="30" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img8.png"
+ ALT="$0
+\leq$">
+lengte strookje <IMG
+ WIDTH="39" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img9.png"
+ ALT="$\leq 50$">)
+dat uitgeknipt dient te worden.
+</DL>
+</UL>
+
+<P>
+
+<P>
+Per run &#233;&#233;n regel met daarop: `mogelijk' als Jantje de gewenste
+strookjes kan uitknippen, danwel `onmogelijk' als dit niet kan.
+
+<P>
+
+<P>
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="CENTER"><B>invoer</B></TH>
+<TD ALIGN="CENTER">bijbehorende <B>uitvoer</B></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><TABLE  WIDTH="331">
+<TR><TD>
+<PRE>
+2
+8 5
+raarm
+aarwa
+ardez
+eopga
+veisg
+oedte
+doend
+ejury
+4
+ra
+ra
+ra
+ra
+2 3
+abc
+def
+3
+abc
+de
+g
+</PRE></TD></TR>
+</TABLE></TD>
+<TD ALIGN="CENTER"><TABLE  WIDTH="331">
+<TR><TD>
+<PRE>
+mogelijk
+onmogelijk
+</PRE></TD></TR>
+</TABLE></TD>
+</TR>
+</TABLE>
+
+<P>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html53"
+ HREF="node4.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next_motif.png"></A> 
+<A NAME="tex2html51"
+ HREF="opgaven.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up_motif.png"></A> 
+<A NAME="tex2html45"
+ HREF="node2.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="previous_motif.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html54"
+ HREF="node4.html">Y2K</A>
+<B> Up:</B> <A NAME="tex2html52"
+ HREF="opgaven.html">opgaven</A>
+<B> Previous:</B> <A NAME="tex2html46"
+ HREF="node2.html">De erfenis van professor</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I>Nederlands Kampioenschap Programmeren 2000</I>
+<BR><I>2000-10-10</I>
+</ADDRESS>
+</BODY>
+</HTML>

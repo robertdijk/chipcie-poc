@@ -1,0 +1,120 @@
+<HTML>
+<HEAD>
+   <TITLE>Voorronde NKP 1997</TITLE>
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.01Gold (X11; I; HP-UX B.10.20 9000/735) [Netscape]">
+</HEAD>
+
+<H1>Hadamard</H1>
+
+<H2>Beschrijving</H2>
+
+In verschillende wetenschappelijke disciplines bestaat er een zekere
+belangstelling voor zogenaamde Hadamard-matrices, kortweg
+H-matrices. Dit zijn <i>n &#215; n</i> matrices (vierkant dus), gevuld met
+de getallen 1 en -1, z&oacute; dat alle rijen, wanneer gezien als vectoren,
+loodrecht op elkaar staan, d.w.z. hun inproduct is 0.
+Laat H zo'n H-matrix zijn en h<sub>ij</sub> het element in de i-de rij
+en de j-de kolom van H (1 &lt= i, j &lt= <i>n</i>). Dan geldt dus dat
+h<SUB>ij</SUB> = 1 en
+   \sum_{j=1}^{n} h_{i_1 j} h<SUB>i_2 j</SUB> = 0, als i<sub>1</SUB> &lt&gt i<SUB>2</SUB><BR>
+Enkele voorbeelden van H-matrices zijn:<BR>
+     <TABLE BORDER><TR>
+        <TD>1</TD><TD>1</TD>
+	</TR><TR>
+	<TD>1 </TD><TD> -1</TD>
+	</TR>           
+	</TABLE>
+<BR>
+      <TABLE BORDER>
+	 <TR>
+         <TD> 1 </TD><TD> -1 </TD><TD>  1 </TD><TD>  1 </TD>
+	 </TR><TR>
+         <TD> 1 </TD><TD> -1 </TD><TD> -1 </TD><TD> -1 </TD>
+	</TR><TR>
+          <TD> 1 </TD><TD>  1 </TD><TD>  1 </TD><TD> -1 </TD>
+	</TR><TR>
+          <TD> 1 </TD><TD>  1 </TD><TD> -1 </TD><TD>  1 </TD>
+	</TR>
+	</TABLE>
+<BR>
+Het is niet zo ingewikkeld om aan te tonen dat als <i>n</i> groter dan
+twee is, <i>n</i> deelbaar door vier moet zijn om een H-matrix van die
+afmetingen mogelijk te maken. Ronduit eenvoudig is het om in te zien
+dat een H-matrix een H-matrix blijft als je twee of meer rijen
+verwisselt. Dit laatste geldt natuurlijk ook voor de kolommen.
+
+<H2>De Opgave</H2>
+
+Met deze wetenschap in het achterhoofd kunnen we twee H-matrices
+<i>equivalent</i> noemen, als de &eacute;&eacute;n uit de ander door rij- en/of
+kolomverwisselingen ontstaat. Merk daarbij op dat het niet uitmaakt of
+je eerst een aantal rijverwisselingen uitvoert en dan een aantal
+kolomverwisselingen, of andersom: in beide gevallen is het resultaat
+gelijk. Voor kleine H-matrices (d.w.z <i>n</i> klein) is het nog
+vrij eenvoudig om met de hand vast te stellen of ze equivalent zijn of
+niet. Voor grotere H-matrices wordt dit al een stuk lastiger. Daarom
+wordt jou gevraagd een programma te schrijven dat die taak kan
+uitvoeren.<BR><BR>
+
+<h2>De Invoer</h2>
+
+De invoer begint met een regel met daarop het aantal runs. Daarna
+volgt per run: een regel met daarop de waarde van <i>n</i>, de afmeting van
+de H-matrices (<i>n</i> = 2 of 4 &lt;= <i>n</i> &lt;= 1000). De daarop volgende
+<i>n</i> regels bevatten rij 1 tot en met rij <i>n</i> van de eerste
+matrix. Zo'n rij bestaat uit <i>n</i> getallen 1 of -1, gescheiden door
+spaties. Na de eerste matrix volgt een lege regel, waarna de tweede
+matrix van de run volgt, die op dezelfde manier gerepresenteerd wordt.
+
+<h2>De Uitvoer</h2>
+
+Voor elke run moet de uitvoer het resultaat van het onderzoek naar
+equivalentie bevatten. Als de twee H-matrices van &eacute;&eacute;n run
+equivalent met elkaar blijken te zijn, dan dient in de uitvoer een
+regel met de tekst <tt>equivalent</tt> te verschijnen; zoniet, dan
+dient een regel met de tekst <tt>niet equivalent</tt>  te worden
+afgedrukt.
+
+<h2>Voorbeeld</h2>
+
+Bij de <B>invoer</b>
+<PRE>
+2
+4
+  1 -1  1  1
+  1 -1 -1 -1
+  1  1  1 -1
+  1  1 -1  1
+
+ -1 -1 -1  1
+  1 -1  1  1
+ -1  1  1  1
+ -1 -1  1 -1
+8
+  1 -1  1  1 -1 -1 -1 -1
+  1 -1 -1 -1 -1 -1  1  1
+ -1 -1 -1  1  1 -1  1 -1
+  1  1 -1  1 -1  1  1 -1
+  1 -1  1  1  1  1  1  1
+  1 -1 -1 -1  1  1 -1 -1
+ -1 -1 -1  1 -1  1 -1  1
+  1  1 -1  1  1 -1 -1  1
+
+ -1  1 -1  1 -1 -1 -1  1
+  1 -1 -1 -1 -1 -1  1  1
+ -1  1 -1 -1  1 -1  1 -1
+  1  1 -1 -1 -1  1 -1 -1
+  1 -1 -1  1  1 -1 -1 -1
+  1  1 -1  1  1  1  1  1
+  1  1  1  1 -1 -1  1 -1
+  1  1  1 -1  1 -1 -1  1
+</PRE>
+hoort de <B>uitvoer</B>
+<PRE>
+niet equivalent
+equivalent
+</PRE>
+<BR><BR><BR>
+
+</BODY>
+</HTML>

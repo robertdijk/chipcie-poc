@@ -1,0 +1,187 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<!--Converted with LaTeX2HTML 98.2 beta6 (August 14th, 1998)
+original version by:  Nikos Drakos, CBLU, University of Leeds
+* revised and updated by:  Marcus Hennecke, Ross Moore, Herb Swan
+* with significant contributions from:
+  Jens Lippmann, Marek Rouchal, Martin Wilck and others -->
+<HTML>
+<HEAD>
+<TITLE>Y2K</TITLE>
+<META NAME="description" CONTENT="Y2K">
+<META NAME="keywords" CONTENT="opgaven">
+<META NAME="resource-type" CONTENT="document">
+<META NAME="distribution" CONTENT="global">
+<META HTTP-EQUIV="Content-Type" CONTENT="text/html; charset=iso-8859-1">
+<LINK REL="STYLESHEET" HREF="opgaven.css">
+<LINK REL="next" HREF="node5.html">
+<LINK REL="previous" HREF="node3.html">
+<LINK REL="up" HREF="opgaven.html">
+<LINK REL="next" HREF="node5.html">
+</HEAD>
+<BODY >
+<!--Navigation Panel-->
+<A NAME="tex2html63"
+ HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next_motif.png"></A> 
+<A NAME="tex2html61"
+ HREF="opgaven.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up_motif.png"></A> 
+<A NAME="tex2html55"
+ HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="previous_motif.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html64"
+ HREF="node5.html">Landjes veroveren II</A>
+<B> Up:</B> <A NAME="tex2html62"
+ HREF="opgaven.html">opgaven</A>
+<B> Previous:</B> <A NAME="tex2html56"
+ HREF="node3.html">Jantje</A>
+<BR>
+<BR>
+<!--End of Navigation Panel-->
+
+<H1><A NAME="SECTION00400000000000000000">
+Y2K</A>
+</H1>
+We ontkomen er niet aan: het is nog steeds 2000, het jaar dat menig
+IT-er met vrees aan zag komen, uitzonderingen daargelaten. Alle
+einde-der-tijden-profeten ten spijt is er (nog) niks interessants
+gebeurd. Laten we daarom nog maar eens kijken of we iets leuks kunnen
+doen met data, alsof wij, IT-ers, er nog niet genoeg mee gespeeld
+hadden.
+
+<P>
+
+<P>
+Stel dat men de dag en een datum zonder jaartal gegeven krijgt: wat is
+het jaar waarin die combinatie het meest recent optrad?
+
+<P>
+
+<P>
+Deze bestaat uit:
+
+<UL><LI>sep=-1mm
+
+<LI>&#233;&#233;n regel met daarop een enkele positieve integer: het
+    aantal runs;
+
+<LI>per run &#233;&#233;n regel met daarop de volgende items, steeds van
+    elkaar gescheiden door een enkele spatie:
+  <DL>
+<DD><DT><STRONG>1 integer 
+<!-- MATH
+ $\in \{ 1, \ldots, 7 \}$
+ -->
+<IMG
+ WIDTH="90" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img10.png"
+ ALT="$\in \{ 1, \ldots, 7 \}$"></STRONG>
+<DD>de
+      standaardrepresentatie van een dagnaam, dus zondag =1, maandag
+      =2, ..., zaterdag =7;
+
+<P>
+<DT><STRONG>1 integer</STRONG>
+<DD>het dagnummer;
+
+<P>
+<DT><STRONG>1 integer 
+<!-- MATH
+ $\in \{ 1, \ldots, 12 \}$
+ -->
+<IMG
+ WIDTH="99" HEIGHT="33" ALIGN="MIDDLE" BORDER="0"
+ SRC="img11.png"
+ ALT="$\in \{ 1, \ldots, 12 \}$"></STRONG>
+<DD>de
+      standaardrepresentatie van een maandnaam, dus januari =1,
+      februari =2, maart =3, ..., december =12.
+  </DL>
+</UL>
+
+<P>
+In alle gevallen zal de gegeven combinatie geldig zijn en voorkomen
+in de jaren 
+<!-- MATH
+ $1970 \ldots 2000$
+ -->
+<IMG
+ WIDTH="96" HEIGHT="32" ALIGN="MIDDLE" BORDER="0"
+ SRC="img12.png"
+ ALT="$1970 \ldots 2000$">.
+Schrikkeljaren zijn die jaren waarvan het jaartal deelbaar is door 4,
+maar niet door 100, tenzij het jaartal door 400 deelbaar is.
+
+<P>
+
+<P>
+Per run &#233;&#233;n regel met daarop: het jaar (in 4 cijfers) waarin de
+gegeven combinatie van dagnaam, dagnummer en maandnaam voor het laatst
+optrad, ten opzichte van vandaag.
+
+<P>
+
+<P>
+<TABLE CELLPADDING=3 BORDER="1">
+<TR><TH ALIGN="CENTER"><B>invoer</B></TH>
+<TD ALIGN="CENTER">bijbehorende <B>uitvoer</B></TD>
+</TR>
+<TR><TD ALIGN="CENTER"><TABLE  WIDTH="331">
+<TR><TD>
+<PRE>
+4
+3 29 2
+1 22 11
+7 7 10
+6 6 10
+</PRE>
+<BR>
+</TD></TR>
+</TABLE></TD>
+<TD ALIGN="CENTER"><TABLE  WIDTH="331">
+<TR><TD>
+<PRE>
+2000
+1998
+1995
+2000
+</PRE></TD></TR>
+</TABLE></TD>
+</TR>
+</TABLE>
+
+<P>
+
+<P>
+<HR>
+<!--Navigation Panel-->
+<A NAME="tex2html63"
+ HREF="node5.html">
+<IMG WIDTH="37" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="next"
+ SRC="next_motif.png"></A> 
+<A NAME="tex2html61"
+ HREF="opgaven.html">
+<IMG WIDTH="26" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="up"
+ SRC="up_motif.png"></A> 
+<A NAME="tex2html55"
+ HREF="node3.html">
+<IMG WIDTH="63" HEIGHT="24" ALIGN="BOTTOM" BORDER="0" ALT="previous"
+ SRC="previous_motif.png"></A>   
+<BR>
+<B> Next:</B> <A NAME="tex2html64"
+ HREF="node5.html">Landjes veroveren II</A>
+<B> Up:</B> <A NAME="tex2html62"
+ HREF="opgaven.html">opgaven</A>
+<B> Previous:</B> <A NAME="tex2html56"
+ HREF="node3.html">Jantje</A>
+<!--End of Navigation Panel-->
+<ADDRESS>
+<I>Nederlands Kampioenschap Programmeren 2000</I>
+<BR><I>2000-10-10</I>
+</ADDRESS>
+</BODY>
+</HTML>

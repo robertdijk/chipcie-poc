@@ -1,0 +1,1 @@
+Team Phoenix (with Stefan, Jesse, and Pim) was not available during the live FPC contest. However, Stefan promised to bake a cake to the students if they could beat them, so I hosted contest for them at Stefan's place to see if they would beat their students. Turns out that team Crystal Math solved more exercises than team Phoenix, so Stefan had to bake a cake!

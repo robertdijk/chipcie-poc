@@ -1,0 +1,73 @@
+<HTML>
+<HEAD>
+   <TITLE>Voorronde NKP 1997</TITLE>
+   <META NAME="GENERATOR" CONTENT="Mozilla/3.01Gold (X11; I; HP-UX B.10.20 9000/735) [Netscape]">
+</HEAD>
+
+<H1>Splitsen</H1>
+
+<H2>Beschrijving</H2>
+
+Wiskundigen zijn soms rare jongens/meiden. Dat blijkt onder andere wel
+uit het feit dat ze natuurlijke getallen --- bijvoorbeeld 12 ---
+willen schrijven als iets moeilijkers; laten we zeggen als som van
+vier <i>oneven</i> kwadraten: <i>12 = 3&#178; + 1&#178; + 1&#178; + 1&#178;</i>.
+Toevallig kan dat voor alle getallen van de vorm <i>4 t</i>, waarbij
+<i>t</i> een oneven, positief geheel getal is.
+
+Helaas zijn wiskundigen na de introductie van de zakjapanner de kunst
+van het hoofdrekenen een beetje verleerd. Het vinden van zo'n
+schrijfwijze --- ook wel <B>opsplitsing</B> genoemd --- laten ze dan
+ook liever aan de informatici (m/v) over.
+
+<H2>Het Probleem</H2>
+
+Aan jou dus de eer om voor al die wiskundigen een programma te
+schrijven dat een willekeurig getal <i>4 t</i> in vier oneven kwadraten
+splitst, waarbij <i>t</i> een oneven, positief geheel getal is. Nu zijn er
+voor elke <i>4 t</i> meestal verscheidene opsplitsingen. Uiteraard zijn we
+alleen ge&iuml;nteresseerd in echt verschillende opsplitsingen. We
+noemen twee opsplitsingen echt verschillend als de &eacute;&eacute;n niet in de
+ander over te voeren is door de vier termen te permuteren.
+
+<H2>De Invoer</H2>
+
+De invoer begint met &eacute;&eacute;n regel met daarop het aantal getallen <i>n</i>
+dat gesplitst moet worden. Daarna volgen <i>n</i> regels met daarop een
+waarde voor <i>t</i>, waarbij 1 &lt;= t &lt;= 5001 en <i>t</i> oneven.
+
+Voor elke waarde van <i>t</i> bevat de uitvoer alle echt verschillende
+opsplitsingen van <i>4 t</i>: per opsplitsing &eacute;&eacute;n regel, die er uit
+ziet als <i>4*t=a<sub>1</sub>&#178; + a<sub>2</sub>&#178; + a<sub>3</sub>&#178; + 
+a<sub>4</sub>&#178;</i>, waarbij <i>a<sub>1</sub> &lt;= a<sub>2</sub> &lt;= a<sub>3</sub> &lt;= a<sub>4</sub></i> en <i>a<sub>i</sub>&#178;</i> een oneven kwadraat is (<i>1 &lt;= i &lt;= 4</i>).
+
+Verder dienen de opsplitsingen in lexicografische volgorde te
+verschijnen. De opsplitsingen voor verschillende <i>t</i>'s dienen
+gescheiden te worden door een lege regel.
+
+<h2>Voorbeeld</h2>
+
+Bij de <B>invoer</b>
+<PRE>
+3
+13
+15
+31
+</PRE>
+hoort de <B>uitvoer</b>
+<PRE>
+4*13=1+1+1+49
+4*13=1+1+25+25
+4*13=9+9+9+25
+
+4*15=1+1+9+49
+4*15=1+9+25+25
+
+4*31=1+1+1+121
+4*31=1+25+49+49
+4*31=9+9+25+81
+4*31=25+25+25+49
+</PRE>
+
+</BODY>
+</HTML>
