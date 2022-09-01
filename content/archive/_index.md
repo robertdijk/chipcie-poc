@@ -7,7 +7,7 @@ weight: 500
 featured_image: /images/YAW02258.webp
 featured_image_alignment: bottom
 ---
-# Archive
+
 This page contains exercises, test sets and solutions of several contests. You can use these to practice and maximise your chance of winning:
 
  * [Freshmen Programming Contest (FPC)](/archive/fpc)
