@@ -1,4 +1,4 @@
-baseURL = 'http://example.org/'
+baseURL = 'https://commissies.ch.tudelft.nl/chipcie'
 languageCode = 'en-gb'
 title = 'CHipCie'
 theme = "ananke"
@@ -7,6 +7,9 @@ copyright = "W.I.S.V. `Christiaan Huygens'"
 SectionPagesMenu = "main"
 Paginate = 5
 enableRobotsTXT = true
+
+RelativeURLs=true
+CanonifyURLs=true
 
 [params]
   favicon = ""
