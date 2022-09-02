@@ -1,7 +1,7 @@
 ---
 title: "Registration DAPC 2022"
-date: 2022-09-05T09:00:00+02:00
-tags: ["news", "dapc"]
+date: 2022-09-02T09:00:00+02:00
+tags: ["news", "DAPC 2022"]
 draft: false
 ---
 
