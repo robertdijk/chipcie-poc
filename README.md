@@ -18,7 +18,7 @@ A table is generated based on the layout defined [here](layouts/partials/archive
 The table itself is generated [here](layouts/shortcodes). A shortcode per type of contest is required with this setup.
 
 ## Running
-For development, run `hugo serve` to run the application and then visit [http://localhost:1313](http://localhost:1313).<br>
+For development, run `hugo serve` to run the application and then visit [http://localhost:1313/chipcie](http://localhost:1313/chipcie).<br>
 For production, run `hugo` and serve the contents of the `/public` folder using e.g. Nginx.
 
 Note that `hugo serve` keeps all files (including the entire archive) in memory while serving.
