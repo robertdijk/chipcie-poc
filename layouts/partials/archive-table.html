@@ -1,34 +1,34 @@
 <tr>
   <td><strong>{{ .contest.name }}</strong></td>
   <td>{{ .contest.date }}</td>
-  <td class="link">
+  <td class="archive-link">
     {{if .links.website }}
-    <a href="{{.links.website}}">
+    <a href="{{.links.website}}" target="_blank">
       <span class="material-symbols-outlined icon" title="Website">
         link
       </span>
     </a>
     {{end}}
   </td>
-  <td class="archive-link ">
+  <td class="archive-link">
     {{if .resources.problems}}
-    <a href="/archive/{{.contest.year}}/{{.contest.type}}/{{.resources.problems}}">
+    <a href="/archive/{{.contest.year}}/{{.contest.type}}/{{.resources.problems}}" target="_blank">
       <span class="material-symbols-outlined icon" title="Problem Set">
         description
       </span>
     </a>
     {{end}}
   </td>
-  <td class="link">
+  <td class="archive-link">
     {{if .resources.slides}}
-    <a href="/archive/{{.contest.year}}/{{.contest.type}}/{{.resources.slides}}">
+    <a href="/archive/{{.contest.year}}/{{.contest.type}}/{{.resources.slides}}" target="_blank">
       <span class="material-symbols-outlined icon" title="Presentation">
         co_present
       </span>
     </a>
     {{end}}
   </td>
-  <td class="link">
+  <td class="archive-link">
     {{if .resources.data}}
     <a href="/archive/{{.contest.year}}/{{.contest.type}}/{{.resources.data}}">
       <span class="material-symbols-outlined icon" title="All Data and Solutions">
@@ -37,18 +37,18 @@
     </a>
     {{end}}
   </td>
-  <td class="link">
+  <td class="archive-link">
     {{if .links.result }}
-    <a href="{{.links.result}}">
+    <a href="{{.links.result}}" target="_blank">
       <span class="material-symbols-outlined icon" title="Scoreboard">
         scoreboard
       </span>
     </a>
     {{end}}
   </td>
-  <td class="link">
+  <td class="archive-link">
     {{if .links.photos }}
-    <a href="{{.links.photos}}">
+    <a href="{{.links.photos}}" target="_blank">
       <span class="material-symbols-outlined icon" title="Photos">
         photo_library
       </span>

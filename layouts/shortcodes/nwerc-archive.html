@@ -1,7 +1,11 @@
 <table class="archive helvetica">
-  <tr><th>Name</th><th>Date</th></tr>
+  <thead>
+    <tr><th>Name</th><th>Date</th></tr>
+  </thead>
+  <tbody>
 {{ range sort $.Site.Data.archive.nwerc "contest.year" "desc" }}
   {{ partial "archive-table" . }}
 {{ end }}
+  </tbody>
 </table>
 

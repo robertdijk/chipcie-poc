@@ -7,13 +7,15 @@
 }
 
 .icon {
-    width: 2.5em;
-    text-align: center;
     vertical-align: middle;
-    height: 100%;
-    font-size: larger;
 }
 
 .archive-link {
+    text-align: center;
     width: 3em;
+}
+
+.archive th {
+    text-align: left;
+    color: #000;
 }
