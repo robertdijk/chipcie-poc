@@ -18,12 +18,19 @@ A table is generated based on the layout defined [here](layouts/partials/archive
 The table itself is generated [here](layouts/shortcodes). A shortcode per type of contest is required with this setup.
 
 ## Running
-For development run `hugo serve` to run the application and then visit [http://localhost:1313](http://localhost:1313).
+For development, run `hugo serve` to run the application and then visit [http://localhost:1313](http://localhost:1313).<br>
+For production, run `hugo` and serve the contents of the `/public` folder using e.g. Nginx.
+
+Note that `hugo serve` keeps all files (including the entire archive) in memory while serving.
+If you want to avoid this, you can instruct Hugo to serve static files from disk using `hugo serve --renderStaticToDisk`.
+This will copy the `/static` folder to `/public`.
+If you prefer to not duplicate the archive on disk, you can create a symlink: `cd public ; ln -s ../static/archive .`.
+(see [#22](https://github.com/WISVCH/chipcie-website/issues/22) for the original discussion)
 
 
-## Todo's and improvements
+## Todos and improvements
  - [X] How to deal with scoreboards?
- - [ ] Figure out if there is enough lfs space for all years
+ - [X] Figure out if there is enough lfs space for all years
  - [X] Fix layout (especially of the table)
  - [X] Add other pages that are wanted (general information, training sources, etc)
     * [X] Add Contest page
@@ -37,11 +44,11 @@ For development run `hugo serve` to run the application and then visit [http://l
    * [X] Reverse the table to have the latest contest at the top
    * [X] Add photo links from previous contests
 
-## Future Todo's
+## Future Todos
  - [ ] Scan in old problem sets (marked to be in the old physical problem set archive)
    - [ ] DAPC 1990, 1991, 1992
    - [ ] NKP 1992, 1994, 1995, 2001(maybe, hopefully)
    - [ ] NWERC 1988, 1990, 1991, 1995 (double check 1989 if only 4 problems)
  - [ ] Search old chipcie drive for scoreboard dkp 2011 and 1998-
  - [ ] Search old CHipCie drive for problem sets FPC 2017, 2013, 2010, 2009, 2008, 2005
- - [ ] Add pictures from new ch picture site once it works again(dapc 2019 and up) 
+ - [ ] Add pictures from new ch picture site once it works again(dapc 2019 and up)
