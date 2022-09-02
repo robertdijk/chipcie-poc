@@ -17,3 +17,4 @@ When creating a team, **DO** tick the box “I also want to participate as conte
 The person who creates your team, will initially be the “contestant coach” of this team.
 
 For the best preparations, be sure to check out the [archive](/archive), [resources](/resources) and a [sample problem](/sample).
+A preliminary overview of the [programming environment](/system) used during the contest is also available.
