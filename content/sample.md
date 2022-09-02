@@ -1,7 +1,6 @@
 ---
 title: Sample Problem
-featured_image: "images/notebook.jpg"
-featured_image: /images/header-contest.webp
+featured_image: /images/YAW02293.webp
 type: page
 ---
 
