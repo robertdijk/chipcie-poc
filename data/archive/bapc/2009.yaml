@@ -5,8 +5,8 @@ contest:
   year: 2009
 resources:
   problems: bapc2009.pdf
-  slides:
-  data:
+  slides: solutions.pdf
+  data: data.zip
 links:
   photos:
   website:

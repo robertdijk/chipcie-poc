@@ -5,7 +5,7 @@ contest:
   year: 2010
 resources:
   problems: bapc2010.pdf
-  slides:
+  slides: solutions.pdf
   data: all.zip
 links:
   photos:

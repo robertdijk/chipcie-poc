@@ -5,8 +5,8 @@ contest:
   year: 2010
 resources:
   problems: dkp2010.pdf
-  slides: 2010-preliminaries-solutions.tar.gz
-  data: testdata.tar.gz
+  slides: solutions.pdf
+  data: data.zip
 links:
   photos: https://flitcie.ch.tudelft.nl/54/DKP2010
   website:
