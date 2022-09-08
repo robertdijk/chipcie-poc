@@ -51,4 +51,4 @@ If you prefer to not duplicate the archive on disk, you can create a symlink: `c
    - [ ] NWERC 1988, 1990, 1991, 1995 (double check 1989 if only 4 problems)
  - [ ] Search old chipcie drive for scoreboard dkp 2011 and 1998-
  - [ ] Search old CHipCie drive for problem sets FPC 2017, 2013, 2010, 2009, 2008, 2005
- - [ ] Add pictures from new ch picture site once it works again(dapc 2019 and up)
+ - [X] Add pictures from new ch picture site once it works again(dapc 2019 and up)

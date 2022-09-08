@@ -8,6 +8,6 @@ resources:
   slides: solutions.pdf
   data: solutions.zip
 links:
-  photos:
+  photos: https://ch.tudelft.nl/media/photos/?type_0=gallery&album_gallery_id_0=70
   website:
   result: /archive/2021/dapc/scoreboard.html
